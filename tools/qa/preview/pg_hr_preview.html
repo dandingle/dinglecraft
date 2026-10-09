@@ -1,0 +1,83 @@
+<!doctype html>
+<html><head><meta charset="utf-8"><title>Purgatory cast (Hyperreal)</title>
+<style>html,body{margin:0;height:100%;background:#000;overflow:hidden;font:13px/1.4 system-ui;color:#fff}
+#hud{position:fixed;left:12px;top:10px;text-shadow:0 1px 2px #000;opacity:.85}</style></head><body>
+<div id="hud">Purgatory cast QA (P7). Driven by window.PGQ (docs/QA.md). ?preset=show|blackout|bomber|bigpig|bigfrog|work&amp;art=&lt;workspace url&gt;</div>
+<script src="../../../assets/vendor/three.r128.min.js"></script>   <!-- the bundled r128 (serve the repo root: npm run serve) -->
+<script>window.HR={BUST:Date.now()};</script>
+<script src="../../../src/texpacks/models/rig.js"></script>
+<script>
+/* P7's QA stage for the purgatory models (src/texpacks/models/pg_*.js), before or after packing: textures are served from
+   the purgatory workspace's staging folder first, then the Hyperreal workspace's final_ent/ (?art= / ?pg= urls; serve them
+   beside the repo), and an id with no file is '' (the game's "not embedded"), so the flat/canvas fallbacks show exactly as
+   they would in a build without the art. Lights approximate tB_light's theatre presets. pg_hr_tex.json lists which files
+   exist ('f' entity, 'F' tile, 's'/'S' staged); regenerate it from the workspace when the art changes. */
+const Q=new URLSearchParams(location.search),ART=(Q.get('art')||'art/').replace(/\/?$/,'/'),PGW=(Q.get('pg')||'pg/').replace(/\/?$/,'/');   /* ?art=<Hyperreal workspace url>&pg=<purgatory workspace url> */
+const MD='../../../src/texpacks/models/',FE=ART+'final_ent/',ST=PGW+'staged/final_ent/',FT=ART+'final/',STT=PGW+'staged/final/';
+const PGQ=window.PGQ={ready:false,actors:[],T:0,tex:{}};
+(async()=>{
+  try{PGQ.tex=await (await fetch('pg_hr_tex.json?v='+Date.now())).json();}catch(e){PGQ.tex={};}
+  const has=(id,suf)=>PGQ.tex[id+suf];
+  HR.texURL=(id,suf)=>{const w=has(id,suf);if(!w)return '';return (w==='s'?ST:FE)+id+suf+'?v='+HR.BUST;};
+  const R=new THREE.WebGLRenderer({antialias:true,preserveDrawingBuffer:true});
+  R.setPixelRatio(1);R.setSize(innerWidth,innerHeight);
+  R.outputEncoding=THREE.sRGBEncoding;R.toneMapping=THREE.ACESFilmicToneMapping;R.physicallyCorrectLights=true;
+  R.shadowMap.enabled=true;R.shadowMap.type=THREE.PCFSoftShadowMap;document.body.appendChild(R.domElement);
+  HR.setAnisotropy(R.capabilities.getMaxAnisotropy());
+  const S=new THREE.Scene(),cam=new THREE.PerspectiveCamera(40,innerWidth/innerHeight,0.05,300);
+  const key=new THREE.DirectionalLight(0xffc58f,3.4);key.castShadow=true;key.shadow.mapSize.set(2048,2048);
+  Object.assign(key.shadow.camera,{left:-12,right:12,top:12,bottom:-12,near:1,far:80});key.shadow.bias=-0.0004;key.shadow.normalBias=0.02;S.add(key);S.add(key.target);
+  const hemi=new THREE.HemisphereLight(0xffb26a,0x6a1f4e,0.55);S.add(hemi);
+  const amb=new THREE.AmbientLight(0xffe2b0,0.05);S.add(amb);
+  const spot=new THREE.PointLight(0xfff1d6,0,24,2);S.add(spot);
+  const lin=h=>new THREE.Color(h);
+  const P={show:{k:0xffc58f,ki:3.4,d:[.18,1,.32],s:0xffb26a,g:0x6a1f4e,h:.55,f:0x2a1626,x:1.1},
+    blackout:{k:0x7f9cff,ki:.32,d:[1,.55,.25],s:0x18223c,g:0x050409,h:.07,f:0x07060a,x:1.55,fs:110},
+    bomber:{k:0xffa24e,ki:2.6,d:[-.2,1,.4],s:0x9a5422,g:0x2a1308,h:.5,f:0x3a2412,x:1.15},
+    bigpig:{k:0xffb3d4,ki:3,d:[0,.8,-.6],s:0xff8cc4,g:0x40102c,h:.7,f:0x3a1430,x:1.1},
+    bigfrog:{k:0xb4c8ff,ki:1.7,d:[-.3,.8,-.6],s:0x1e3a2c,g:0x081208,h:.32,f:0x101a2a,x:1.4},
+    work:{k:0xf2f6ff,ki:1.4,d:[0,1,.05],s:0xeef2f4,g:0xb4b4aa,h:1.7,f:0xd8d8d0,x:1}};
+  PGQ.preset=function(n){const p=P[n]||P.show;key.color.setHex(p.k);key.intensity=p.ki;const l=Math.hypot(...p.d);key.position.set(p.d[0]/l*30,p.d[1]/l*30,p.d[2]/l*30);
+    hemi.color.setHex(p.s);hemi.groundColor.setHex(p.g);hemi.intensity=p.h;S.background=new THREE.Color(p.f);S.fog=new THREE.Fog(p.f,30,90);R.toneMappingExposure=p.x;
+    spot.intensity=p.fs||0;spot.position.set(0,4.2,0);PGQ.pn=n;};
+  PGQ.preset(Q.get('preset')||'show');
+  /* the stage: Stage Deck boards (art if staged/final, else black-painted planks) and a velvet back wall */
+  const L=new THREE.TextureLoader();
+  const tileMat=(n,rep,fb)=>{const m=new THREE.MeshStandardMaterial({color:fb,roughness:.9});const w=PGQ.tex[n+'_basecolor.png'];
+    if(w){for(const [p,s] of [['map','basecolor'],['normalMap','normal'],['roughnessMap','roughness']]){if(!PGQ.tex[n+'_'+s+'.png'])continue;const t=L.load((w==='S'?STT:FT)+n+'_'+s+'.png');t.wrapS=t.wrapT=THREE.RepeatWrapping;t.repeat.set(rep[0],rep[1]);if(s==='basecolor')t.encoding=THREE.sRGBEncoding;m[p]=t;}m.color.set(0xffffff);}
+    return m;};
+  const floor=new THREE.Mesh(new THREE.BoxGeometry(60,1,40),tileMat('pg_deck',[60,40],0x1a1716));floor.position.y=-.5;floor.receiveShadow=true;S.add(floor);
+  const wall=new THREE.Mesh(new THREE.BoxGeometry(60,14,1),tileMat('pg_velvet_s',[60,14],0x5a1020));wall.position.set(0,7,-9);wall.receiveShadow=true;S.add(wall);
+  PGQ.S=S;PGQ.R=R;PGQ.cam=cam;PGQ.key=key;PGQ.spot=spot;
+  const load=src=>new Promise(r=>{const s=document.createElement('script');s.src=MD+src+'?v='+HR.BUST;s.onload=()=>r(true);s.onerror=()=>r(false);document.head.appendChild(s);});
+  await load('pg_0lib.js');await load('pg_ids.js');
+  const names=(Q.get('models')||'pg_blank,pg_arm,pg_pig,pg_bomber,pg_bigpig,pg_bigfrog,pg_cook,pg_drummer,pg_yeti,pg_labrat,pg_daredevil,pg_comic,pg_frog').split(',');
+  for(const n of names)await load(n+'.js');
+  PGQ.models=names.filter(n=>HR.MODELS[n]);
+  const mkS=seed=>({speed:0,attack:0,hurt:0,dead:0,yaw:0,pitch:0,seed,fuse:0,cd:0,near:4,accel:new THREE.Vector3(),fired:false,woodHit:false,blockHit:false,hp:1});
+  PGQ.add=function(name,variant,x,z,yaw,scale){let m;try{m=HR.MODELS[name](variant);}catch(e){console.error(name,e);return null;}
+    const G=new THREE.Group();G.position.set(x||0,0,z||0);G.rotation.y=yaw||0;if(scale)G.scale.set(scale[0],scale[1],scale[2]);G.add(m.root);S.add(G);
+    m.root.traverse(o=>{if(o.isMesh){o.castShadow=o.castShadow!==false;o.receiveShadow=true;}});
+    const a={name,variant,m,G,s:mkS(PGQ.actors.length+1)};PGQ.actors.push(a);return a;};
+  PGQ.clear=function(){for(const a of PGQ.actors)S.remove(a.G);PGQ.actors.length=0;};
+  PGQ.step=function(sec,fn){const dt=1/60;for(let t=0;t<sec;t+=dt){PGQ.T+=dt;if(fn)fn(PGQ.T,dt);for(const a of PGQ.actors){try{a.m.update(dt,PGQ.T,a.s);}catch(e){if(!a.err){a.err=String(e&&e.stack||e);console.error(a.name,e);}}a.s.fired=false;}}};
+  PGQ.look=function(px,py,pz,tx,ty,tz){cam.position.set(px,py,pz);cam.lookAt(tx,ty,tz);key.target.position.set(tx,0,tz);
+    const d=key.position.clone().normalize();key.position.set(tx+d.x*30,d.y*30,tz+d.z*30);spot.position.set(tx,4.2,tz);};
+  PGQ.render=function(){R.render(S,cam);};
+  /* a contact sheet: cells = [{label, fn}] (fn poses the scene and the camera); returns a JPEG data URL */
+  /* wait until every texture in the scene has its image (http loads are async; an empty texture renders black) */
+  PGQ.waitTex=async function(ms){const t0=performance.now();for(;;){let pend=0;S.traverse(o=>{if(!o.isMesh)return;for(const m of [].concat(o.material))for(const k of ['map','normalMap','roughnessMap'])if(m&&m[k]&&!m[k].image)pend++;});
+      if(!pend||performance.now()-t0>(ms||8000))return pend;await new Promise(r=>setTimeout(r,100));}};
+  PGQ.sheet=async function(cells,cols,cw,ch){cols=cols||5;cw=cw||384;ch=ch||288;const rows=Math.ceil(cells.length/cols);
+    const out=document.createElement('canvas');out.width=cols*cw;out.height=rows*ch;const g=out.getContext('2d');g.fillStyle='#111';g.fillRect(0,0,out.width,out.height);
+    R.setSize(cw,ch);cam.aspect=cw/ch;cam.updateProjectionMatrix();
+    for(let i=0;i<cells.length;i++){const c=cells[i];try{await c.fn();}catch(e){console.error('cell',c.label,e);}await PGQ.waitTex();
+      R.render(S,cam);g.drawImage(R.domElement,(i%cols)*cw,Math.floor(i/cols)*ch,cw,ch);
+      g.fillStyle='rgba(0,0,0,.55)';g.fillRect((i%cols)*cw,Math.floor(i/cols)*ch+ch-20,cw,20);g.fillStyle='#fff';g.font='13px system-ui';g.fillText(c.label,(i%cols)*cw+6,Math.floor(i/cols)*ch+ch-6);}
+    R.setSize(innerWidth,innerHeight);cam.aspect=innerWidth/innerHeight;cam.updateProjectionMatrix();
+    return out.toDataURL('image/jpeg',0.86);};
+  PGQ.errors=()=>PGQ.actors.filter(a=>a.err).map(a=>a.name+': '+a.err.slice(0,300));
+  PGQ.info=()=>({models:PGQ.models,calls:R.info.render.calls,tris:R.info.render.triangles,geos:R.info.memory.geometries,texs:R.info.memory.textures});
+  PGQ.ready=true;window.__vox={qa:1};
+})();
+</script></body></html>

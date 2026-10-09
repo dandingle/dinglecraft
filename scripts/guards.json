@@ -1,0 +1,10 @@
+{
+  "_doc": "Size guards for the built game.js and html (ported from the legacy release gate). Each section is measured in UTF-8 bytes from the first 'from' match up to the first 'to' match. mode 'optional': a missing section measures 0. mode 'required': a missing or misplaced section fails. 'lastIndexOf' (PART 57 only) also requires that marker between from and to, exactly as the legacy gate did. Read by scripts/build.mjs, tests/repo/r_build.js and the gate.",
+  "html_cap": 45000000,
+  "sections": [
+    { "name": "PART 55", "from": "/* ---- PART 55: ", "to": "/* ---- PART 54: t0_contract.js ---- */", "cap": 950000, "mode": "optional" },
+    { "name": "PART 56", "from": "/* ---- PART 56: ", "to": "/* ---- PART 55: p0_contract.js ---- */", "cap": 450000, "mode": "required", "note": "must sit right before PART 55" },
+    { "name": "PART 57", "from": "/* ---- PART 57: m0_contract.js ---- */", "to": "/* ---- PART 56: c0_contract.js ---- */", "cap": 600000, "mode": "required", "lastIndexOf": "/* ---- PART 57: ", "note": "must sit right before PART 56" },
+    { "name": "PART 57 HR block", "from": "/* ---- PART 57 HR: ", "to": "/* the Hyperreal cast (src/texpacks/models)", "cap": 700000, "mode": "required", "note": "must sit right before hrLoadModels" }
+  ]
+}

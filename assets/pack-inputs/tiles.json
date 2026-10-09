@@ -1,0 +1,842 @@
+{
+ "bed_s": {
+  "rot": false,
+  "alpha": null,
+  "emissive": 0,
+  "rough": 1.0,
+  "src": "AI upgrade 2026-10-06: nano-banana-pro edit (layout kept)"
+ },
+ "bed_t": {
+  "rot": false,
+  "alpha": null,
+  "emissive": 0,
+  "rough": 1.0,
+  "src": "AI upgrade 2026-10-06: nano-banana-pro edit (layout kept)"
+ },
+ "bedrock": {
+  "rot": true,
+  "alpha": null,
+  "emissive": 0,
+  "rough": 1.0,
+  "src": "patina text-only, highlights compressed"
+ },
+ "brick": {
+  "rot": false,
+  "alpha": null,
+  "emissive": 0,
+  "rough": 1.0,
+  "src": "nano-banana-pro hero; exact period crop (10 courses x 3 bricks) + narrow wrap blend; mortar-recess height normals"
+ },
+ "cactus": {
+  "rot": false,
+  "alpha": null,
+  "emissive": 0,
+  "rough": 1.0,
+  "src": "AI upgrade 2026-10-06: nano-banana-pro edit (layout kept)"
+ },
+ "cactus_t": {
+  "rot": true,
+  "alpha": null,
+  "emissive": 0,
+  "rough": 1.0,
+  "src": "AI upgrade 2026-10-06: nano-banana-pro edit (layout kept)"
+ },
+ "chest_f": {
+  "rot": false,
+  "alpha": null,
+  "emissive": 0,
+  "rough": 1.0,
+  "src": "AI upgrade 2026-10-06: nano-banana-pro edit (layout kept)"
+ },
+ "chest_t": {
+  "rot": false,
+  "alpha": null,
+  "emissive": 0,
+  "rough": 1.0,
+  "src": "AI upgrade 2026-10-06: nano-banana-pro edit (layout kept)"
+ },
+ "clay": {
+  "rot": true,
+  "alpha": null,
+  "emissive": 0,
+  "rough": 0.9,
+  "src": "patina text, crease features patch-replaced, smears/grit, wet roughness"
+ },
+ "cobble": {
+  "rot": false,
+  "alpha": null,
+  "emissive": 0,
+  "rough": 1.0,
+  "src": "approved v2 cobblestone_*"
+ },
+ "craft_s": {
+  "rot": false,
+  "alpha": null,
+  "emissive": 0,
+  "rough": 1.0,
+  "src": "AI upgrade 2026-10-06: nano-banana-pro edit (layout kept)"
+ },
+ "craft_t": {
+  "rot": false,
+  "alpha": null,
+  "emissive": 0,
+  "rough": 1.0,
+  "src": "nano-banana-pro/edit, game 16px tile as layout guide; luminance normals"
+ },
+ "dirt": {
+  "rot": true,
+  "alpha": null,
+  "emissive": 0,
+  "rough": 1.0,
+  "src": "approved v2 (nano-banana-pro + patina extract)"
+ },
+ "door_l": {
+  "rot": false,
+  "alpha": null,
+  "emissive": 0,
+  "rough": 1.0,
+  "src": "AI upgrade 2026-10-06: nano-banana-pro edit (layout kept)"
+ },
+ "door_u": {
+  "rot": false,
+  "alpha": "cutout",
+  "emissive": 0,
+  "rough": 1.0,
+  "src": "AI upgrade 2026-10-06: nano-banana-pro edit (layout kept)"
+ },
+ "flower_r": {
+  "rot": false,
+  "alpha": "cutout",
+  "emissive": 0,
+  "rough": 1.0,
+  "src": "nano-banana-pro rose on white, keyed, bottom-centred"
+ },
+ "flower_y": {
+  "rot": false,
+  "alpha": "cutout",
+  "emissive": 0,
+  "rough": 1.0,
+  "src": "nano-banana-pro dandelion on white, keyed, bottom-centred"
+ },
+ "furn_f": {
+  "rot": false,
+  "alpha": null,
+  "emissive": 0,
+  "rough": 1.0,
+  "src": "AI upgrade 2026-10-06: nano-banana-pro edit (layout kept)"
+ },
+ "furn_t": {
+  "rot": true,
+  "alpha": null,
+  "emissive": 0,
+  "rough": 1.0,
+  "src": "approved stone + faint soot and ash (seamless)"
+ },
+ "glass": {
+  "rot": false,
+  "alpha": "blend",
+  "emissive": 0,
+  "rough": 1.0,
+  "src": "local: flaking painted frame from approved oak grain + grimy fogged pane, smears, drips, fly specks, cobweb"
+ },
+ "glowstone": {
+  "rot": true,
+  "alpha": null,
+  "emissive": 1.0,
+  "rough": 1.0,
+  "src": "patina text amber crystal clusters"
+ },
+ "grass_side": {
+  "rot": false,
+  "alpha": null,
+  "emissive": 0,
+  "rough": 1.0,
+  "src": "approved v2 (nb edit + patina masked inpaint)"
+ },
+ "grass_top": {
+  "rot": true,
+  "alpha": null,
+  "emissive": 0,
+  "rough": 1.0,
+  "src": "approved v2 (nano-banana-pro + patina extract)"
+ },
+ "gravel": {
+  "rot": true,
+  "alpha": null,
+  "emissive": 0,
+  "rough": 1.0,
+  "src": "patina text-only seamless"
+ },
+ "ice": {
+  "rot": true,
+  "alpha": "blend",
+  "emissive": 0,
+  "rough": 1.0,
+  "src": "patina text, bubble clusters patch-replaced, frost/scratches; alpha ~0.8"
+ },
+ "lava": {
+  "rot": false,
+  "alpha": null,
+  "emissive": 1.0,
+  "rough": 1.0,
+  "src": "patina text-only, equalised + heat lift; crust rough / melt smooth"
+ },
+ "leaf_b": {
+  "rot": true,
+  "alpha": "cutout",
+  "emissive": 0,
+  "rough": 1.0,
+  "src": "rebuilt from real nano-banana-pro leaf sprites"
+ },
+ "leaf_o": {
+  "rot": true,
+  "alpha": "cutout",
+  "emissive": 0,
+  "rough": 1.0,
+  "src": "rebuilt from real nano-banana-pro leaf sprites"
+ },
+ "leaf_s": {
+  "rot": true,
+  "alpha": "cutout",
+  "emissive": 0,
+  "rough": 1.0,
+  "src": "rebuilt from real nano-banana-pro leaf sprites"
+ },
+ "log_b": {
+  "rot": false,
+  "alpha": null,
+  "emissive": 0,
+  "rough": 1.0,
+  "src": "patina img2img of approved oak bark s0.85 (birch prompt), plates lifted to chalk white"
+ },
+ "log_o": {
+  "rot": false,
+  "alpha": null,
+  "emissive": 0,
+  "rough": 1.0,
+  "src": "approved v2 oak_log_side_*"
+ },
+ "log_s": {
+  "rot": false,
+  "alpha": null,
+  "emissive": 0,
+  "rough": 1.0,
+  "src": "patina img2img of approved oak bark s0.7, graded spruce red-brown"
+ },
+ "log_top": {
+  "rot": true,
+  "alpha": null,
+  "emissive": 0,
+  "rough": 1.0,
+  "src": "approved v2 oak_log_top_*"
+ },
+ "nbrick": {
+  "rot": false,
+  "alpha": null,
+  "emissive": 0,
+  "rough": 0.9,
+  "src": "patina text bricks graded to near-black blood maroon"
+ },
+ "nethrock": {
+  "rot": true,
+  "alpha": null,
+  "emissive": 0,
+  "rough": 0.85,
+  "src": "nano-banana-pro meat-rock hero, offset-blend seamless + LF equalise; wet strands = low roughness"
+ },
+ "obsidian": {
+  "rot": true,
+  "alpha": null,
+  "emissive": 0,
+  "rough": 0.8,
+  "src": "patina text-only"
+ },
+ "ore_coal": {
+  "rot": true,
+  "alpha": null,
+  "emissive": 0,
+  "rough": 1.0,
+  "src": "AI upgrade 2026-10-06: nano-banana-pro edit (layout kept) - ore border pixel-identical to stone"
+ },
+ "ore_dia": {
+  "rot": true,
+  "alpha": null,
+  "emissive": 0,
+  "rough": 1.0,
+  "src": "AI upgrade 2026-10-06: nano-banana-pro edit (layout kept) - ore border pixel-identical to stone"
+ },
+ "ore_gold": {
+  "rot": true,
+  "alpha": null,
+  "emissive": 0,
+  "rough": 1.0,
+  "src": "AI upgrade 2026-10-06: nano-banana-pro edit (layout kept) - ore border pixel-identical to stone"
+ },
+ "ore_iron": {
+  "rot": true,
+  "alpha": null,
+  "emissive": 0,
+  "rough": 1.0,
+  "src": "AI upgrade 2026-10-06: nano-banana-pro edit (layout kept) - ore border pixel-identical to stone"
+ },
+ "plank_b": {
+  "rot": false,
+  "alpha": null,
+  "emissive": 0,
+  "rough": 1.0,
+  "src": "patina img2img of approved oak planks (4 boards) s0.6, graded birch"
+ },
+ "plank_o": {
+  "rot": false,
+  "alpha": null,
+  "emissive": 0,
+  "rough": 1.0,
+  "src": "approved v2 oak_planks_*"
+ },
+ "plank_s": {
+  "rot": false,
+  "alpha": null,
+  "emissive": 0,
+  "rough": 1.0,
+  "src": "patina img2img of approved oak planks (4 boards) s0.6, graded spruce"
+ },
+ "sand": {
+  "rot": true,
+  "alpha": null,
+  "emissive": 0,
+  "rough": 1.0,
+  "src": "patina text + local grain mineralogy, gravel-photo pebbles/shell bits, ripple normal"
+ },
+ "sandstone": {
+  "rot": false,
+  "alpha": null,
+  "emissive": 0,
+  "rough": 1.0,
+  "src": "patina text-only (horizontal bedding) + stone micro-detail"
+ },
+ "sandstone_t": {
+  "rot": true,
+  "alpha": null,
+  "emissive": 0,
+  "rough": 1.0,
+  "src": "patina text-only + stone/sand micro-detail"
+ },
+ "sbrick": {
+  "rot": false,
+  "alpha": null,
+  "emissive": 0,
+  "rough": 1.0,
+  "src": "patina text dungeon slabs, re-bonded by course shift, darkened/damp; seam metric high only because joints sit on the tile edge"
+ },
+ "snow": {
+  "rot": true,
+  "alpha": null,
+  "emissive": 0,
+  "rough": 1.0,
+  "src": "patina text-only, graded white + sparkle/grit"
+ },
+ "snow_side": {
+  "rot": false,
+  "alpha": null,
+  "emissive": 0,
+  "rough": 1.0,
+  "src": "nano-banana-pro/edit of approved dirt, quilted horizontally seamless, matted over exact dirt (bottom 46% = dirt)"
+ },
+ "soulsand": {
+  "rot": true,
+  "alpha": null,
+  "emissive": 0,
+  "rough": 1.0,
+  "src": "nano-banana-pro hero: face-free sand rebuilt as periodic Voronoi patch mosaic, 4 faint screaming faces re-placed irregularly"
+ },
+ "stone": {
+  "rot": true,
+  "alpha": null,
+  "emissive": 0,
+  "rough": 1.0,
+  "src": "approved v2 (nano-banana-pro + patina extract)"
+ },
+ "stonebrick": {
+  "rot": false,
+  "alpha": null,
+  "emissive": 0,
+  "rough": 1.0,
+  "src": "patina extract of the unused v1 squared-setts hero (raw/v1/cobblestone_images_0)"
+ },
+ "tallgrass": {
+  "rot": false,
+  "alpha": "cutout",
+  "emissive": 0,
+  "rough": 1.0,
+  "src": "nano-banana-pro on white, keyed, bottom-centred"
+ },
+ "tnt_s": {
+  "rot": false,
+  "alpha": null,
+  "emissive": 0,
+  "rough": 1.0,
+  "src": "nano-banana-pro/edit, game 16px tile as layout guide; luminance normals"
+ },
+ "tnt_t": {
+  "rot": false,
+  "alpha": null,
+  "emissive": 0,
+  "rough": 1.0,
+  "src": "AI upgrade 2026-10-06: nano-banana-pro edit (layout kept)"
+ },
+ "torch": {
+  "rot": false,
+  "alpha": "cutout",
+  "emissive": 0.9,
+  "rough": 1.0,
+  "src": "nano-banana-pro torch on black, keyed to alpha (un-premultiplied, colour bled), bottom-centred, 78% frame height"
+ },
+ "water": {
+  "rot": false,
+  "alpha": "blend",
+  "emissive": 0,
+  "rough": 1.0,
+  "src": "procedural: murky pond colour, scum streaks, duckweed, debris, 2 drowned leaves; strong periodic ripple normal; alpha ~0.77"
+ },
+ "wool": {
+  "rot": false,
+  "alpha": null,
+  "emissive": 0,
+  "rough": 1.0,
+  "src": "patina text knit felt, LF-equalised, desaturated to near-neutral off-white for in-game tint, light dinge"
+ },
+ "pg_armhole_t": {
+  "rot": true,
+  "alpha": null,
+  "emissive": 0,
+  "rough": 1.0,
+  "src": "P6 pgw3_armhole: nano-banana-pro object face, luminance normals; seam h1.60 v13.78"
+ },
+ "pg_backing": {
+  "rot": false,
+  "alpha": null,
+  "emissive": 0,
+  "rough": 1.0,
+  "src": "P6 pgw2_rx_backing: patina variant, LF-equalised, normal tilt removed, wrap ramp on axis (0, 1); seam h1.38 v1.19; normals rebuilt from luminance (the extract normal bent along the edges)"
+ },
+ "pg_bench_s": {
+  "rot": false,
+  "alpha": null,
+  "emissive": 0,
+  "rough": 1.0,
+  "src": "P6 pgw3_bench: nano-banana-pro object face, luminance normals; seam h3.94 v11.34"
+ },
+ "pg_bench_t": {
+  "rot": false,
+  "alpha": null,
+  "emissive": 0,
+  "rough": 1.0,
+  "src": "P6 pgw3_bench_t: nano-banana-pro object face, luminance normals; seam h4.43 v12.12"
+ },
+ "pg_brace": {
+  "rot": false,
+  "alpha": null,
+  "emissive": 0,
+  "rough": 1.0,
+  "src": "P6 pgw3_brace: patina variant, LF-equalised, normal tilt removed; seam h1.00 v0.99"
+ },
+ "pg_burner_s": {
+  "rot": true,
+  "alpha": null,
+  "emissive": 0,
+  "rough": 1.0,
+  "src": "P6 pgw2_enamel: patina text enamel (it came out as a hob grate): one plain quadrant cropped, upscaled, offset-blend seamless, luminance normals; seam h1.11 v1.38"
+ },
+ "pg_burner_t": {
+  "rot": true,
+  "alpha": null,
+  "emissive": 1.0,
+  "rough": 1.0,
+  "src": "P6 pgw2_burner: nano-banana-pro black enamel hob with a glowing coil (P7: emissive 2.0 emask lum)"
+ },
+ "pg_can_s": {
+  "rot": false,
+  "alpha": null,
+  "emissive": 0,
+  "rough": 1.0,
+  "src": "P6 pgw3_can: nano-banana-pro object face, luminance normals; seam h4.29 v6.09"
+ },
+ "pg_can_t": {
+  "rot": true,
+  "alpha": null,
+  "emissive": 0,
+  "rough": 1.0,
+  "src": "P6 pgw3_can_t: nano-banana-pro object face, crop (0.06, 0.06, 0.94, 0.94), luminance normals; seam h2.65 v5.74"
+ },
+ "pg_cattail": {
+  "rot": false,
+  "alpha": "cutout",
+  "emissive": 0,
+  "rough": 1.0,
+  "src": "P6 pgw3_r_cattail: nano-banana-pro on chroma blue, keyed to alpha (12% opaque), despilled, bottom-centred"
+ },
+ "pg_counter_b": {
+  "rot": true,
+  "alpha": null,
+  "emissive": 0,
+  "rough": 1.0,
+  "src": "P6 pgw3_counter_b: patina variant, LF-equalised, normal tilt removed; seam h1.01 v1.00"
+ },
+ "pg_counter_s": {
+  "rot": false,
+  "alpha": null,
+  "emissive": 0,
+  "rough": 1.0,
+  "src": "P6 pgw2_cabinet: nano-banana-pro object face, luminance normals; seam h1.43 v18.62"
+ },
+ "pg_counter_t": {
+  "rot": true,
+  "alpha": null,
+  "emissive": 0,
+  "rough": 1.0,
+  "src": "P6 pgw2_x_counter: patina extract, LF-equalised, normal tilt removed; seam h0.91 v0.99"
+ },
+ "pg_deck": {
+  "rot": true,
+  "alpha": null,
+  "emissive": 0,
+  "rough": 1.0,
+  "src": "P6 pgw1_x_deck: patina extract, LF-equalised, normal tilt removed; seam h2.20 v1.88"
+ },
+ "pg_door_s": {
+  "rot": false,
+  "alpha": null,
+  "emissive": 0,
+  "rough": 1.0,
+  "src": "P6 pgw3_door: nano-banana-pro object face, luminance normals; seam h7.76 v8.99"
+ },
+ "pg_door_t": {
+  "rot": false,
+  "alpha": null,
+  "emissive": 0,
+  "rough": 1.0,
+  "src": "P6 pgw3_door_t: patina variant, LF-equalised, normal tilt removed; seam h0.81 v1.00"
+ },
+ "pg_dough": {
+  "rot": true,
+  "alpha": null,
+  "emissive": 0,
+  "rough": 1.0,
+  "src": "P6 pgw3_dough: patina variant, LF-equalised, normal tilt removed; seam h0.75 v1.08"
+ },
+ "pg_eye": {
+  "rot": false,
+  "alpha": null,
+  "emissive": 0,
+  "rough": 1.0,
+  "src": "P6 pgw2_eye: nano-banana-pro object face, crop (0.17, 0.15, 0.83, 0.81), luminance normals; seam h15.71 v31.85"
+ },
+ "pg_fleece": {
+  "rot": true,
+  "alpha": "cutout",
+  "emissive": 0,
+  "rough": 1.0,
+  "src": "P6 pgw1_x_fleece: patina extract, LF-equalised, normal tilt removed; seam h0.81 v0.95; periodic ragged alpha holes near the edges (4.0% transparent)"
+ },
+ "pg_foam": {
+  "rot": true,
+  "alpha": null,
+  "emissive": 0,
+  "rough": 1.0,
+  "src": "P6 pgw1_x_foam: patina extract, LF-equalised, normal tilt removed; seam h1.01 v1.08"
+ },
+ "pg_forearm_s": {
+  "rot": false,
+  "alpha": null,
+  "emissive": 0,
+  "rough": 1.0,
+  "src": "P6 pgw1_x_forearm: patina extract, LF-equalised, normal tilt removed, wrap ramp on axis (0,); seam h1.08 v0.97"
+ },
+ "pg_forearm_x": {
+  "rot": true,
+  "alpha": null,
+  "emissive": 0,
+  "rough": 1.0,
+  "src": "P6 local: the sleeve cross-section with its felt ring recoloured to the final pg_forearm_s skin (shading kept)"
+ },
+ "pg_hotplate_s": {
+  "rot": false,
+  "alpha": null,
+  "emissive": 0,
+  "rough": 1.0,
+  "src": "P6 pgw3_hotplate: nano-banana-pro object face, luminance normals; seam h1.19 v2.71"
+ },
+ "pg_hotplate_t": {
+  "rot": true,
+  "alpha": null,
+  "emissive": 1.0,
+  "rough": 1.0,
+  "src": "P6 local: copy of pg_burner_t (the same glowing coil; P7: emissive like the burner)"
+ },
+ "pg_lamp": {
+  "rot": false,
+  "alpha": "cutout",
+  "emissive": 0,
+  "rough": 1.0,
+  "src": "P6 pgw3_r_lamp: nano-banana-pro on chroma blue, keyed to alpha (9% opaque), despilled, bottom-centred"
+ },
+ "pg_lily_s": {
+  "rot": false,
+  "alpha": null,
+  "emissive": 0,
+  "rough": 1.0,
+  "src": "P6 local: a ragged green felt rim (from pg_lily_t) over darkened pg_scum water"
+ },
+ "pg_lily_t": {
+  "rot": true,
+  "alpha": null,
+  "emissive": 0,
+  "rough": 1.0,
+  "src": "P6 pgw3_lily: nano-banana-pro object face, luminance normals; seam h3.18 v3.47"
+ },
+ "pg_lino": {
+  "rot": true,
+  "alpha": null,
+  "emissive": 0,
+  "rough": 1.0,
+  "src": "P6 pgw2_lino: patina variant, LF-equalised, normal tilt removed; seam h0.92 v5.39"
+ },
+ "pg_mblack": {
+  "rot": false,
+  "alpha": null,
+  "emissive": 0,
+  "rough": 1.0,
+  "src": "P6 pgw2_mblack: patina variant, LF-equalised, normal tilt removed; seam h0.58 v0.86"
+ },
+ "pg_mirror": {
+  "rot": false,
+  "alpha": null,
+  "emissive": 0,
+  "rough": 1.0,
+  "src": "P6 pgw2_mirror: nano-banana-pro object face, luminance normals; seam h7.69 v17.86"
+ },
+ "pg_ore_googly": {
+  "rot": true,
+  "alpha": null,
+  "emissive": 0,
+  "rough": 1.0,
+  "src": "P6 pgw1_v_googly: nano-banana-pro edit of the final pg_foam, border kept pixel-exact (feathered 120 px), luminance normals inside; glossy plastic eyes (white = low roughness)"
+ },
+ "pg_ore_knuckle": {
+  "rot": true,
+  "alpha": null,
+  "emissive": 0,
+  "rough": 1.0,
+  "src": "P6 pgw1_v_knuckle_b: nano-banana-pro edit of the final pg_rot, border kept pixel-exact (feathered 120 px), luminance normals inside; skin slightly glossier than foam; foam re-graded like pg_rot"
+ },
+ "pg_ore_sequin": {
+  "rot": true,
+  "alpha": null,
+  "emissive": 0,
+  "rough": 1.0,
+  "src": "P6 pgw1_v_sequin: nano-banana-pro edit of the final pg_rot, border kept pixel-exact (feathered 120 px), luminance normals inside; sequins glossy; foam re-graded like pg_rot"
+ },
+ "pg_ore_wire": {
+  "rot": true,
+  "alpha": null,
+  "emissive": 0,
+  "rough": 1.0,
+  "src": "P6 pgw1_v_wire: nano-banana-pro edit of the final pg_foam, border kept pixel-exact (feathered 120 px), luminance normals inside; metal wire smoother"
+ },
+ "pg_phill": {
+  "rot": false,
+  "alpha": null,
+  "emissive": 0,
+  "rough": 1.0,
+  "src": "P6 pgw2_phill: nano-banana-pro painterly hero, luminance normals, offset-blend seamless + LF-equalised; seam h1.26 v1.46"
+ },
+ "pg_pins_s": {
+  "rot": true,
+  "alpha": null,
+  "emissive": 0,
+  "rough": 1.0,
+  "src": "P6 pgw2_x_pins: patina extract, LF-equalised, normal tilt removed, wrap ramp on axis (0, 1); seam h0.96 v1.21; normals rebuilt from luminance (the extract normal had a bad edge strip)"
+ },
+ "pg_pins_t": {
+  "rot": true,
+  "alpha": null,
+  "emissive": 0,
+  "rough": 1.0,
+  "src": "P6 pgw3_pinstop: nano-banana-pro edit of the final pg_pins_s, border kept pixel-exact (feathered 120 px), luminance normals inside; felt leaf cap"
+ },
+ "pg_plate": {
+  "rot": true,
+  "alpha": null,
+  "emissive": 0,
+  "rough": 1.0,
+  "src": "P6 pgw3_plate: nano-banana-pro object face, luminance normals; seam h2.51 v16.37"
+ },
+ "pg_psky": {
+  "rot": false,
+  "alpha": null,
+  "emissive": 0,
+  "rough": 1.0,
+  "src": "P6 pgw2_psky: nano-banana-pro painterly hero, luminance normals, offset-blend seamless + LF-equalised; seam h1.14 v1.14"
+ },
+ "pg_ptrunk_s": {
+  "rot": false,
+  "alpha": null,
+  "emissive": 0,
+  "rough": 1.0,
+  "src": "P6 pgw3_ptrunk: nano-banana-pro object face, crop (0.03, 0.1, 0.97, 0.9), luminance normals; seam h2.39 v8.31"
+ },
+ "pg_ptrunk_t": {
+  "rot": false,
+  "alpha": null,
+  "emissive": 0,
+  "rough": 1.0,
+  "src": "P6 pgw3_ptrunk_t: nano-banana-pro object face, crop (0.06, 0.12, 0.94, 0.88), luminance normals; seam h5.54 v8.82"
+ },
+ "pg_rot": {
+  "rot": true,
+  "alpha": null,
+  "emissive": 0,
+  "rough": 1.0,
+  "src": "P6 pgw1_v_rot: patina variant of the final foam (s0.6), LF-equalised, graded to burnt orange with periodic darker flake patches (the variant had kept the foam colour); seam h0.90 v0.97"
+ },
+ "pg_satin": {
+  "rot": true,
+  "alpha": null,
+  "emissive": 0,
+  "rough": 1.0,
+  "src": "P6 pgw2_t_satin: nano-banana-pro painterly hero, luminance normals, offset-blend seamless + LF-equalised; seam h1.04 v1.04; patina extract pgw2_x_satin rejected (flat, streak broke at the wrap)"
+ },
+ "pg_scum": {
+  "rot": false,
+  "alpha": null,
+  "emissive": 0,
+  "rough": 1.0,
+  "src": "P6 pgw3_scum: patina variant, LF-equalised, normal tilt removed; seam h0.87 v0.97"
+ },
+ "pg_seat_s": {
+  "rot": false,
+  "alpha": null,
+  "emissive": 0,
+  "rough": 1.0,
+  "src": "P6 pgw2_r_seat: nano-banana-pro object face, luminance normals; seam h0.85 v7.11"
+ },
+ "pg_seat_t": {
+  "rot": false,
+  "alpha": null,
+  "emissive": 0,
+  "rough": 1.0,
+  "src": "P6 pgw3_seat_t: nano-banana-pro object face, crop (0.06, 0.02, 0.96, 0.94), luminance normals; seam h2.63 v3.19"
+ },
+ "pg_shag_s": {
+  "rot": false,
+  "alpha": null,
+  "emissive": 0,
+  "rough": 1.0,
+  "src": "P6 local: the final pg_shag_t stretched 3x vertically (hanging pile) over the exact deck under a ragged periodic fringe line (the patina band variant pgw1_v_shagside grew a shrub and was not used); h seam 1.30"
+ },
+ "pg_shag_t": {
+  "rot": true,
+  "alpha": null,
+  "emissive": 0,
+  "rough": 1.0,
+  "src": "P6 pgw1_x_shag: patina extract, LF-equalised, normal tilt removed; seam h0.93 v1.02"
+ },
+ "pg_sheet": {
+  "rot": true,
+  "alpha": null,
+  "emissive": 0,
+  "rough": 1.0,
+  "src": "P6 pgw2_x_sheet: patina extract, its dark frame cropped off (60 px), wrap ramps, LF-equalised; seam h1.21 v1.23"
+ },
+ "pg_skin": {
+  "rot": true,
+  "alpha": null,
+  "emissive": 0,
+  "rough": 1.0,
+  "src": "P6 pgw1_t_skin: nano-banana-pro hero, offset-blend seamless + LF-equalised (patina extract refused by the content checker), high-pass luminance normals; seam h1.11 v1.17"
+ },
+ "pg_sleeve_s": {
+  "rot": false,
+  "alpha": null,
+  "emissive": 0,
+  "rough": 1.0,
+  "src": "P6 pgw1_t_sleeve_hero: nano-banana-pro hero (frame cropped 4%), LF-equalised, wrap ramps on both axes (the patina extract pgw1_x_sleeve flattened the felt and was not used); seam h1.47 v1.28"
+ },
+ "pg_sleeve_x": {
+  "rot": true,
+  "alpha": null,
+  "emissive": 0,
+  "rough": 1.0,
+  "src": "P6 pgw1_t_sleevecut: nano-banana-pro cross-section (felt ring, flesh, bone), luminance normals, wet flesh low roughness"
+ },
+ "pg_soup": {
+  "rot": false,
+  "alpha": null,
+  "emissive": 0,
+  "rough": 1.0,
+  "src": "P6 pgw2_x_soup: patina extract, LF-equalised, normal tilt removed; seam h0.93 v0.81"
+ },
+ "pg_strunk_s": {
+  "rot": false,
+  "alpha": null,
+  "emissive": 0,
+  "rough": 1.0,
+  "src": "P6 pgw3_strunk: nano-banana-pro object face, crop (0.13, 0.075, 0.89, 0.97), luminance normals; seam h2.38 v1.32"
+ },
+ "pg_strunk_t": {
+  "rot": false,
+  "alpha": null,
+  "emissive": 0,
+  "rough": 1.0,
+  "src": "P6 pgw3_strunk_t: nano-banana-pro object face, crop (0.05, 0.18, 0.96, 0.85), luminance normals; seam h18.97 v5.72"
+ },
+ "pg_stuffing": {
+  "rot": true,
+  "alpha": null,
+  "emissive": 0,
+  "rough": 1.0,
+  "src": "P6 pgw2_t_stuffing: nano-banana-pro painterly hero, luminance normals, offset-blend seamless + LF-equalised; seam h1.03 v0.98; patina extract pgw2_x_stuffing rejected (bright edge bands)"
+ },
+ "pg_swamp": {
+  "rot": true,
+  "alpha": null,
+  "emissive": 0,
+  "rough": 1.0,
+  "src": "P6 pgw2_v_swamp: patina variant, LF-equalised, normal tilt removed; seam h0.94 v1.00"
+ },
+ "pg_tesla_s": {
+  "rot": false,
+  "alpha": null,
+  "emissive": 0,
+  "rough": 1.0,
+  "src": "P6 pgw3_tesla: patina variant, LF-equalised, normal tilt removed; seam h1.01 v0.93"
+ },
+ "pg_tesla_t": {
+  "rot": true,
+  "alpha": null,
+  "emissive": 0,
+  "rough": 1.0,
+  "src": "P6 pgw3_tesla_t: nano-banana-pro object face, luminance normals; seam h4.21 v8.02"
+ },
+ "pg_traveler": {
+  "rot": false,
+  "alpha": null,
+  "emissive": 0,
+  "rough": 1.0,
+  "src": "P6 pgw1_v_traveler: patina variant of the final velvet (s0.6), LF-equalised, graded to dark plum (#4a1030 family)"
+ },
+ "pg_velvet_s": {
+  "rot": false,
+  "alpha": null,
+  "emissive": 0,
+  "rough": 1.0,
+  "src": "P6 pgw1_x_velvet: patina extract, LF-equalised, normal tilt removed, wrap ramp on axis (0,); seam h1.04 v1.23"
+ },
+ "pg_velvet_t": {
+  "rot": true,
+  "alpha": null,
+  "emissive": 0,
+  "rough": 1.0,
+  "src": "P6 local: pg_velvet_s rotated 90 degrees and softened (folds seen end-on)"
+ }
+}

@@ -1,0 +1,81 @@
+<!doctype html>
+<html><head><meta charset="utf-8"><title>Hyperreal pack preview</title>
+<style>html,body{margin:0;height:100%;background:#000;overflow:hidden}#hud{position:fixed;left:12px;top:10px;color:#fff;font:13px/1.4 system-ui;text-shadow:0 1px 2px #000;opacity:.85}</style>
+</head><body><div id="hud">Hyperreal pack — first blocks (drag to orbit, wheel to zoom, 1/2/3 = views)</div>
+<script src="../../../assets/vendor/three.r128.min.js"></script>   <!-- the bundled r128 (serve the repo root: npm run serve) -->
+<script>
+const R=new THREE.WebGLRenderer({antialias:true,preserveDrawingBuffer:true});
+R.setPixelRatio(Math.min(2,devicePixelRatio));R.setSize(innerWidth,innerHeight);
+R.outputEncoding=THREE.sRGBEncoding;R.toneMapping=THREE.ACESFilmicToneMapping;R.toneMappingExposure=1.05;
+R.shadowMap.enabled=true;R.shadowMap.type=THREE.PCFSoftShadowMap;R.physicallyCorrectLights=true;
+document.body.appendChild(R.domElement);
+const S=new THREE.Scene();
+/* golden-hour sky gradient */
+const sc=document.createElement('canvas');sc.width=4;sc.height=256;const sg=sc.getContext('2d');
+const gr=sg.createLinearGradient(0,0,0,256);gr.addColorStop(0,'#3d6fa8');gr.addColorStop(0.55,'#9fb8c9');gr.addColorStop(0.78,'#f2c48d');gr.addColorStop(1,'#f4a35c');
+sg.fillStyle=gr;sg.fillRect(0,0,4,256);const skyT=new THREE.CanvasTexture(sc);skyT.encoding=THREE.sRGBEncoding;S.background=skyT;
+S.fog=new THREE.Fog(0xe8b98a,18,60);
+const cam=new THREE.PerspectiveCamera(55,innerWidth/innerHeight,0.05,200);
+const sun=new THREE.DirectionalLight(0xffc98a,5.2);sun.position.set(-14,7,6);sun.castShadow=true;
+sun.shadow.mapSize.set(4096,4096);const sh=sun.shadow.camera;sh.left=-16;sh.right=16;sh.top=16;sh.bottom=-16;sh.near=0.5;sh.far=60;
+sun.shadow.bias=-0.0004;sun.shadow.normalBias=0.03;sun.shadow.radius=4;S.add(sun);
+S.add(new THREE.HemisphereLight(0x9cc4ff,0x5a4630,0.9));
+const L=new THREE.TextureLoader(),AN=R.capabilities.getMaxAnisotropy();
+const ART=(new URLSearchParams(location.search).get('art')||'art/').replace(/\/?$/,'/');   /* ?art=<url of the Hyperreal workspace> */
+function tex(n,srgb){const t=L.load(ART+'final/'+n+'.png?v='+Date.now());t.anisotropy=AN;if(srgb)t.encoding=THREE.sRGBEncoding;return t;}
+const M={};
+function mat(k){if(M[k])return M[k];return M[k]=new THREE.MeshStandardMaterial({map:tex(k+'_basecolor',1),normalMap:tex(k+'_normal'),roughnessMap:tex(k+'_roughness'),roughness:1,metalness:0,normalScale:new THREE.Vector2(1.3,1.3)});}
+/* block types: face order +x -x +y -y +z -z */
+const T={grass:['grass_side','grass_side','grass_top','dirt','grass_side','grass_side'],dirt:Array(6).fill('dirt'),stone:Array(6).fill('stone'),
+  cobble:Array(6).fill('cobblestone'),planks:Array(6).fill('oak_planks'),log:['oak_log_side','oak_log_side','oak_log_top','oak_log_top','oak_log_side','oak_log_side'],
+  logx:['oak_log_top','oak_log_top','oak_log_side','oak_log_side','oak_log_side','oak_log_side']};
+const ROT={grass:[2],dirt:[0,1,2,3,4,5],stone:[0,1,2,3,4,5]};
+/* box geometry with the top/bottom UVs rotated by r quarter turns (hides tiling repetition) */
+const GEO={};
+function geo(type,r){const k=type+r;if(GEO[k])return GEO[k];const g=new THREE.BoxGeometry(1,1,1);
+  if(type==='logx'){/* log lying along x: rotate side UVs 90deg so bark grain runs along the log */
+    const uv=g.attributes.uv;for(const f of [2,3,4,5])for(let i=0;i<4;i++){const j=f*4+i,u=uv.getX(j),v=uv.getY(j);uv.setXY(j,v,1-u);}}
+  if(r){const uv=g.attributes.uv,faces=ROT[type]||[];for(const f of faces)for(let i=0;i<4;i++){const j=f*4+i;let u=uv.getX(j)-.5,v=uv.getY(j)-.5;for(let q=0;q<r;q++){const t=u;u=-v;v=t;}uv.setXY(j,u+.5,v+.5);}}
+  return GEO[k]=g;}
+const blocks=new Map();const key=(x,y,z)=>x+','+y+','+z;
+function put(x,y,z,t){blocks.set(key(x,y,z),{x,y,z,t});}
+const hash=(x,y,z)=>{let h=x*374761393+y*668265263+z*2147483647;h=(h^(h>>13))*1274126177;return (h^(h>>16))>>>0;};
+/* terrain: grass field with a hill, dirt under grass, stone deeper; front edge cut away to show layers */
+for(let x=-8;x<=8;x++)for(let z=-8;z<=6;z++){
+  let h=0;const d=Math.hypot(x+4,z+4);if(d<4.2)h=Math.round(2.6-d*0.55)+1;if(x>3&&z<-3)h=1;
+  const cut=z>3&&x>-3&&x<5; const base=cut?-2:-4;
+  for(let y=base;y<=h;y++){let t=y===h?'grass':(y>=h-2?'dirt':'stone');if(cut&&y===h)t='grass';put(x,y,z,t);}
+}
+/* a step down in front to show the cliff */
+for(let x=-2;x<=4;x++)for(let z=4;z<=6;z++){for(let y=-1;y<=0;y++)blocks.delete(key(x,y,z));blocks.delete(key(x,-2,z));put(x,-2,z,'grass');}
+/* stone outcrop */
+for(const [x,z,hh] of [[5,1,2],[6,1,3],[6,2,2],[5,2,1],[7,2,1]])for(let y=1;y<=hh;y++)put(x,y,z,'stone');
+/* cobblestone wall */
+for(let x=-6;x<=-2;x++)for(let y=1;y<=2;y++)put(x,y,2,'cobble');put(-4,3,2,'cobble');
+/* oak trunk */
+for(let y=1;y<=5;y++)put(1,y,-2,'log');
+/* fallen log showing the end grain */
+for(let x=2;x<=4;x++)put(x,1,3-0,'logx');
+/* plank deck with a step */
+for(let x=-1;x<=1;x++)for(let z=-6;z<=-4;z++)put(x,1,z,'planks');for(let x=-1;x<=1;x++)put(x,2,-6,'planks');
+/* build: one InstancedMesh per (type, uv-rotation) with only exposed blocks */
+const groups={};
+for(const b of blocks.values()){
+  const exposed=[[1,0,0],[-1,0,0],[0,1,0],[0,-1,0],[0,0,1],[0,0,-1]].some(([dx,dy,dz])=>!blocks.has(key(b.x+dx,b.y+dy,b.z+dz)));
+  if(!exposed)continue;const r=ROT[b.t]?hash(b.x,b.y,b.z)%4:0;const k=b.t+'|'+r;(groups[k]=groups[k]||[]).push(b);}
+const dm=new THREE.Object3D();
+for(const k in groups){const [t,r]=k.split('|');const list=groups[k];
+  const im=new THREE.InstancedMesh(geo(t,+r),T[t].map(mat),list.length);im.castShadow=im.receiveShadow=true;
+  list.forEach((b,i)=>{dm.position.set(b.x+.5,b.y+.5,b.z+.5);dm.updateMatrix();im.setMatrixAt(i,dm.matrix);});S.add(im);}
+/* camera views + simple orbit */
+const VIEWS=[{t:[0,1,0],r:15,yaw:0.85,pitch:0.42},{t:[1,1.5,0],r:6.5,yaw:0.55,pitch:0.25},{t:[1,0,4],r:5,yaw:-0.35,pitch:0.18}];
+let V={...VIEWS[0]};function setView(i){V={...VIEWS[i]};}
+function place(){cam.position.set(V.t[0]+V.r*Math.cos(V.pitch)*Math.sin(V.yaw),V.t[1]+V.r*Math.sin(V.pitch),V.t[2]+V.r*Math.cos(V.pitch)*Math.cos(V.yaw));cam.lookAt(V.t[0],V.t[1],V.t[2]);}
+let drag=null;addEventListener('pointerdown',e=>drag=[e.clientX,e.clientY]);addEventListener('pointerup',()=>drag=null);
+addEventListener('pointermove',e=>{if(!drag)return;V.yaw-=(e.clientX-drag[0])*0.005;V.pitch=Math.max(0.05,Math.min(1.4,V.pitch+(e.clientY-drag[1])*0.005));drag=[e.clientX,e.clientY];});
+addEventListener('wheel',e=>{V.r=Math.max(2,Math.min(40,V.r*(1+e.deltaY*0.001)));});
+addEventListener('keydown',e=>{if(e.key>='1'&&e.key<='3')setView(+e.key-1);});
+addEventListener('resize',()=>{cam.aspect=innerWidth/innerHeight;cam.updateProjectionMatrix();R.setSize(innerWidth,innerHeight);});
+window.setView=setView;
+(function loop(){place();R.render(S,cam);requestAnimationFrame(loop);})();
+</script></body></html>

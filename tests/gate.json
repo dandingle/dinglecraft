@@ -1,0 +1,130 @@
+{
+  "_doc": [
+    "The release gate, as data. scripts/gate.mjs runs it (npm run gate = full repeats; npm test = --once; npm run test:quick = --tier quick).",
+    "Groups run in this order. Inside a group, pass k runs every entry whose repeat >= k (so statics once, then the smokes twice, as the legacy gate.sh did).",
+    "entry: name (the gate line label), suite (repo-relative), args, env, repeat (full-gate count; --once forces 1), clock (static | real | fake: only static and fake",
+    "entries may run in parallel under --jobs N; real-clock suites always run alone), runIn 'build' (the frozen core quartet runs from a copy next to the built game.js),",
+    "tiers (named subsets), when ({file: repo-relative path that must exist} or {env: variable that must be set}; otherwise the entry prints SKIP).",
+    "steps: commands that are not suites (exit 0 = pass). helpers: files under tests/ that are not suites (r_gate checks every other .js under the suite dirs is listed).",
+    "Every suite prints 'N passed, M failed' as its last line and exits 1 on any failure. Print check names, not source text or the og_trace fixtures (generated digests)."
+  ],
+  "groups": ["repo", "core", "texpacks", "purgatory", "pilot", "creativity", "malgorath", "og_trace"],
+  "entries": [
+    { "group": "repo", "name": "r_build.js", "suite": "tests/repo/r_build.js", "repeat": 1, "clock": "static", "tiers": ["quick"] },
+    { "group": "repo", "name": "r_gate.js", "suite": "tests/repo/r_gate.js", "repeat": 1, "clock": "static", "tiers": ["quick"] },
+    { "group": "repo", "name": "r_ipscan.js", "suite": "tests/repo/r_ipscan.js", "repeat": 1, "clock": "static", "tiers": ["quick"] },
+    { "group": "repo", "name": "r_ipassets.js", "suite": "tests/repo/r_ipassets.js", "repeat": 1, "clock": "static", "tiers": ["quick"] },
+    { "group": "repo", "name": "r_other_ip.js", "suite": "tests/repo/r_other_ip.js", "repeat": 1, "clock": "static", "tiers": ["quick"] },
+    { "group": "repo", "name": "r_privacy.js", "suite": "tests/repo/r_privacy.js", "repeat": 1, "clock": "static", "tiers": ["quick"] },
+
+    { "group": "core", "name": "test.js", "suite": "tests/core/test.js", "runIn": "build", "repeat": 1, "clock": "static", "tiers": ["quick"] },
+    { "group": "core", "name": "smoke.js", "suite": "tests/core/smoke.js", "runIn": "build", "repeat": 6, "clock": "real" },
+    { "group": "core", "name": "botsmoke.js", "suite": "tests/core/botsmoke.js", "runIn": "build", "repeat": 3, "clock": "fake" },
+    { "group": "core", "name": "u_scale.js", "suite": "tests/ui/u_scale.js", "repeat": 1, "clock": "real", "tiers": ["quick"] },
+    { "group": "core", "name": "u_title.js", "suite": "tests/ui/u_title.js", "repeat": 1, "clock": "real", "tiers": ["quick"] },
+
+    { "group": "texpacks", "name": "t0_static.js", "suite": "tests/texpacks/t0_static.js", "repeat": 1, "clock": "static", "tiers": ["quick"] },
+    { "group": "texpacks", "name": "tA_static.js", "suite": "tests/texpacks/tA_static.js", "repeat": 1, "clock": "static", "tiers": ["quick"] },
+    { "group": "texpacks", "name": "tB_static.js", "suite": "tests/texpacks/tB_static.js", "repeat": 1, "clock": "static", "tiers": ["quick"] },
+    { "group": "texpacks", "name": "tC_static.js", "suite": "tests/texpacks/tC_static.js", "repeat": 1, "clock": "static", "tiers": ["quick"] },
+    { "group": "texpacks", "name": "t0_smoke.js", "suite": "tests/texpacks/t0_smoke.js", "repeat": 2, "clock": "real" },
+    { "group": "texpacks", "name": "tA_smoke.js", "suite": "tests/texpacks/tA_smoke.js", "repeat": 2, "clock": "real" },
+    { "group": "texpacks", "name": "tB_smoke.js", "suite": "tests/texpacks/tB_smoke.js", "repeat": 2, "clock": "real" },
+    { "group": "texpacks", "name": "tC_smoke.js", "suite": "tests/texpacks/tC_smoke.js", "repeat": 2, "clock": "real" },
+    { "group": "texpacks", "name": "tA_real.js", "suite": "tests/texpacks/tA_real.js", "repeat": 1, "clock": "static", "when": { "file": "assets/vendor/three.r128.min.js" } },
+    { "group": "texpacks", "name": "tB_real.js", "suite": "tests/texpacks/tB_real.js", "repeat": 1, "clock": "static", "when": { "file": "assets/vendor/three.r128.min.js" } },
+    { "group": "texpacks", "name": "tC_real.js", "suite": "tests/texpacks/tC_real.js", "repeat": 1, "clock": "static", "when": { "file": "assets/vendor/three.r128.min.js" } },
+
+    { "group": "purgatory", "name": "p_static.js", "suite": "tests/purgatory/p_static.js", "repeat": 1, "clock": "static", "tiers": ["quick"] },
+    { "group": "purgatory", "name": "p2_static.js", "suite": "tests/purgatory/p2_static.js", "repeat": 1, "clock": "static", "tiers": ["quick"] },
+    { "group": "purgatory", "name": "p0_smoke.js", "suite": "tests/purgatory/p0_smoke.js", "repeat": 2, "clock": "real" },
+    { "group": "purgatory", "name": "p1_smoke.js", "suite": "tests/purgatory/p1_smoke.js", "repeat": 2, "clock": "real" },
+    { "group": "purgatory", "name": "p2_smoke.js", "suite": "tests/purgatory/p2_smoke.js", "repeat": 2, "clock": "real" },
+    { "group": "purgatory", "name": "p3_smoke.js", "suite": "tests/purgatory/p3_smoke.js", "repeat": 2, "clock": "real" },
+    { "group": "purgatory", "name": "p4_smoke.js", "suite": "tests/purgatory/p4_smoke.js", "repeat": 2, "clock": "fake" },
+    { "group": "purgatory", "name": "p4_boss.js", "suite": "tests/purgatory/p4_boss.js", "repeat": 2, "clock": "fake" },
+    { "group": "purgatory", "name": "p5_bots.js", "suite": "tests/purgatory/p5_bots.js", "repeat": 2, "clock": "fake" },
+    { "group": "purgatory", "name": "p7_hr.js", "suite": "tests/purgatory/p7_hr.js", "repeat": 1, "clock": "real" },
+    { "group": "purgatory", "name": "p8_saves.js", "suite": "tests/purgatory/p8_saves.js", "repeat": 1, "clock": "real" },
+    { "group": "purgatory", "name": "p8_recast.js", "suite": "tests/purgatory/p8_recast.js", "repeat": 1, "clock": "static", "tiers": ["quick"] },
+
+    { "group": "pilot", "name": "speedrun_fast", "suite": "tests/pilot/speedrun.js", "args": ["--fast", "--to=auto"], "repeat": 1, "clock": "fake" },
+
+    { "group": "creativity", "name": "c_static.js", "suite": "tests/creativity/c_static.js", "repeat": 1, "clock": "static", "tiers": ["quick"] },
+    { "group": "creativity", "name": "c1_static.js", "suite": "tests/creativity/c1_static.js", "repeat": 1, "clock": "static", "tiers": ["quick"] },
+    { "group": "creativity", "name": "c2_static.js", "suite": "tests/creativity/c2_static.js", "repeat": 1, "clock": "static", "tiers": ["quick"] },
+    { "group": "creativity", "name": "c0_smoke.js", "suite": "tests/creativity/c0_smoke.js", "repeat": 2, "clock": "real" },
+    { "group": "creativity", "name": "c1_smoke.js", "suite": "tests/creativity/c1_smoke.js", "repeat": 2, "clock": "real" },
+    { "group": "creativity", "name": "c2_smoke.js", "suite": "tests/creativity/c2_smoke.js", "repeat": 2, "clock": "real" },
+    { "group": "creativity", "name": "c2_audio.js", "suite": "tests/creativity/c2_audio.js", "repeat": 1, "clock": "real" },
+    { "group": "creativity", "name": "c3_found.js", "suite": "tests/creativity/c3_found.js", "repeat": 1, "clock": "real" },
+
+    { "group": "malgorath", "name": "m_static.js", "suite": "tests/malgorath/m_static.js", "repeat": 1, "clock": "static", "tiers": ["quick"] },
+    { "group": "malgorath", "name": "m1_static.js", "suite": "tests/malgorath/m1_static.js", "repeat": 1, "clock": "static", "tiers": ["quick"] },
+    { "group": "malgorath", "name": "m2_static.js", "suite": "tests/malgorath/m2_static.js", "repeat": 1, "clock": "static", "tiers": ["quick"] },
+    { "group": "malgorath", "name": "m3_static.js", "suite": "tests/malgorath/m3_static.js", "repeat": 1, "clock": "static", "tiers": ["quick"] },
+    { "group": "malgorath", "name": "m0_smoke.js", "suite": "tests/malgorath/m0_smoke.js", "repeat": 2, "clock": "real" },
+    { "group": "malgorath", "name": "m1_smoke.js", "suite": "tests/malgorath/m1_smoke.js", "repeat": 2, "clock": "real" },
+    { "group": "malgorath", "name": "m2_smoke.js", "suite": "tests/malgorath/m2_smoke.js", "repeat": 2, "clock": "real" },
+    { "group": "malgorath", "name": "m3_smoke.js", "suite": "tests/malgorath/m3_smoke.js", "repeat": 2, "clock": "real" },
+    { "group": "malgorath", "name": "m_harness.js", "suite": "tests/malgorath/m_harness.js", "repeat": 1, "clock": "fake" },
+    { "group": "malgorath", "name": "m2_fight.js", "suite": "tests/malgorath/m2_fight.js", "repeat": 1, "clock": "fake" },
+    { "group": "malgorath", "name": "m2_audio.js", "suite": "tests/malgorath/m2_audio.js", "repeat": 1, "clock": "real" },
+    { "group": "malgorath", "name": "m3_model.js", "suite": "tests/malgorath/m3_model.js", "repeat": 1, "clock": "real" },
+    { "group": "malgorath", "name": "m4_hr.js", "suite": "tests/malgorath/m4_hr.js", "repeat": 1, "clock": "real" },
+
+    { "group": "og_trace", "name": "og_trace.js", "suite": "tests/texpacks/og_trace.js", "args": ["--golden", "tests/fixtures/og_trace/over.json"], "repeat": 1, "clock": "fake", "tiers": ["quick"] },
+    { "group": "og_trace", "name": "og_trace_purg.js", "suite": "tests/texpacks/og_trace.js", "args": ["--golden", "tests/fixtures/og_trace/purg.json"], "repeat": 1, "clock": "fake" },
+    { "group": "og_trace", "name": "og_trace_crea.js", "suite": "tests/texpacks/og_trace.js", "args": ["--golden", "tests/fixtures/og_trace/crea.json"], "repeat": 1, "clock": "fake" },
+    { "group": "og_trace", "name": "og_trace_malg.js", "suite": "tests/texpacks/og_trace.js", "args": ["--golden", "tests/fixtures/og_trace/malg.json"], "repeat": 1, "clock": "fake" }
+  ],
+  "added": {
+    "_doc": "Suites added after the split (no legacy count exists for them). r_gate accepts a gate suite without a legacy count only when it is listed here with the release that added it and why.",
+    "p8_saves.js": "Release 1.0 (game v6.4), lead: old v6.1-v6.3 saves load after the recast ids (save.dim, MP keys, Headliner Trunks, bot dims, stock symbols), both ways",
+    "p8_recast.js": "Release 1.0 (game v6.4), TESTS: the purgatory recast by name (the name contract tables, items, lines), by shape and colour (every OG rig, the real Hyperreal models in a child process) and by animation contract (the v6.3 s fields)",
+    "r_ipscan.js": "Release 1.0 (game v6.4), TESTS: the banned-names scan (ROT13 list tests/fixtures/ip_banned.json) over the whole repo, every file name and the shipped build (since v6.8 src/features/part47-50.js and the og_trace goldens are scanned like any other file); no allow-list",
+    "r_ipassets.js": "Release 1.0 (game v6.4), TESTS: the removed images stay removed (sha1/sha256 denylist from the v6.3 pack, ids, the build's embedded payloads; the old creeper core is denylisted too and boomer_core is a repaint), the renames and recolours landed, the pack matches the models",
+    "r_other_ip.js": "Release 1.0 (game v6.4), TESTS: the other third-party IP fixes on the build (Nuke Keg, made-up stocks, Fortune Orb, Critter Jar, DEEP DIRT 2D, no HR villager, Dan's outfit, no media route, the CC-BY credits)",
+    "u_scale.js": "Release 1.0 (game v6.4), lane UI: the UI scale (Auto at 720p/1080p/1440p and DPRs, caps, Settings values, vox_settings.ui round trip incl. old settings, CSS variables), the title menu (#t_ver label, ids, views, mode buttons, Create World) and the HUD layout (hlSpot toast spots, hudLayout wired and inert in node)",
+    "r_privacy.js": "Release 1.0 (game v6.4), TESTS: no personal data in the repo or the build (paths, user and host names, emails, keys, image and audio metadata, git identity and history)",
+    "u_title.js": "Release 1.0 (game v6.7), final fixes: the title waits for the saved settings (name prompt, boot music), the player's name (pnValid, pn round trip, pnText in any case but never the Dan Dingle credit, pnBack), the menu music on the recording fake AudioContext (Sound off / Music 0 never create one, the bus, the fade), the World Music label and 6.7 Help rows, no toast push, the rules editor, the pickup redraw, Malgorath's bar hidden on a new world and on Save & Quit",
+    "c3_found.js": "Release 1.0 cycle (game v6.7), found works: Dan's own paintings and discs as rare loot (the lootFill roll: a seed + chest-cell hash, 1 in 40, no Math.random; minting through the registry; data md5-pinned to his save; hang, play, caps, bots, save/load, never in purgatory)"
+  },
+  "steps": [
+    { "group": "repo", "name": "changelog", "cmd": ["node", "scripts/changelog.mjs", "--check"], "tiers": ["quick"], "when": { "file": "scripts/changelog.mjs" } },
+    { "group": "repo", "name": "scan selftest", "cmd": ["node", "tools/scan_selftest.mjs"], "tiers": ["quick"],
+      "note": "every scan rule fires on a synthetic sample, false positives stay quiet, no matched value is ever printed; writes only out/scan_selftest/" },
+    { "group": "repo", "name": "fal selftest", "cmd": ["node", "tools/art/fal_selftest.mjs"], "tiers": ["quick"],
+      "unsetEnv": ["FAL_KEY", "DINGLE_ENV_PATH", "FAL_LEDGER_DIR", "FAL_BUDGET_USD", "ANTHROPIC_API_KEY"],
+      "note": "the fal client's key order and fail-closed budget, $0: fetch throws, temp folders and fake keys only, main() never runs" },
+    { "group": "repo", "name": "secrets scan", "cmd": ["node", "tools/scan_secrets.mjs"], "tiers": ["quick"],
+      "note": "the would-be-committed file list (git ls-files, or a probe repo in the OS temp folder); prints path:line rule only, never a value" },
+    { "group": "repo", "name": "brain selftest", "cmd": ["node", "brain/selftest.mjs"], "when": { "file": "brain/node_modules" },
+      "unsetEnv": ["ANTHROPIC_API_KEY", "ANTHROPIC_AUTH_TOKEN", "ANTHROPIC_BASE_URL", "FAL_KEY", "DINGLE_ENV_PATH", "DINGLE_UPSTREAM"],
+      "note": "hermetic (fake upstream, ephemeral ports, a sentinel key); needs brain/node_modules (npm ci --prefix brain)" }
+  ],
+  "helpers": [
+    "tests/core/stubs.js", "tests/pilot/pilot.js", "tests/pilot/nav.js", "tests/pilot/route.js", "tests/pilot/boss_scripts.js"
+  ],
+  "tiers": {
+    "quick": "repo checks (incl. the Release 1.0 IP, asset, other-IP and privacy scans), every *_static suite, p8_recast, the core logic suite and the overworld og_trace session (about a minute)"
+  },
+  "legacy": {
+    "_doc": "The legacy gate (the splice pipeline's gate.sh at v6.3, its last green log) for docs/PARITY.md and r_gate: per-suite single-run counts and repeats.",
+    "counts": {
+      "test.js": 69, "smoke.js": 221, "botsmoke.js": 199,
+      "t0_static.js": 101, "tA_static.js": 47, "tB_static.js": 49, "tC_static.js": 101,
+      "t0_smoke.js": 55, "tA_smoke.js": 62, "tB_smoke.js": 84, "tC_smoke.js": 93,
+      "p_static.js": 68, "p2_static.js": 51, "p0_smoke.js": 119, "p1_smoke.js": 142, "p2_smoke.js": 137, "p3_smoke.js": 165, "p4_smoke.js": 37,
+      "p4_boss.js": 133, "p5_bots.js": 80, "p7_hr.js": 118, "speedrun_fast": 53,
+      "c_static.js": 43, "c1_static.js": 35, "c2_static.js": 28, "c0_smoke.js": 114, "c1_smoke.js": 82, "c2_smoke.js": 65, "c2_audio.js": 48,
+      "m_static.js": 62, "m1_static.js": 35, "m2_static.js": 30, "m3_static.js": 24, "m0_smoke.js": 51, "m1_smoke.js": 54, "m2_smoke.js": 67, "m3_smoke.js": 42,
+      "m_harness.js": 8, "m2_fight.js": 35, "m2_audio.js": 30, "m3_model.js": 34, "m4_hr.js": 68,
+      "og_trace.js": 31, "og_trace_parity.js": 31, "og_trace_nocrea.js": 31, "og_trace_nomalg.js": 31, "og_trace_purg.js": 29, "og_trace_crea.js": 29, "og_trace_malg.js": 27
+    },
+    "retired": {
+      "p_static.js": 27, "p0_smoke.js": 4, "c_static.js": 11, "c0_smoke.js": 1, "m_static.js": 18, "m0_smoke.js": 2,
+      "og_trace_parity.js": 31, "og_trace_nocrea.js": 31, "og_trace_nomalg.js": 31
+    }
+  }
+}

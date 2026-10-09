@@ -1,0 +1,6 @@
+# Byte parity: never normalise line endings anywhere (the build is plain concatenation and is md5-pinned).
+* -text
+*.webp binary
+*.png binary
+# The og_trace goldens are generated digest fixtures (one long JSON line each): diffs of them are noise.
+tests/fixtures/og_trace/*.json -diff

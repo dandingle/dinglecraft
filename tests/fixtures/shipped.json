@@ -1,0 +1,241 @@
+{
+  "_doc": "Shipped versions are frozen: if GAME_VERSION is listed here, the built html must match this md5 (bump the version before changing output). scripts/release.mjs appends new entries.",
+  "shipped": {
+    "5.9": {
+      "bytes": 1122434,
+      "md5": "facea97e67180142c19c90d66a494aca",
+      "date": "2026-10-06"
+    },
+    "6.0": {
+      "bytes": 31027880,
+      "md5": "ad3c47586fe91624850734866c7c254c",
+      "date": "2026-10-06"
+    },
+    "6.1": {
+      "bytes": 40049146,
+      "md5": "eaf4c54159103d059f8dacafacec8249",
+      "date": "2026-10-07"
+    },
+    "6.2": {
+      "bytes": 40194141,
+      "md5": "376d0b76b3cc5b51ec78690c6e73936a",
+      "date": "2026-10-07"
+    },
+    "6.3": {
+      "bytes": 42986086,
+      "md5": "e0d781ad02350580f027d9452ba67e28",
+      "date": "2026-10-08",
+      "parts": {
+        "head": {
+          "bytes": 135992,
+          "md5": "faf27193fabebc884bdff9e674057626"
+        },
+        "game": {
+          "bytes": 3132960,
+          "md5": "5dc3aa02237e576d38f899b9ca075f48"
+        },
+        "hrassets": {
+          "bytes": 39717108,
+          "md5": "c114d5a60c216360aab548f513b7d4de"
+        },
+        "tail": {
+          "bytes": 26,
+          "md5": "6ad4ea15127078e6949350f7e3821449"
+        }
+      },
+      "assets": {
+        "hr_assets.gen.js": {
+          "bytes": 37416630,
+          "md5": "38bd50ae6fd470cb44960d5a5bc5f2b0",
+          "sha1": "1151313c5fd5e9c666bf221c2bae0a95512d0078"
+        },
+        "mg_assets.gen.js": {
+          "bytes": 2300478,
+          "md5": "9868882be40ed21d30145ff1834e0931",
+          "sha1": "f2d901f4639900b0a54b62876c7a71bad4ffa359"
+        }
+      },
+      "note": "v6.3 was the last splice-built release; the repo reproduces it byte for byte"
+    },
+    "6.4": {
+      "label": "Release 1.0 Preview",
+      "bytes": 40056521,
+      "md5": "6c4e787a49eb70066e5cee058c991b2b",
+      "date": "2026-10-08",
+      "parts": {
+        "head": {
+          "bytes": 147366,
+          "md5": "1ed127edb0c6beeb5344d7b874356c49"
+        },
+        "game": {
+          "bytes": 3122226,
+          "md5": "9a2e90ed553301021570ff63a81f28f3"
+        },
+        "hrassets": {
+          "bytes": 36786903,
+          "md5": "a31f462a3e57012ae2bf0f1fa443ab6a"
+        },
+        "tail": {
+          "bytes": 26,
+          "md5": "6ad4ea15127078e6949350f7e3821449"
+        }
+      },
+      "assets": {
+        "hr_assets.gen.js": {
+          "bytes": 34486425,
+          "md5": "72070e362bc04cfeaae79f8ef949a407",
+          "sha1": "40d76cef5c35212a4a80a08d4b159eb6c6c4fba1"
+        },
+        "mg_assets.gen.js": {
+          "bytes": 2300478,
+          "md5": "8f653d2b420efaa190f9ec005aad2d40",
+          "sha1": "10e1541a08f77d49833a9e833f0f15444667c174"
+        }
+      }
+    },
+    "6.5": {
+      "label": "Release 1.0",
+      "bytes": 41422259,
+      "md5": "c2c8704518caa5337b5ba6679370ed6e",
+      "date": "2026-10-08",
+      "parts": {
+        "head": {
+          "bytes": 1517544,
+          "md5": "f88a4102b8fbc6f7a0b1e291efc2ad07"
+        },
+        "game": {
+          "bytes": 3117786,
+          "md5": "cd5035dba7e5bb39d8a50e45cc50b1e3"
+        },
+        "hrassets": {
+          "bytes": 36786903,
+          "md5": "a31f462a3e57012ae2bf0f1fa443ab6a"
+        },
+        "tail": {
+          "bytes": 26,
+          "md5": "6ad4ea15127078e6949350f7e3821449"
+        }
+      },
+      "assets": {
+        "hr_assets.gen.js": {
+          "bytes": 34486425,
+          "md5": "72070e362bc04cfeaae79f8ef949a407",
+          "sha1": "40d76cef5c35212a4a80a08d4b159eb6c6c4fba1"
+        },
+        "mg_assets.gen.js": {
+          "bytes": 2300478,
+          "md5": "8f653d2b420efaa190f9ec005aad2d40",
+          "sha1": "10e1541a08f77d49833a9e833f0f15444667c174"
+        }
+      }
+    },
+    "6.6": {
+      "label": "Release 1.0",
+      "bytes": 42813996,
+      "md5": "975fd64e1c92b4650b2c4235314ad96e",
+      "date": "2026-10-09",
+      "parts": {
+        "head": {
+          "bytes": 2909264,
+          "md5": "7a1ac35c31c3af2ce6d26e39292a7e9b"
+        },
+        "game": {
+          "bytes": 3117803,
+          "md5": "45eca29ef173b022a26bc4bd5b95cbe7"
+        },
+        "hrassets": {
+          "bytes": 36786903,
+          "md5": "a31f462a3e57012ae2bf0f1fa443ab6a"
+        },
+        "tail": {
+          "bytes": 26,
+          "md5": "6ad4ea15127078e6949350f7e3821449"
+        }
+      },
+      "assets": {
+        "hr_assets.gen.js": {
+          "bytes": 34486425,
+          "md5": "72070e362bc04cfeaae79f8ef949a407",
+          "sha1": "40d76cef5c35212a4a80a08d4b159eb6c6c4fba1"
+        },
+        "mg_assets.gen.js": {
+          "bytes": 2300478,
+          "md5": "8f653d2b420efaa190f9ec005aad2d40",
+          "sha1": "10e1541a08f77d49833a9e833f0f15444667c174"
+        }
+      }
+    },
+    "6.7": {
+      "label": "Release 1.0",
+      "bytes": 42528108,
+      "md5": "779f3dc4116688918503b8b681722f1b",
+      "date": "2026-10-09",
+      "parts": {
+        "head": {
+          "bytes": 2603112,
+          "md5": "e6cf8d8209b046512205a1a9aeac52be"
+        },
+        "game": {
+          "bytes": 3141207,
+          "md5": "3b5d012623d5b6d260284ae8300affec"
+        },
+        "hrassets": {
+          "bytes": 36783763,
+          "md5": "11250fdee19a8b0b735a1154a3d05a17"
+        },
+        "tail": {
+          "bytes": 26,
+          "md5": "6ad4ea15127078e6949350f7e3821449"
+        }
+      },
+      "assets": {
+        "hr_assets.gen.js": {
+          "bytes": 34483285,
+          "md5": "d047cc7b7bf35ea2cfda9d2618b22b97",
+          "sha1": "71c3e7fbc4cbdb17a66fd0e044ad2628ec886736"
+        },
+        "mg_assets.gen.js": {
+          "bytes": 2300478,
+          "md5": "8f653d2b420efaa190f9ec005aad2d40",
+          "sha1": "10e1541a08f77d49833a9e833f0f15444667c174"
+        }
+      }
+    },
+    "6.8": {
+      "label": "Release 1.0",
+      "bytes": 42516777,
+      "md5": "8fa3c2330c78212ad7c70237925939db",
+      "date": "2026-10-09",
+      "parts": {
+        "head": {
+          "bytes": 2603112,
+          "md5": "e6cf8d8209b046512205a1a9aeac52be"
+        },
+        "game": {
+          "bytes": 3129876,
+          "md5": "b954d8b3f731c63790948568a2c54c48"
+        },
+        "hrassets": {
+          "bytes": 36783763,
+          "md5": "11250fdee19a8b0b735a1154a3d05a17"
+        },
+        "tail": {
+          "bytes": 26,
+          "md5": "6ad4ea15127078e6949350f7e3821449"
+        }
+      },
+      "assets": {
+        "hr_assets.gen.js": {
+          "bytes": 34483285,
+          "md5": "d047cc7b7bf35ea2cfda9d2618b22b97",
+          "sha1": "71c3e7fbc4cbdb17a66fd0e044ad2628ec886736"
+        },
+        "mg_assets.gen.js": {
+          "bytes": 2300478,
+          "md5": "8f653d2b420efaa190f9ec005aad2d40",
+          "sha1": "10e1541a08f77d49833a9e833f0f15444667c174"
+        }
+      }
+    }
+  }
+}

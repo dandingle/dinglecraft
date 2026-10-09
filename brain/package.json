@@ -1,0 +1,13 @@
+{
+  "name": "dingle-brain",
+  "private": true,
+  "type": "module",
+  "description": "Local server that holds your Anthropic key and runs the DINGLECRAFT AI players' minds.",
+  "scripts": {
+    "start": "node dingle-brain.mjs",
+    "test": "node selftest.mjs"
+  },
+  "dependencies": {
+    "@anthropic-ai/sdk": "^0.131.0"
+  }
+}

@@ -1,0 +1,157 @@
+{
+ "v": 1,
+ "_doc": [
+  "Hyperreal block-tile manifest (Package A). Hand-authored; read by tools/art/texpacks/pack_assets.py.",
+  "Tile list = every key of the art workspace's final/tiles.json (DC_ART_SRC) that has a <name>_basecolor.png, plus the",
+  "fallback-only names below (no art: the game keeps OG pixels, lit by Hyperreal lights, with these flags).",
+  "Flag order: defaults -> art flags from final/tiles.json (rot:true => rot 'all' + mirror; rough => roughness",
+  "multiplier) -> the per-tile entries here. rot: none | tb (top/bottom faces only) | all. mirror only ever goes",
+  "with rot: mirroring a seam-designed tile (planks, brick, bark) breaks it at block edges. rough multiplies the",
+  "roughness map (or is the roughness when there is no map). emissive = strength (linear HDR multiplier of the",
+  "albedo), emask = full | lum | flame | none (lum takes emin/elo/ehi: glow floor and luminance ramp). up = lit like the ground (plants). The game also forces 'up' at",
+  "runtime for every tile a cross/wall-torch block uses, so new plants never need an entry here."
+ ],
+ "aliases": {
+  "cobblestone": "cobble",
+  "oak_planks": "plank_o",
+  "oak_log_side": "log_o",
+  "oak_log_top": "log_top"
+ },
+ "defaults": {
+  "rot": "none",
+  "mirror": false,
+  "ns": 1.3,
+  "rough": 1.0,
+  "emissive": 0,
+  "emask": "none",
+  "up": false,
+  "scroll": false,
+  "water": false,
+  "opaque": false,
+  "derive_normal": false
+ },
+ "tiles": {
+  "log_top": {
+   "rot": "tb"
+  },
+  "sandstone_t": {
+   "rot": "tb"
+  },
+  "furn_t": {
+   "rot": "tb"
+  },
+  "cactus_t": {
+   "rot": "tb"
+  },
+  "grass_top": {
+   "ns": 1.3
+  },
+  "water": {
+   "scroll": true,
+   "water": true,
+   "rough": 0.6
+  },
+  "lava": {
+   "scroll": true,
+   "opaque": true,
+   "emissive": 2.5,
+   "emask": "lum",
+   "emin": 0.35,
+   "elo": 0.15,
+   "ehi": 0.55
+  },
+  "glowstone": {
+   "emissive": 2.0,
+   "emask": "lum"
+  },
+  "torch": {
+   "emissive": 4.0,
+   "emask": "flame",
+   "up": true
+  },
+  "tallgrass": {
+   "up": true
+  },
+  "flower_r": {
+   "up": true
+  },
+  "flower_y": {
+   "up": true
+  },
+  "fl_tulr": {
+   "up": true
+  },
+  "fl_tulo": {
+   "up": true
+  },
+  "fl_corn": {
+   "up": true
+  },
+  "fl_all": {
+   "up": true
+  },
+  "fl_lily": {
+   "up": true
+  },
+  "fl_snow": {
+   "up": true
+  },
+  "fl_mari": {
+   "up": true
+  },
+  "fl_edel": {
+   "up": true
+  },
+  "fl_slav": {
+   "up": true
+  },
+  "portal_n": {
+   "emissive": 1.5,
+   "emask": "full"
+  },
+  "portal_a": {
+   "emissive": 1.5,
+   "emask": "full"
+  },
+  "pg_burner_t": {
+   "emissive": 2.0,
+   "emask": "lum",
+   "emin": 0.0,
+   "elo": 0.45,
+   "ehi": 0.85
+  },
+  "pg_hotplate_t": {
+   "emissive": 2.0,
+   "emask": "lum",
+   "emin": 0.0,
+   "elo": 0.45,
+   "ehi": 0.85
+  },
+  "pg_tesla_t": {
+   "emissive": 1.2,
+   "emask": "lum",
+   "elo": 0.6,
+   "ehi": 0.95
+  },
+  "pg_soup": {
+   "scroll": true,
+   "water": true,
+   "rough": 0.5
+  },
+  "pg_scum": {
+   "scroll": true,
+   "water": true,
+   "rough": 0.7
+  },
+  "pg_lamp": {
+   "emissive": 3.0,
+   "emask": "lum",
+   "elo": 0.55,
+   "ehi": 0.9,
+   "up": true
+  },
+  "pg_mirror": {
+   "rough": 0.35
+  }
+ }
+}

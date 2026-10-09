@@ -1,0 +1,306 @@
+[
+ {
+  "id": "1",
+  "title": "THE SHOW MUST GO ON: PURGATORY EDITION",
+  "unlock": "unlocked: start",
+  "printed": "Welcome, valued guest! Make yourself at home. There is no need to ever leave.",
+  "margin": "Your things are in a trunk by the door you came in. The only way out is to finish the show. Three headliners. When the last one goes limp, run for the EXIT. It's through the audience. It's locked until then. —D.",
+  "ticks": [
+   {
+    "id": "read",
+    "label": "Read the Programme",
+    "tag": "main"
+   }
+  ]
+ },
+ {
+  "id": "2",
+  "title": "FINDING YOUR WAY",
+  "unlock": "start",
+  "printed": "Our stage is raked for perfect sightlines! Guests are welcome to explore the stalls.",
+  "margin": "Stay out of the seats. Uphill is later. If you can see the painting, you're facing deeper in. If you can see cardboard, you're facing the way out. The lights above the curtain are where you're going. The curtains open when the star before them dies.",
+  "ticks": [
+   {
+    "id": "apron",
+    "label": "See the apron",
+    "tag": "main"
+   },
+   {
+    "id": "beacon",
+    "label": "See the lights over the curtain",
+    "tag": "main"
+   }
+  ]
+ },
+ {
+  "id": "3",
+  "title": "OUR SCENERY",
+  "unlock": "start",
+  "printed": "Every tree in our forest is a working performer! Stand in front of our scenery for the best photographs.",
+  "margin": "The sleeves are Felt. Punch them. The arm at the bottom: cut that and the whole head comes down. Don't think about whose arm. The mountains are cardboard. Never stand in front of one when you knock out its last brace.",
+  "ticks": [
+   {
+    "id": "sleeve",
+    "label": "Felt Sleeve",
+    "tag": "main"
+   },
+   {
+    "id": "forearm",
+    "label": "Puppeteer Forearm",
+    "tag": "main"
+   },
+   {
+    "id": "rod",
+    "label": "Puppet Rod",
+    "tag": "main"
+   }
+  ]
+ },
+ {
+  "id": "4",
+  "title": "THE PROPS DEPARTMENT",
+  "unlock": "first Felt",
+  "printed": "Our props master loves to be thanked in person. Lean in close when he opens his lid!",
+  "margin": "The can by the Mark makes things. He throws the big things at you when you shut the lid. Duck. Everything he can make is in the book. ??? means you've never held what it needs. Read the line under it. Make another can. He'll move in. Take him with you.",
+  "ticks": [
+   {
+    "id": "floppy",
+    "label": "Floppy Pick",
+    "tag": "main"
+   },
+   {
+    "id": "slapper",
+    "label": "Sock Slapper",
+    "tag": "main"
+   },
+   {
+    "id": "duck",
+    "label": "Duck a volley",
+    "tag": "side"
+   }
+  ]
+ },
+ {
+  "id": "5",
+  "title": "BELOW STAGE",
+  "unlock": "first Floppy Pick",
+  "printed": "Guests are welcome to dig for souvenirs anywhere below stage. Go as deep as you like!",
+  "margin": "Under the deck is foam. Googly eyes near the top. Coat hangers lower, thick in the kitchen drains. Sequins in the orange rot. At the very bottom, fingers. Don't dig the floor. The floor is someone.",
+  "ticks": [
+   {
+    "id": "foam",
+    "label": "Foam Chunk",
+    "tag": "main"
+   },
+   {
+    "id": "larp",
+    "label": "LARP Pick",
+    "tag": "main"
+   },
+   {
+    "id": "googly",
+    "label": "Googly Eyes",
+    "tag": "side"
+   }
+  ]
+ },
+ {
+  "id": "6",
+  "title": "THE FLOOR IS HOLLOW",
+  "unlock": "first Blank seen",
+  "printed": "Our puppets love a cuddle! Walk right up.",
+  "margin": "If it's on an arm, it has a hole. It can't reach past the elbow. Stand there. Break the hole and it's nothing. Remember this later.",
+  "ticks": [
+   {
+    "id": "armhole",
+    "label": "Break an Arm Hole",
+    "tag": "main"
+   }
+  ]
+ },
+ {
+  "id": "7",
+  "title": "LIGHTING",
+  "unlock": "first BLACKOUT warning",
+  "printed": "Please stand in the spotlight for the best view!",
+  "margin": "Three clicks means the lights are going. In the dark the spot finds whoever's out in the open, and everything comes to them. Get under something or stand by a lamp, or go below and dig. It's always dark down there anyway. The hands come up out of the trenches. They climb into the empty ones.",
+  "ticks": [
+   {
+    "id": "lamp",
+    "label": "Eyeball Lamp",
+    "tag": "main"
+   },
+   {
+    "id": "blackout",
+    "label": "Survive a blackout",
+    "tag": "side"
+   },
+   {
+    "id": "trunk",
+    "label": "Prop Trunk (sneak + right-click to sleep in it)",
+    "tag": "side"
+   }
+  ]
+ },
+ {
+  "id": "8",
+  "title": "THE KITCHEN",
+  "unlock": "enter Plane 2",
+  "printed": "Visit our Cook! He loves a helper behind the counter.",
+  "margin": "No throats in here. Raw food comes out the back of your head. Drop it on a burner, or give it to the cook and stand back from the counter. Never go behind it. The pelican's fish comes back. Hit it with a bat. The drains have a ledge. Climb down.",
+  "ticks": [
+   {
+    "id": "smelt",
+    "label": "Smelt something",
+    "tag": "main"
+   },
+   {
+    "id": "wire",
+    "label": "Armature Wire",
+    "tag": "main"
+   },
+   {
+    "id": "bat",
+    "label": "Foam Bat",
+    "tag": "main"
+   },
+   {
+    "id": "batfish",
+    "label": "Bat a fish",
+    "tag": "side"
+   }
+  ]
+ },
+ {
+  "id": "9",
+  "title": "ACT I: THE DEMOLITIONIST",
+  "unlock": "first Wire Snips, or the apron trigger seen",
+  "printed": "Guests are welcome to press the big red button!",
+  "margin": "Don't push his plunger until you can cut a wire. Every bang comes down a wire. Follow it. Cut it. He goes round the same way every time. He never checks his own seat. Close the gap. Give him back anything he sticks on you. When he sits on the big one: the trapdoor. The lever by the WHITE plunger.",
+  "shaky": "The plungers work for us too.",
+  "ticks": [
+   {
+    "id": "snips",
+    "label": "Wire Snips",
+    "tag": "main"
+   },
+   {
+    "id": "cord",
+    "label": "Det Cord",
+    "tag": "main"
+   },
+   {
+    "id": "bomber",
+    "label": "The Demolitionist",
+    "tag": "main"
+   }
+  ]
+ },
+ {
+  "id": "10",
+  "title": "THE PROP LAB",
+  "unlock": "Demolitionist dead",
+  "printed": "Our scientists are always looking for volunteers!",
+  "margin": "The copper in the coils makes a bench. The Lab Rat pays for everything. If he runs, carry him back. The big hairy one in the pink dunes is slow and never stops. His shoes are real. Aim low. The Drummer's under the floor. Follow the dust that jumps. Stand where the chain ends.",
+  "ticks": [
+   {
+    "id": "bench",
+    "label": "Lab Bench",
+    "tag": "main"
+   },
+   {
+    "id": "sequin",
+    "label": "Sequin",
+    "tag": "main"
+   },
+   {
+    "id": "shag",
+    "label": "Shag Fur",
+    "tag": "main"
+   },
+   {
+    "id": "stiletto",
+    "label": "The Stiletto",
+    "tag": "side"
+   }
+  ]
+ },
+ {
+  "id": "11",
+  "title": "ACT II: THE PIG",
+  "unlock": "enter Plane 3",
+  "printed": "The Pig adores her fans! Walk up the stairs and say hello. Guests in sequins get special attention.",
+  "margin": "Climb fast. Change lanes on the landings. Catch, don't dodge. Throw them back. When she pushes her gloves up, she's going to throw YOU. Keep a mitt up for the others. Up top she can't walk past a mirror: three looks and she's onto you, bring spares. Steal her light and she comes for you. When she poses, the big lamp hangs on one rope.",
+  "ticks": [
+   {
+    "id": "mitt",
+    "label": "Pig Mitt",
+    "tag": "main"
+   },
+   {
+    "id": "mirror",
+    "label": "Vanity Mirror",
+    "tag": "main"
+   },
+   {
+    "id": "bigpig",
+    "label": "The Pig",
+    "tag": "main"
+   }
+  ]
+ },
+ {
+  "id": "12",
+  "title": "ACT III: THE MANAGEMENT",
+  "unlock": "Pig dead",
+  "printed": "The management loves visitors. Walk right up!",
+  "margin": "Don't. Keep moving on the sheet. Hold your weapon or the frogs take your pockets. Always carry something that cuts. Two staples pin the tongue. Flies make him look away. If he swallows you, punch the hand.",
+  "shaky": "This is where I stopped writing.",
+  "ticks": [
+   {
+    "id": "staple",
+    "label": "Staple Gun",
+    "tag": "main"
+   },
+   {
+    "id": "bigfrog",
+    "label": "The Frog",
+    "tag": "main"
+   },
+   {
+    "id": "fly",
+    "label": "Felt Fly",
+    "tag": "side"
+   }
+  ]
+ },
+ {
+  "id": "12b",
+  "title": "",
+  "unlock": "glued shut; peels open when the Frog enters P3",
+  "printed": "(a full-page photograph of the swamp, ruined by the glue)",
+  "margin": "UNDER THE FLOOR.",
+  "marginNote": "scrawled across the photo in big shaking letters",
+  "ticks": [
+   {
+    "id": "elbow",
+    "label": "Hit the elbow",
+    "tag": "main"
+   }
+  ]
+ },
+ {
+  "id": "13",
+  "title": "CURTAIN CALL",
+  "unlock": "Frog dead",
+  "printed": "Please remain seated until the curtain has fully come down.",
+  "margin": "RUN. Downhill. Don't stop. Watch for the shadow. Don't get swept up.",
+  "ticks": [
+   {
+    "id": "escape",
+    "label": "Escape",
+    "tag": "main"
+   }
+  ]
+ }
+]

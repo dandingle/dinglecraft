@@ -1,0 +1,56 @@
+# DINGLECRAFT CI: the node suites, one gate group per job (scripts/gate.mjs over tests/gate.json), the hermetic brain selftest
+# and the secrets/privacy scan. No secrets are used anywhere: the game suites never touch the network, the brain selftest runs
+# against a fake upstream with a sentinel key, and the scan only reads the checkout.
+name: ci
+
+on:
+  push:
+  pull_request:
+
+permissions:
+  contents: read
+
+concurrency:
+  group: ci-${{ github.ref }}
+  cancel-in-progress: true
+
+jobs:
+  game:
+    name: gate ${{ matrix.group }}
+    runs-on: ubuntu-latest
+    timeout-minutes: 45
+    strategy:
+      fail-fast: false
+      matrix:
+        group: [repo, core, texpacks, purgatory, pilot, creativity, malgorath, og_trace]
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-node@v4
+        with:
+          node-version: '22'
+      # builds with --strict first (a shipped version must reproduce its shipped bytes), then runs the group once
+      - run: node scripts/gate.mjs --once --group ${{ matrix.group }}
+      - name: gate record
+        if: always()
+        run: cat out/gate_run.json || true
+
+  brain:
+    runs-on: ubuntu-latest
+    timeout-minutes: 15
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-node@v4
+        with:
+          node-version: '22'
+      - run: npm ci --prefix brain
+      - run: node brain/selftest.mjs
+
+  scan:
+    runs-on: ubuntu-latest
+    timeout-minutes: 10
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-node@v4
+        with:
+          node-version: '22'
+      - run: node tools/scan_secrets.mjs

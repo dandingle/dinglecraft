@@ -1,0 +1,27 @@
+{
+  "name": "dinglecraft",
+  "version": "6.8.0",
+  "private": true,
+  "description": "DINGLECRAFT: a fan-made voxel sandbox that ships as one HTML file.",
+  "license": "SEE LICENSE IN LICENSE",
+  "engines": {
+    "node": ">=20"
+  },
+  "scripts": {
+    "build": "node scripts/build.mjs",
+    "test": "node scripts/gate.mjs --once",
+    "test:quick": "node scripts/gate.mjs --tier quick",
+    "test:brain": "node brain/selftest.mjs",
+    "gate": "node scripts/gate.mjs",
+    "serve": "node scripts/serve.mjs",
+    "brain": "node brain/dingle-brain.mjs",
+    "brain:launch": "node brain/launch.mjs",
+    "bump": "node scripts/bump.mjs",
+    "release": "node scripts/release.mjs",
+    "changelog": "node scripts/changelog.mjs",
+    "repack": "node tools/assets/repack.mjs",
+    "scan": "node tools/scan_secrets.mjs",
+    "scan:history": "node tools/scan_history.mjs",
+    "hooks": "git config core.hooksPath tools/hooks"
+  }
+}

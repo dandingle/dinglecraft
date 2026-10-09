@@ -1,0 +1,4 @@
+{
+ "_doc": "Allow-list for tools/scan_secrets.mjs. Text hits are keyed by file + rule + a sha256 prefix of the line (never the line itself); file-level hits by file + rule. Every entry says why it is allowed.",
+ "allow": []
+}

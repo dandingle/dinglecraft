@@ -1,0 +1,13 @@
+.crui{z-index:22;background:rgba(0,0,0,.55)}
+.crwin{position:relative;max-width:min(1180px,97%);max-height:95%;overflow:auto;padding:10px 12px;text-align:left;user-select:none}
+#crask{z-index:26;background:rgba(0,0,0,.4)}
+#craskwin{max-width:440px;text-align:center}
+#crasktext{margin:0 0 10px;line-height:1.45;font-size:14px}
+#craskin{display:none}
+.crbtns{display:flex;gap:8px;justify-content:center;flex-wrap:wrap}
+.crbtns .mc-btn{width:auto;display:inline-block;margin:0;padding:8px 18px}
+.crrow{display:flex;align-items:center;flex-wrap:wrap;gap:4px;margin:3px 0}
+.crtool{display:inline-flex;align-items:center;justify-content:center;min-width:40px;height:40px;margin:0;padding:0 9px;font:bold 13px 'Courier New',monospace;color:#fff;text-shadow:1px 1px 0 #3f3f3f;cursor:pointer;background:linear-gradient(#a8a8a8,#7d7d7d);border:2px solid;border-color:#e0e0e0 #2f2f2f #2f2f2f #e0e0e0}
+.crtool.on{background:linear-gradient(#6fae4a,#3f7a2a);border-color:#c8f0b0 #1f3d14 #1f3d14 #c8f0b0}
+.crtool:disabled{opacity:.45;cursor:default}
+.crlab{font:bold 12px 'Courier New',monospace;color:#3f3f3f;margin:0 4px}

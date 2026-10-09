@@ -1,0 +1,17 @@
+{
+ "note": "sha256 of JSON.stringify(buildRequest(lane,bot,payload)) from brain/prompts.mjs: first recorded from v6.0 (P5, 2026-10-07); regenerated for Release 1.0 (game v6.4) after the prompt wording changes (game chat, blocky voxel survival, boomers). A request without payload.guide must stay byte-identical: purgatory never changes overworld prompts.",
+ "cases": {
+  "act|BunkerBrad": "a8c55c86beca311a0b54af49b6ecf62c8b16dc9b2cc90021b55a6f20f32baf86",
+  "act|xx_lilcreepah_xx": "7d672ab85563f2d77243aa67398f0bd35ed50f19611e7648e18a1f56cab53e92",
+  "act|honeybee_mc": "19a60101d1d01a10d9ab5ea11197573ebbd446df42387e210511f6a13a3c8f00",
+  "act|nobody": "e2183bf220f5dc4f0d1b0d4ff5b61cdf0c2ca4b54e6e4d3f801925ada5e80601",
+  "mind|BunkerBrad": "157bf6244856508d65e54c5f7023f1e791039fcb6c927411ebb7bbeb9ce564e5",
+  "mind|xx_lilcreepah_xx": "bcfe2a4dfebf7014d7b86e6defd4c4b19eac10a15b679f63678ad84dc0e3357a",
+  "mind|honeybee_mc": "1e8345b172d98b176e55653fbb82b157db713864acc04bd78714a4030636b733",
+  "mind|nobody": "5d96014dd148efc7ae22072897741d0129a4e623cc00123193c7db034e8d816b",
+  "build|BunkerBrad": "4b8e5d72f5e7e940860f33aea3b521366b00abc0bab1b1ffa8ce0eaf58f77134",
+  "build|xx_lilcreepah_xx": "a91a80b27595310eae2e932aa4ed3bc416cbf1af8086171d8bcb336aef224a33",
+  "build|honeybee_mc": "5ccec8c624d38376459a354cd1c16b49006dd695f7ecc1bf9d6c516b6c0dc91f",
+  "build|nobody": "bed31e9a528f0745508f467eb60ae1672f6ceb0df356fd4a1dfced9817671fb6"
+ }
+}

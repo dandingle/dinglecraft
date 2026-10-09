@@ -1,0 +1,16 @@
+{
+ "fist_pg": "P6 pgw2_r_fistpg: nano-banana-pro, no crop, luminance normals; Release 1.0: recoloured to burlap brown (tools/art/texpacks/r1_local_art.py)",
+ "pgent_apron": "P6 pgw2_r_apron: nano-banana-pro, no crop, luminance normals",
+ "pgent_arm": "P6 pgw1_r_arm: nano-banana-pro, crop (0.125, 0.0, 0.9, 0.92), luminance normals",
+ "pgent_hand": "P6 pgw1_r_hand: nano-banana-pro, no crop, luminance normals",
+ "pgent_satchel": "P6 pgw1_satchel: nano-banana-pro, autocrop (151, 135, 869, 879), luminance normals",
+ "pgent_sneakers": "P6 pgw2_sneakers: nano-banana-pro, crop (0.2, 0.06, 0.78, 1.0), luminance normals",
+ "pgface_blank": "P6 nano-banana-pro t2i (a blank felt head with its features torn off), autocrop (0.2, 0.11, 0.8, 0.87), luminance normals; Release 1.0 renamed the id",
+ "pgface_feltdan": "P6 pgw2_feltdan: nano-banana-pro, no crop, luminance normals; Release 1.0: recoloured to burlap brown with sewn-on button eyes (tools/art/texpacks/r1_local_art.py)",
+ "pgface_piglet": "P6 pgw1_piglet_face: nano-banana-pro, autocrop (263, 260, 750, 844), luminance normals",
+ "pgmat_cuff": "P6 pgw1_r_cuff: patina text material, LF-equalised, normal tilt removed; seam h0.94 v0.93",
+ "pgmat_felt": "P6 local: the sleeve hero felt relief (pilling, glue blobs) on an off-white base for tinting (the patina felt pgw2_felt came out blank); seam h0.98 v1.34",
+ "pgmat_frogfelt": "P6 local: pgw1_t_sleeve_hero felt (left of the seam), offset-blend seamless, LF-equalised, graded to the frog face green [112.5, 140.2, 74.8]; seam h1.05 v1.34 (the flat patina felt pgw1_mat_frogfelt was rejected)",
+ "pgmat_fur": "P6 pgw2_r_fur: patina text material, LF-equalised, normal tilt removed; seam h1.11 v1.12",
+ "pgmat_tongue": "P6 pgw1_r_tongue: patina text material, LF-equalised, normal tilt removed; seam h1.06 v0.97"
+}

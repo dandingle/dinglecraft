@@ -1,0 +1,49 @@
+# secrets (copy .env.example to .env; never commit it)
+.env
+.env.*
+!.env.example
+*.env
+.envrc
+*.pem
+*.key
+*.p12
+*.pfx
+id_rsa*
+id_ed25519*
+id_ecdsa*
+credentials.json
+tokens.json
+*.jsonl
+# the owner's private terms for the privacy scans (local only; tools/lib/private_terms.cjs)
+*.local.txt
+# build outputs (reproducible from the sources)
+/build/
+/dist/
+/out/
+**/out/
+# dependencies and local brain state
+node_modules/
+brain/data/
+brain/STOP
+# local art-tool spend ledger (FAL_LEDGER_DIR: costs.md + BUDGET, wherever it points)
+.art-ledger/
+costs.md
+BUDGET
+# a local copy of third-party libraries other than the bundled assets/vendor/
+/vendor/
+# generated asset text (the build assembles it from assets/packed/)
+*.gen.js
+__pycache__/
+*.pyc
+.DS_Store
+*.log
+# scratch space, editor and OS junk
+/scratch/
+*.tmp
+Thumbs.db
+desktop.ini
+._*
+*.swp
+*~
+.idea/
+.vscode/

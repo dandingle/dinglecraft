@@ -1,0 +1,15 @@
+{
+ "faces": [
+  "pano_0.webp",
+  "pano_1.webp",
+  "pano_2.webp",
+  "pano_3.webp",
+  "pano_4.webp",
+  "pano_5.webp"
+ ],
+ "order": "[yaw,pitch] YXZ: 0 [0,0] front, 1 [-90deg,0], 2 [180deg,0], 3 [90deg,0], 4 [0,+90deg] up, 5 [0,-90deg] down",
+ "yaw0": -2.36,
+ "pitch": -0.12,
+ "spin_s": 150,
+ "made_by": "tools/art/title_pano.mjs (OG pack, 2048px), then WebP q85"
+}

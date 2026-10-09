@@ -1,0 +1,378 @@
+{
+ "_doc": [
+  "The banned-names list for tests/repo/r_ipscan.js (Release 1.0): third-party character, place, item and catchphrase names that must never appear in the game, the docs or the tests. DINGLECRAFT's cast is its own.",
+  "ROT13-encoded so the repo passes its own scan: every letter a-z/A-Z is rotated by 13, except a letter right after a backslash (regex escapes such as \\b stay as they are). tests/lib/ipban.js decodes it.",
+  "Each term: k (the number --list prints as term#k), tier ('all' = every byte of every scanned file; 'prose' = only string literals with a space in JavaScript, and all text in other files), re (the encoded regex, matched case-insensitively), sample (an encoded phrase the regex must match: the suite's self-test).",
+  "To read the list in plain text: node tests/repo/r_ipscan.js --decode (prints it, writes nothing). Never write the decoded list into a repo file.",
+  "There is no allow-list: a hit anywhere fails the gate."
+ ],
+ "encoding": "rot13-letters-except-after-backslash",
+ "terms": [
+  {
+   "k": 1,
+   "tier": "all",
+   "re": "zhccrg",
+   "sample": "Zhccrg Chetngbel"
+  },
+  {
+   "k": 2,
+   "tier": "all",
+   "re": "xrezvg",
+   "sample": "Xrezvg (Rzcgl)"
+  },
+  {
+   "k": 3,
+   "tier": "all",
+   "re": "xrezvr",
+   "sample": "Xrezvr..."
+  },
+  {
+   "k": 4,
+   "tier": "all",
+   "re": "cvttl",
+   "sample": "Zvff Cvttl'f Gehax"
+  },
+  {
+   "k": 5,
+   "tier": "all",
+   "re": "\\buneel\\b",
+   "sample": "Penml Uneel"
+  },
+  {
+   "k": 6,
+   "tier": "all",
+   "re": "fgngyre",
+   "sample": "Fgngyre"
+  },
+  {
+   "k": 7,
+   "tier": "all",
+   "re": "jnyqbes",
+   "sample": "Jnyqbes"
+  },
+  {
+   "k": 8,
+   "tier": "all",
+   "re": "fjrqvfu",
+   "sample": "gur Fjrqvfu Purs"
+  },
+  {
+   "k": 9,
+   "tier": "all",
+   "re": "fjrqra",
+   "sample": "Fjrqra'f Xvgpura"
+  },
+  {
+   "k": 10,
+   "tier": "all",
+   "re": "o[bø]ex",
+   "sample": "Oøex Zrngonyy"
+  },
+  {
+   "k": 11,
+   "tier": "all",
+   "re": "tbamb",
+   "sample": "Phr Tbamb."
+  },
+  {
+   "k": 12,
+   "tier": "all",
+   "re": "sbmmvr",
+   "sample": "Sbmmvr"
+  },
+  {
+   "k": 13,
+   "tier": "all",
+   "re": "jbpxn",
+   "sample": "jbpxn jbpxn"
+  },
+  {
+   "k": 14,
+   "tier": "all",
+   "re": "\\bjnxn ?jnxn\\b",
+   "sample": "jnxn jnxn"
+  },
+  {
+   "k": 15,
+   "tier": "all",
+   "re": "ornxre",
+   "sample": "Ornxre Pybar"
+  },
+  {
+   "k": 16,
+   "tier": "all",
+   "re": "ohafra",
+   "sample": "Qe. Ohafra"
+  },
+  {
+   "k": 17,
+   "tier": "all",
+   "re": "ubarlqrj",
+   "sample": "Ubarlqrj"
+  },
+  {
+   "k": 18,
+   "tier": "all",
+   "re": "fjrrghzf",
+   "sample": "Fjrrghzf"
+  },
+  {
+   "k": 19,
+   "tier": "all",
+   "re": "mrnynaq",
+   "sample": "Yrj Mrnynaq"
+  },
+  {
+   "k": 20,
+   "tier": "all",
+   "re": "\\byrj\\b",
+   "sample": "Yrj"
+  },
+  {
+   "k": 21,
+   "tier": "all",
+   "re": "pnzvyyn",
+   "sample": "Pnzvyyn'f Ura"
+  },
+  {
+   "k": 22,
+   "tier": "all",
+   "re": "ubtguebo",
+   "sample": "Yvax Ubtguebo"
+  },
+  {
+   "k": 23,
+   "tier": "all",
+   "re": "arjfzna",
+   "sample": "Gur Arjfzna"
+  },
+  {
+   "k": 24,
+   "tier": "all",
+   "re": "tebhpu",
+   "sample": "Tebhpu Pna"
+  },
+  {
+   "k": 25,
+   "tier": "all",
+   "re": "jungabg",
+   "sample": "Jungabg Jbbqf"
+  },
+  {
+   "k": 26,
+   "tier": "all",
+   "re": "\\bzrrc\\b",
+   "sample": "Zrrc Zrgre"
+  },
+  {
+   "k": 27,
+   "tier": "all",
+   "re": "uv-?lnu",
+   "sample": "Uv-Lnu Tybirf"
+  },
+  {
+   "k": 28,
+   "tier": "all",
+   "re": "evmmb",
+   "sample": "Evmmb"
+  },
+  {
+   "k": 29,
+   "tier": "all",
+   "re": "ebjys",
+   "sample": "Ebjys"
+  },
+  {
+   "k": 30,
+   "tier": "all",
+   "re": "frfnzr",
+   "sample": "Frfnzr"
+  },
+  {
+   "k": 31,
+   "tier": "all",
+   "re": "senttyr",
+   "sample": "Senttyr"
+  },
+  {
+   "k": 32,
+   "tier": "all",
+   "re": "\\burafba\\b",
+   "sample": "Urafba"
+  },
+  {
+   "k": 33,
+   "tier": "all",
+   "re": "znuan",
+   "sample": "Znuan Znuan"
+  },
+  {
+   "k": 34,
+   "tier": "all",
+   "re": "envaobj pbaarpgvba",
+   "sample": "Envaobj Pbaarpgvba"
+  },
+  {
+   "k": 35,
+   "tier": "all",
+   "re": "ryrpgevp znlurz",
+   "sample": "Ryrpgevp Znlurz"
+  },
+  {
+   "k": 36,
+   "tier": "all",
+   "re": "envaobj fjnzc",
+   "sample": "gur Envaobj Fjnzc"
+  },
+  {
+   "k": 37,
+   "tier": "all",
+   "re": "obbzrenat svfu",
+   "sample": "Obbzrenat Svfu"
+  },
+  {
+   "k": 38,
+   "tier": "all",
+   "re": "cvtf va fcnpr",
+   "sample": "Cvtf va Fcnpr"
+  },
+  {
+   "k": 39,
+   "tier": "all",
+   "re": "fjvar ?gerx",
+   "sample": "Fjvargerx"
+  },
+  {
+   "k": 40,
+   "tier": "all",
+   "re": "fgenatrcbex",
+   "sample": "Fgenatrcbex"
+  },
+  {
+   "k": 41,
+   "tier": "all",
+   "re": "hapyr qrnqyl",
+   "sample": "Hapyr Qrnqyl"
+  },
+  {
+   "k": 42,
+   "tier": "all",
+   "re": "fnz rntyr",
+   "sample": "Fnz Rntyr"
+  },
+  {
+   "k": 43,
+   "tier": "all",
+   "re": "\\bqe\\.? ?grrgu",
+   "sample": "Qe. Grrgu"
+  },
+  {
+   "k": 44,
+   "tier": "all",
+   "re": "orna ohaal",
+   "sample": "Orna Ohaal"
+  },
+  {
+   "k": 45,
+   "tier": "all",
+   "re": "ovt oveq",
+   "sample": "Ovt Oveq"
+  },
+  {
+   "k": 46,
+   "tier": "all",
+   "re": "\\bryzb\\b",
+   "sample": "Ryzb"
+  },
+  {
+   "k": 47,
+   "tier": "all",
+   "re": "pbbxvr zbafgre",
+   "sample": "Pbbxvr Zbafgre"
+  },
+  {
+   "k": 48,
+   "tier": "all",
+   "re": "fahssyrhcnthf",
+   "sample": "Fahssyrhcnthf"
+  },
+  {
+   "k": 49,
+   "tier": "all",
+   "re": "oreg naq reavr",
+   "sample": "Oreg naq Reavr"
+  },
+  {
+   "k": 50,
+   "tier": "all",
+   "re": "ornhertneq",
+   "sample": "Ornhertneq"
+  },
+  {
+   "k": 51,
+   "tier": "all",
+   "re": "zneiva fhttf",
+   "sample": "Zneiva Fhttf"
+  },
+  {
+   "k": 52,
+   "tier": "all",
+   "re": "qbbmre",
+   "sample": "Qbbmre"
+  },
+  {
+   "k": 53,
+   "tier": "prose",
+   "re": "\\bzbv\\b",
+   "sample": "niratr zbv"
+  },
+  {
+   "k": 54,
+   "tier": "prose",
+   "re": "qbu-ub",
+   "sample": "Qbu-ub-ub."
+  },
+  {
+   "k": 55,
+   "tier": "prose",
+   "re": "uv-ub",
+   "sample": "Uv-ub. Gbavtug"
+  },
+  {
+   "k": 56,
+   "tier": "prose",
+   "re": "ln{2,}l",
+   "sample": "Lnnnl."
+  },
+  {
+   "k": 57,
+   "tier": "prose",
+   "re": "urer vf gur arjf",
+   "sample": "Urer vf gur arjf."
+  },
+  {
+   "k": 58,
+   "tier": "prose",
+   "re": "xvffl",
+   "sample": "xvffl xvffl"
+  },
+  {
+   "k": 59,
+   "tier": "prose",
+   "re": "xlh{2,}pxva",
+   "sample": "Xlhhhpxva!"
+  },
+  {
+   "k": 60,
+   "tier": "prose",
+   "re": "fgbb+s+r+at",
+   "sample": "Zher fgbbsssrrat!"
+  },
+  {
+   "k": 61,
+   "tier": "prose",
+   "re": "aø{2,}",
+   "sample": "Aøøø."
+  }
+ ]
+}

@@ -1,0 +1,6 @@
+#pguide,#pres{z-index:23;background:rgba(0,0,0,.6)}
+#pgubody{max-height:none;flex:1 1 auto;min-height:0;overflow-y:auto}
+#pguwin{width:min(700px,calc(100% - 16px))!important;max-width:calc(100% - 16px)!important;display:flex;flex-direction:column}
+#pguwin>h2,#pgucheck,#pgunav{flex:none}
+#preswin{width:min(460px,calc(100% - 16px))!important}
+#pfelt,#psplat{position:fixed;inset:0;pointer-events:none;display:none;z-index:7}

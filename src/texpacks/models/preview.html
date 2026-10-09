@@ -1,0 +1,92 @@
+<!doctype html>
+<html><head><meta charset="utf-8"><title>Hyperreal cast</title>
+<style>html,body{margin:0;height:100%;background:#000;overflow:hidden;font:13px/1.4 system-ui;color:#fff}
+#hud{position:fixed;left:12px;top:10px;text-shadow:0 1px 2px #000;opacity:.9;max-width:60vw}
+#lab{position:fixed;left:0;top:0;pointer-events:none}
+.tag{position:absolute;transform:translate(-50%,-100%);font-weight:600;font-size:12px;text-shadow:0 1px 3px #000;white-space:nowrap}
+</style></head><body>
+<div id="hud">Hyperreal cast — drag orbit · wheel zoom · <b>D</b> day/cave · <b>W</b> walk · <b>A</b> attack · <b>H</b> hurt · <b>T</b> turntable · <b>F</b> fuse · <b>K</b> die · <b>←/→</b> focus · <b>0</b> lineup</div>
+<div id="lab"></div>
+<script src="../../../assets/vendor/three.r128.min.js"></script>   <!-- the bundled r128 (serve the repo root: npm run serve) -->
+<script>window.HR={BUST:Date.now()};</script>
+<script src="rig.js"></script>
+<script>
+/* model files are listed here; missing ones are skipped */
+const ALL=['player','bunkerbrad','lilcreepah','honeybee','zombie','boomer','skeleton','spider','pig','cow','sheep',
+  /* v6.1 Puppet Purgatory (P7): the lib and the id list load first; ?var=hollow passes a variant to every purgatory model.
+     Richer purgatory QA (stage light presets, staged art, contact sheets): tools/qa/preview/pg_hr_preview.html */
+  'pg_0lib','pg_ids','pg_bigfrog','pg_bomber','pg_bigpig','pg_blank','pg_arm','pg_pig','pg_cook','pg_drummer','pg_yeti','pg_labrat','pg_daredevil','pg_comic','pg_frog'];
+const VAR=new URLSearchParams(location.search).get('var')||undefined;
+const ONLY=(new URLSearchParams(location.search).get('only')||'').split(',').filter(Boolean);
+const CAST=ONLY.length?ALL.filter(n=>ONLY.includes(n)||(/^pg_(0lib|ids)$/.test(n)&&ONLY.some(o=>/^pg_/.test(o)))):ALL;
+const R=new THREE.WebGLRenderer({antialias:true,preserveDrawingBuffer:true});
+R.setPixelRatio(Math.min(2,devicePixelRatio));R.setSize(innerWidth,innerHeight);
+R.outputEncoding=THREE.sRGBEncoding;R.toneMapping=THREE.ACESFilmicToneMapping;R.toneMappingExposure=1.0;
+R.shadowMap.enabled=true;R.shadowMap.type=THREE.PCFSoftShadowMap;R.physicallyCorrectLights=true;
+document.body.appendChild(R.domElement);HR.setAnisotropy(R.capabilities.getMaxAnisotropy());
+const S=new THREE.Scene();
+const cam=new THREE.PerspectiveCamera(42,innerWidth/innerHeight,0.05,200);
+/* lighting rigs */
+const sc=document.createElement('canvas');sc.width=4;sc.height=256;const g2=sc.getContext('2d');
+const gr=g2.createLinearGradient(0,0,0,256);gr.addColorStop(0,'#3d6fa8');gr.addColorStop(0.6,'#a9bccb');gr.addColorStop(0.8,'#f2c48d');gr.addColorStop(1,'#f4a35c');g2.fillStyle=gr;g2.fillRect(0,0,4,256);
+const sky=new THREE.CanvasTexture(sc);sky.encoding=THREE.sRGBEncoding;
+const sun=new THREE.DirectionalLight(0xffc98a,4.5);sun.position.set(-8,6,9);sun.castShadow=true;sun.shadow.mapSize.set(4096,4096);
+Object.assign(sun.shadow.camera,{left:-14,right:14,top:10,bottom:-6,near:0.5,far:50});sun.shadow.bias=-0.0003;sun.shadow.normalBias=0.02;S.add(sun);
+const hemi=new THREE.HemisphereLight(0x9cc4ff,0x5a4630,0.8);S.add(hemi);
+const torches=[];for(let i=0;i<4;i++){const l=new THREE.PointLight(0xff9a45,0,14,2);l.position.set(-9+i*6,2.6,2.2);l.castShadow=i<2;S.add(l);torches.push(l);}
+let cave=false;function setCave(on){cave=on;sun.intensity=on?0:4.5;hemi.intensity=on?0.04:0.8;S.background=on?new THREE.Color(0x020203):sky;S.fog=on?new THREE.Fog(0x050404,6,26):new THREE.Fog(0xe8b98a,22,70);R.toneMappingExposure=on?1.5:1.0;}
+setCave(false);
+/* floor: approved block textures */
+const L=new THREE.TextureLoader();
+function blockMat(k,rep){const m=new THREE.MeshStandardMaterial({roughness:1});for(const [p,s] of [['map','basecolor'],['normalMap','normal'],['roughnessMap','roughness']]){const t=L.load('../final/'+k+'_'+s+'.png');t.wrapS=t.wrapT=THREE.RepeatWrapping;t.repeat.set(rep[0],rep[1]);if(s==='basecolor')t.encoding=THREE.sRGBEncoding;m[p]=t;}return m;}
+const floor=new THREE.Mesh(new THREE.BoxGeometry(34,1,12),[blockMat('dirt',[34,1]),blockMat('dirt',[34,1]),blockMat('grass_top',[34,12]),blockMat('dirt',[34,12]),blockMat('grass_side',[34,1]),blockMat('grass_side',[34,1])]);
+floor.position.set(0,-0.5,0);floor.receiveShadow=true;S.add(floor);
+const wall=new THREE.Mesh(new THREE.BoxGeometry(34,6,1),blockMat('cobblestone',[34,6]));wall.position.set(0,3,-4.5);wall.receiveShadow=true;S.add(wall);
+/* cast */
+const actors=[];const lab=document.getElementById('lab');
+function loadScript(src){return new Promise(r=>{const s=document.createElement('script');s.src=src+'?v='+HR.BUST;s.onload=()=>r(true);s.onerror=()=>r(false);document.head.appendChild(s);});}
+(async()=>{
+  for(const n of CAST)await loadScript(n+'.js');
+  const names=CAST.filter(n=>HR.MODELS[n]);
+  names.forEach((n,i)=>{
+    let m;try{m=HR.MODELS[n](/^pg_/.test(n)?VAR:undefined);}catch(e){console.error(n,e);return;}
+    const x=(i-(names.length-1)/2)*2.6;m.root.position.set(x,0,0);S.add(m.root);
+    const tag=document.createElement('div');tag.className='tag';tag.textContent=n;lab.appendChild(tag);
+    actors.push({n,m,x,tag,s:{speed:0,attack:0,hurt:0,dead:0,yaw:0,pitch:0,seed:i+1,fuse:0,cd:0,near:3,accel:new THREE.Vector3(),fired:false,woodHit:false},atkT:0,hurtT:0,fuseOn:false,deadT:-1});
+  });
+  window.ACTORS=actors;
+})();
+/* camera */
+let V={t:[0,1.2,0],r:18,yaw:0,pitch:0.12},focus=-1,walk=false,turn=false;
+function setFocus(i){focus=i;if(i<0){V={t:[0,1.2,0],r:18,yaw:0,pitch:0.12};}else{const a=actors[i];V={t:[a.x,1.0,0],r:4.2,yaw:0.35,pitch:0.08};}}
+window.setFocus=setFocus;window.setCave=setCave;window.setWalk=v=>walk=v;window.setTurn=v=>turn=v;
+window.attack=()=>actors.forEach(a=>{a.atkT=0.8;a.s.fired=true;a.s.woodHit=true;});window.hurt=()=>actors.forEach(a=>a.hurtT=0.5);
+window.fuse=()=>actors.forEach(a=>a.fuseOn=!a.fuseOn);window.die=()=>actors.forEach(a=>{a.deadT=0;});
+addEventListener('keydown',e=>{const k=e.key.toLowerCase();
+  if(k==='d')setCave(!cave);if(k==='w')walk=!walk;if(k==='t')turn=!turn;if(k==='a')attack();if(k==='h')hurt();if(k==='f')fuse();if(k==='k')die();
+  if(k==='0')setFocus(-1);if(e.key==='ArrowRight')setFocus(Math.min(actors.length-1,focus+1));if(e.key==='ArrowLeft')setFocus(Math.max(-1,focus-1));});
+let drag=null;addEventListener('pointerdown',e=>drag=[e.clientX,e.clientY]);addEventListener('pointerup',()=>drag=null);
+addEventListener('pointermove',e=>{if(!drag)return;V.yaw-=(e.clientX-drag[0])*0.005;V.pitch=Math.max(-0.2,Math.min(1.3,V.pitch+(e.clientY-drag[1])*0.005));drag=[e.clientX,e.clientY];});
+addEventListener('wheel',e=>{V.r=Math.max(1.5,Math.min(40,V.r*(1+e.deltaY*0.001)));});
+addEventListener('resize',()=>{cam.aspect=innerWidth/innerHeight;cam.updateProjectionMatrix();R.setSize(innerWidth,innerHeight);});
+const clock=new THREE.Clock();let T=0;const v3=new THREE.Vector3();
+(function loop(){
+  const dt=Math.min(0.05,clock.getDelta());T+=dt;
+  cam.position.set(V.t[0]+V.r*Math.cos(V.pitch)*Math.sin(V.yaw),V.t[1]+V.r*Math.sin(V.pitch),V.t[2]+V.r*Math.cos(V.pitch)*Math.cos(V.yaw));cam.lookAt(V.t[0],V.t[1],V.t[2]);
+  torches.forEach((l,i)=>{l.intensity=cave?(26+8*Math.sin(T*9+i*2.1)+5*HR.noise(T*7,i)):0;});
+  for(const a of actors){
+    a.s.speed+=((walk?1:0)-a.s.speed)*Math.min(1,dt*4);
+    a.atkT=Math.max(0,a.atkT-dt);a.hurtT=Math.max(0,a.hurtT-dt);
+    a.s.attack=a.atkT>0?Math.sin((1-a.atkT/0.8)*Math.PI):0;a.s.hurt=a.hurtT>0?a.hurtT/0.5:0;a.s.cd=a.atkT/0.8;
+    a.s.fuse=HR.clamp(a.s.fuse+(a.fuseOn?dt/1.5:-dt*1.5/1.5),0,1);
+    if(a.deadT>=0){a.deadT+=dt;a.s.dead=HR.clamp(a.deadT/2.5,0,1);if(a.deadT>4.5){a.deadT=-1;a.s.dead=0;}}
+    /* heads track the camera like they've noticed you */
+    const dx=cam.position.x-a.x,dz=cam.position.z;a.s.yaw=HR.clamp(Math.atan2(dx,dz)-(turn?a.m.root.rotation.y:0),-1.1,1.1);a.s.pitch=HR.clamp(-Math.atan2(cam.position.y-1.6,Math.hypot(dx,dz)),-0.6,0.6);
+    if(turn)a.m.root.rotation.y+=dt*0.6;else a.m.root.rotation.y*=0.9;
+    try{a.m.update(dt,T,a.s);}catch(e){if(!a.err){a.err=1;console.error(a.n,e);}}
+    a.s.fired=false;a.s.woodHit=false;
+    v3.set(a.x,2.6,0).project(cam);a.tag.style.left=((v3.x+1)/2*innerWidth)+'px';a.tag.style.top=((1-v3.y)/2*innerHeight)+'px';a.tag.style.display=v3.z<1?'block':'none';
+  }
+  R.render(S,cam);requestAnimationFrame(loop);
+})();
+</script></body></html>

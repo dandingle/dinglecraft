@@ -1,0 +1,7 @@
+# Local brain state: never committed (also covered by the repo root .gitignore)
+node_modules/
+data/
+STOP
+.env
+.env.*
+*.log

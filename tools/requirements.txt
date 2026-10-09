@@ -1,0 +1,8 @@
+# Python is needed ONLY for the art tools (npm run repack, tools/art/**). The build, the tests and the brain are Node only.
+# These exact versions reproduce the committed packed bytes of v6.3 (Pillow 12.3.0 bundles libwebp 1.6.0; Python 3.12).
+# Another Pillow / libwebp makes a valid but DIFFERENT pack: that is a new version (bump first, see docs/RELEASING.md).
+#   python3 -m pip install -r tools/requirements.txt
+Pillow==12.3.0
+numpy==2.4.6
+# only tools/art/texpacks/build_cloth.py + clothlib.py (the cast's garment and hide textures)
+scipy==1.18.0

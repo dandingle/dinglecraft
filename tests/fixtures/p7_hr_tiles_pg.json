@@ -1,0 +1,12 @@
+{
+ "_doc": "P7: the pg_* flag overrides for assets/pack-inputs/hr_tiles.json. Merged by the legacy P7 packer together with the tile install (any pg name in hr_tiles.json is live: it must exist in every gate build's atlas, so it lands only with P2's real tiles). Rotation/mirror come from P6's tiles_pg.json (rot:true -> all + mirror); here only emission, water, the cross sprites and the Eyeball Lamp's glow. Plan 7.2.",
+ "tiles": {
+  "pg_burner_t": {"emissive": 2.0, "emask": "lum", "emin": 0.0, "elo": 0.45, "ehi": 0.85},
+  "pg_hotplate_t": {"emissive": 2.0, "emask": "lum", "emin": 0.0, "elo": 0.45, "ehi": 0.85},
+  "pg_tesla_t": {"emissive": 1.2, "emask": "lum", "elo": 0.6, "ehi": 0.95},
+  "pg_soup": {"scroll": true, "water": true, "rough": 0.5},
+  "pg_scum": {"scroll": true, "water": true, "rough": 0.7},
+  "pg_lamp": {"emissive": 3.0, "emask": "lum", "elo": 0.55, "ehi": 0.9, "up": true},
+  "pg_mirror": {"rough": 0.35}
+ }
+}

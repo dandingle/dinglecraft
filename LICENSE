@@ -1,0 +1,62 @@
+# DINGLECRAFT Licence (source-available, no redistribution)
+
+Copyright (c) 2026 Dan Dingle. All rights reserved, except as set out below.
+
+DINGLECRAFT is source-available, not open source. You may read the code, play the game and tinker with it. You may not
+hand it out.
+
+## 1. What you may do
+
+1. **Play it.** Download, run and play DINGLECRAFT for free.
+2. **Tinker with it.** Read the code, change it and run your changed version, for your own personal, non-commercial use.
+3. **Fork it on GitHub and contribute.** You may fork this repository on GitHub, as GitHub's Terms of Service allow, and
+   send pull requests.
+4. **Make videos and screenshots.** You may record, stream and publish videos, screenshots and other media of yourself
+   playing, and you may monetise them. A credit or a link back is appreciated but not required.
+
+## 2. What you may not do without written permission from Dan Dingle
+
+1. **Redistribute it.** No re-uploading, mirroring, rehosting, repackaging, publishing to app stores or game sites, or
+   sharing copies of the game, its source code or its assets anywhere except through GitHub's fork feature. This applies
+   to modified and unmodified versions alike.
+2. **Sell it or use it commercially.** No selling, sublicensing or bundling of the game, the code or the assets, and no
+   other commercial use. Gameplay videos are the exception set out in section 1.
+3. **Use the assets elsewhere.** The art, models, textures, sounds and music may not be used in other projects.
+4. **Remove this notice.** This licence and the copyright notice must stay with any copy you make under it.
+
+## 3. Third-party components
+
+Components listed in [THIRD_PARTY.md](THIRD_PARTY.md) remain under their own licences. Nothing in this licence limits
+the rights those licences give you.
+
+## 4. Names and trademarks
+
+DINGLECRAFT is an independent fan-made game. NOT AN OFFICIAL MINECRAFT PRODUCT. NOT APPROVED BY OR ASSOCIATED WITH MOJANG
+OR MICROSOFT. Other names and trademarks belong to their owners.
+
+## 5. AI-generated art
+
+Some of the art was generated with AI tools for this project. AI-generated images may not carry copyright of their own in
+every country; where they do not, this licence covers them only as far as the law allows.
+
+## 6. Contributions
+
+If you send a pull request, you confirm that you have the right to submit it. You also grant Dan Dingle a perpetual,
+worldwide, royalty-free, irrevocable licence to use, change and distribute your contribution as part of DINGLECRAFT.
+
+## 7. AI players
+
+The optional AI players use your own Anthropic API key, and you pay for that API usage yourself. Never commit your key.
+
+## 8. No warranty
+
+DINGLECRAFT is provided "as is", without warranty of any kind. Dan Dingle is not liable for any damage arising from its
+use. That includes the AI players spending your API credits and Malgorath eating your world.
+
+## 9. Ending this licence
+
+If you break these terms, your permission to use DINGLECRAFT ends automatically.
+
+---
+
+*Not legal advice: this licence was drafted without a lawyer. Have it reviewed before relying on it for anything serious.*

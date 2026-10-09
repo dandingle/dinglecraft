@@ -1,0 +1,3954 @@
+{
+ "coverage": {
+  "entIds": [
+   "boomer_core",
+   "cocoon",
+   "cowhide",
+   "eye_human",
+   "face_bee",
+   "face_boomer",
+   "face_brad",
+   "face_cow",
+   "face_creepah",
+   "face_dan",
+   "face_pelt",
+   "face_pig",
+   "face_sheep",
+   "face_zombie",
+   "fist_dan",
+   "fist_pg",
+   "foot_bare_side",
+   "foot_bare_top",
+   "foot_top",
+   "hair_shared",
+   "head_bee_side",
+   "head_brad_side",
+   "head_creepah_side",
+   "head_dan_side",
+   "head_pig_side",
+   "head_zombie_side",
+   "honeycomb",
+   "hoodie_creepah",
+   "jog_dan",
+   "jog_zombie",
+   "jumper_bee",
+   "keg_staves",
+   "leggings_bee",
+   "mat_bone",
+   "mat_burlap",
+   "mat_chitin",
+   "mat_jersey",
+   "mat_mossflesh",
+   "mat_rotflesh",
+   "mat_skin",
+   "mat_wool",
+   "pgent_apron",
+   "pgent_arm",
+   "pgent_hand",
+   "pgent_satchel",
+   "pgent_sneakers",
+   "pgface_blank",
+   "pgface_feltdan",
+   "pgface_piglet",
+   "pgmat_cuff",
+   "pgmat_felt",
+   "pgmat_frogfelt",
+   "pgmat_fur",
+   "pgmat_tongue",
+   "pig_flank",
+   "pig_hide",
+   "skin_arm",
+   "skull_front",
+   "sleeve_brad",
+   "stump_section",
+   "tee_dan",
+   "tee_zombie",
+   "trousers_brad",
+   "trousers_creepah"
+  ],
+  "entIdsNotReferenced": [
+   "head_cow_side",
+   "head_sheep_side"
+  ],
+  "modelIdsWithoutTexture": [],
+  "tilesFallbackOnly": [
+   "fl_all",
+   "fl_corn",
+   "fl_edel",
+   "fl_lily",
+   "fl_mari",
+   "fl_slav",
+   "fl_snow",
+   "fl_tulo",
+   "fl_tulr",
+   "portal_a",
+   "portal_n"
+  ],
+  "tilesWithArt": [
+   "bed_s",
+   "bed_t",
+   "bedrock",
+   "brick",
+   "cactus",
+   "cactus_t",
+   "chest_f",
+   "chest_t",
+   "clay",
+   "cobble",
+   "craft_s",
+   "craft_t",
+   "dirt",
+   "door_l",
+   "door_u",
+   "flower_r",
+   "flower_y",
+   "furn_f",
+   "furn_t",
+   "glass",
+   "glowstone",
+   "grass_side",
+   "grass_top",
+   "gravel",
+   "ice",
+   "lava",
+   "leaf_b",
+   "leaf_o",
+   "leaf_s",
+   "log_b",
+   "log_o",
+   "log_s",
+   "log_top",
+   "nbrick",
+   "nethrock",
+   "obsidian",
+   "ore_coal",
+   "ore_dia",
+   "ore_gold",
+   "ore_iron",
+   "pg_armhole_t",
+   "pg_backing",
+   "pg_bench_s",
+   "pg_bench_t",
+   "pg_brace",
+   "pg_burner_s",
+   "pg_burner_t",
+   "pg_can_s",
+   "pg_can_t",
+   "pg_cattail",
+   "pg_counter_b",
+   "pg_counter_s",
+   "pg_counter_t",
+   "pg_deck",
+   "pg_door_s",
+   "pg_door_t",
+   "pg_dough",
+   "pg_eye",
+   "pg_fleece",
+   "pg_foam",
+   "pg_forearm_s",
+   "pg_forearm_x",
+   "pg_hotplate_s",
+   "pg_hotplate_t",
+   "pg_lamp",
+   "pg_lily_s",
+   "pg_lily_t",
+   "pg_lino",
+   "pg_mblack",
+   "pg_mirror",
+   "pg_ore_googly",
+   "pg_ore_knuckle",
+   "pg_ore_sequin",
+   "pg_ore_wire",
+   "pg_phill",
+   "pg_pins_s",
+   "pg_pins_t",
+   "pg_plate",
+   "pg_psky",
+   "pg_ptrunk_s",
+   "pg_ptrunk_t",
+   "pg_rot",
+   "pg_satin",
+   "pg_scum",
+   "pg_seat_s",
+   "pg_seat_t",
+   "pg_shag_s",
+   "pg_shag_t",
+   "pg_sheet",
+   "pg_skin",
+   "pg_sleeve_s",
+   "pg_sleeve_x",
+   "pg_soup",
+   "pg_strunk_s",
+   "pg_strunk_t",
+   "pg_stuffing",
+   "pg_swamp",
+   "pg_tesla_s",
+   "pg_tesla_t",
+   "pg_traveler",
+   "pg_velvet_s",
+   "pg_velvet_t",
+   "plank_b",
+   "plank_o",
+   "plank_s",
+   "sand",
+   "sandstone",
+   "sandstone_t",
+   "sbrick",
+   "snow",
+   "snow_side",
+   "soulsand",
+   "stone",
+   "stonebrick",
+   "tallgrass",
+   "tnt_s",
+   "tnt_t",
+   "torch",
+   "water",
+   "wool"
+  ]
+ },
+ "file": "hr_assets.gen.js",
+ "fileBytes": 34483285,
+ "fileSha1": "71c3e7fbc4cbdb17a66fd0e044ad2628ec886736",
+ "gen": "pack_assets 1.1",
+ "keys": {
+  "e:boomer_core|b": {
+   "bytes": 111879,
+   "px": [
+    512,
+    512
+   ]
+  },
+  "e:boomer_core|n": {
+   "bytes": 153003,
+   "px": [
+    512,
+    512
+   ]
+  },
+  "e:cocoon|b": {
+   "bytes": 118775,
+   "px": [
+    512,
+    512
+   ]
+  },
+  "e:cocoon|n": {
+   "bytes": 103319,
+   "px": [
+    512,
+    512
+   ]
+  },
+  "e:cowhide|b": {
+   "bytes": 88351,
+   "px": [
+    512,
+    512
+   ]
+  },
+  "e:cowhide|n": {
+   "bytes": 70635,
+   "px": [
+    512,
+    512
+   ]
+  },
+  "e:eye_human|b": {
+   "bytes": 102895,
+   "px": [
+    1024,
+    1024
+   ]
+  },
+  "e:eye_human|n": {
+   "bytes": 31071,
+   "px": [
+    512,
+    512
+   ]
+  },
+  "e:face_bee|b": {
+   "bytes": 190271,
+   "px": [
+    1024,
+    1024
+   ]
+  },
+  "e:face_bee|n": {
+   "bytes": 39667,
+   "px": [
+    512,
+    512
+   ]
+  },
+  "e:face_boomer|b": {
+   "bytes": 411999,
+   "px": [
+    1024,
+    1024
+   ]
+  },
+  "e:face_boomer|n": {
+   "bytes": 61127,
+   "px": [
+    512,
+    512
+   ]
+  },
+  "e:face_brad|b": {
+   "bytes": 163123,
+   "px": [
+    1024,
+    1024
+   ]
+  },
+  "e:face_brad|n": {
+   "bytes": 51631,
+   "px": [
+    512,
+    512
+   ]
+  },
+  "e:face_cow|b": {
+   "bytes": 189851,
+   "px": [
+    1024,
+    1024
+   ]
+  },
+  "e:face_cow|n": {
+   "bytes": 40079,
+   "px": [
+    512,
+    512
+   ]
+  },
+  "e:face_creepah|b": {
+   "bytes": 205707,
+   "px": [
+    1024,
+    1024
+   ]
+  },
+  "e:face_creepah|n": {
+   "bytes": 51883,
+   "px": [
+    512,
+    512
+   ]
+  },
+  "e:face_dan|b": {
+   "bytes": 280239,
+   "px": [
+    1024,
+    1024
+   ]
+  },
+  "e:face_dan|n": {
+   "bytes": 83487,
+   "px": [
+    512,
+    512
+   ]
+  },
+  "e:face_pelt|b": {
+   "bytes": 401819,
+   "px": [
+    1024,
+    1024
+   ]
+  },
+  "e:face_pelt|n": {
+   "bytes": 187675,
+   "px": [
+    512,
+    512
+   ]
+  },
+  "e:face_pig|b": {
+   "bytes": 303859,
+   "px": [
+    1024,
+    1024
+   ]
+  },
+  "e:face_pig|n": {
+   "bytes": 68743,
+   "px": [
+    512,
+    512
+   ]
+  },
+  "e:face_sheep|b": {
+   "bytes": 372783,
+   "px": [
+    1024,
+    1024
+   ]
+  },
+  "e:face_sheep|n": {
+   "bytes": 83415,
+   "px": [
+    512,
+    512
+   ]
+  },
+  "e:face_zombie|b": {
+   "bytes": 260183,
+   "px": [
+    1024,
+    1024
+   ]
+  },
+  "e:face_zombie|n": {
+   "bytes": 82399,
+   "px": [
+    512,
+    512
+   ]
+  },
+  "e:fist_dan|b": {
+   "bytes": 179751,
+   "px": [
+    1024,
+    1024
+   ]
+  },
+  "e:fist_dan|n": {
+   "bytes": 55847,
+   "px": [
+    512,
+    512
+   ]
+  },
+  "e:fist_pg|b": {
+   "bytes": 93855,
+   "px": [
+    512,
+    512
+   ]
+  },
+  "e:fist_pg|n": {
+   "bytes": 57627,
+   "px": [
+    512,
+    512
+   ]
+  },
+  "e:foot_bare_side|b": {
+   "bytes": 22879,
+   "px": [
+    512,
+    256
+   ]
+  },
+  "e:foot_bare_side|n": {
+   "bytes": 13935,
+   "px": [
+    512,
+    256
+   ]
+  },
+  "e:foot_bare_top|b": {
+   "bytes": 61663,
+   "px": [
+    512,
+    512
+   ]
+  },
+  "e:foot_bare_top|n": {
+   "bytes": 50183,
+   "px": [
+    512,
+    512
+   ]
+  },
+  "e:foot_top|b": {
+   "bytes": 72231,
+   "px": [
+    512,
+    512
+   ]
+  },
+  "e:foot_top|n": {
+   "bytes": 65035,
+   "px": [
+    512,
+    512
+   ]
+  },
+  "e:hair_shared|b": {
+   "bytes": 86515,
+   "px": [
+    512,
+    512
+   ]
+  },
+  "e:hair_shared|n": {
+   "bytes": 73535,
+   "px": [
+    512,
+    512
+   ]
+  },
+  "e:head_bee_side|b": {
+   "bytes": 89219,
+   "px": [
+    512,
+    512
+   ]
+  },
+  "e:head_bee_side|n": {
+   "bytes": 74427,
+   "px": [
+    512,
+    512
+   ]
+  },
+  "e:head_brad_side|b": {
+   "bytes": 88231,
+   "px": [
+    512,
+    512
+   ]
+  },
+  "e:head_brad_side|n": {
+   "bytes": 71575,
+   "px": [
+    512,
+    512
+   ]
+  },
+  "e:head_creepah_side|b": {
+   "bytes": 79551,
+   "px": [
+    512,
+    512
+   ]
+  },
+  "e:head_creepah_side|n": {
+   "bytes": 61439,
+   "px": [
+    512,
+    512
+   ]
+  },
+  "e:head_dan_side|b": {
+   "bytes": 103983,
+   "px": [
+    512,
+    512
+   ]
+  },
+  "e:head_dan_side|n": {
+   "bytes": 85735,
+   "px": [
+    512,
+    512
+   ]
+  },
+  "e:head_pig_side|b": {
+   "bytes": 81955,
+   "px": [
+    512,
+    512
+   ]
+  },
+  "e:head_pig_side|n": {
+   "bytes": 68487,
+   "px": [
+    512,
+    512
+   ]
+  },
+  "e:head_zombie_side|b": {
+   "bytes": 91927,
+   "px": [
+    512,
+    512
+   ]
+  },
+  "e:head_zombie_side|n": {
+   "bytes": 80635,
+   "px": [
+    512,
+    512
+   ]
+  },
+  "e:honeycomb|b": {
+   "bytes": 117943,
+   "px": [
+    512,
+    512
+   ]
+  },
+  "e:honeycomb|n": {
+   "bytes": 98919,
+   "px": [
+    512,
+    512
+   ]
+  },
+  "e:hoodie_creepah|b": {
+   "bytes": 22427,
+   "px": [
+    512,
+    512
+   ]
+  },
+  "e:hoodie_creepah|n": {
+   "bytes": 10347,
+   "px": [
+    512,
+    512
+   ]
+  },
+  "e:jog_dan|b": {
+   "bytes": 48643,
+   "px": [
+    512,
+    512
+   ]
+  },
+  "e:jog_dan|n": {
+   "bytes": 48327,
+   "px": [
+    512,
+    512
+   ]
+  },
+  "e:jog_zombie|b": {
+   "bytes": 84519,
+   "px": [
+    512,
+    512
+   ]
+  },
+  "e:jog_zombie|n": {
+   "bytes": 43059,
+   "px": [
+    512,
+    512
+   ]
+  },
+  "e:jumper_bee|b": {
+   "bytes": 133499,
+   "px": [
+    512,
+    512
+   ]
+  },
+  "e:jumper_bee|n": {
+   "bytes": 190819,
+   "px": [
+    512,
+    512
+   ]
+  },
+  "e:keg_staves|b": {
+   "bytes": 112759,
+   "px": [
+    512,
+    512
+   ]
+  },
+  "e:keg_staves|n": {
+   "bytes": 58679,
+   "px": [
+    512,
+    512
+   ]
+  },
+  "e:keg_staves|r": {
+   "bytes": 5087,
+   "px": [
+    256,
+    256
+   ]
+  },
+  "e:leggings_bee|b": {
+   "bytes": 88223,
+   "px": [
+    512,
+    512
+   ]
+  },
+  "e:leggings_bee|n": {
+   "bytes": 48331,
+   "px": [
+    512,
+    512
+   ]
+  },
+  "e:mat_bone|b": {
+   "bytes": 45119,
+   "px": [
+    512,
+    512
+   ]
+  },
+  "e:mat_bone|n": {
+   "bytes": 32815,
+   "px": [
+    512,
+    512
+   ]
+  },
+  "e:mat_bone|r": {
+   "bytes": 5523,
+   "px": [
+    256,
+    256
+   ]
+  },
+  "e:mat_burlap|b": {
+   "bytes": 148911,
+   "px": [
+    512,
+    512
+   ]
+  },
+  "e:mat_burlap|n": {
+   "bytes": 169015,
+   "px": [
+    512,
+    512
+   ]
+  },
+  "e:mat_burlap|r": {
+   "bytes": 28215,
+   "px": [
+    256,
+    256
+   ]
+  },
+  "e:mat_chitin|b": {
+   "bytes": 116827,
+   "px": [
+    512,
+    512
+   ]
+  },
+  "e:mat_chitin|n": {
+   "bytes": 116751,
+   "px": [
+    512,
+    512
+   ]
+  },
+  "e:mat_jersey|b": {
+   "bytes": 123375,
+   "px": [
+    512,
+    512
+   ]
+  },
+  "e:mat_jersey|n": {
+   "bytes": 88159,
+   "px": [
+    512,
+    512
+   ]
+  },
+  "e:mat_jersey|r": {
+   "bytes": 2283,
+   "px": [
+    256,
+    256
+   ]
+  },
+  "e:mat_mossflesh|b": {
+   "bytes": 123695,
+   "px": [
+    512,
+    512
+   ]
+  },
+  "e:mat_mossflesh|n": {
+   "bytes": 187119,
+   "px": [
+    512,
+    512
+   ]
+  },
+  "e:mat_mossflesh|r": {
+   "bytes": 21743,
+   "px": [
+    256,
+    256
+   ]
+  },
+  "e:mat_rotflesh|b": {
+   "bytes": 29135,
+   "px": [
+    512,
+    512
+   ]
+  },
+  "e:mat_rotflesh|n": {
+   "bytes": 82959,
+   "px": [
+    512,
+    512
+   ]
+  },
+  "e:mat_rotflesh|r": {
+   "bytes": 14367,
+   "px": [
+    256,
+    256
+   ]
+  },
+  "e:mat_skin|b": {
+   "bytes": 9039,
+   "px": [
+    512,
+    512
+   ]
+  },
+  "e:mat_skin|n": {
+   "bytes": 26231,
+   "px": [
+    512,
+    512
+   ]
+  },
+  "e:mat_skin|r": {
+   "bytes": 759,
+   "px": [
+    256,
+    256
+   ]
+  },
+  "e:mat_wool|b": {
+   "bytes": 90047,
+   "px": [
+    512,
+    512
+   ]
+  },
+  "e:mat_wool|n": {
+   "bytes": 77899,
+   "px": [
+    512,
+    512
+   ]
+  },
+  "e:pgent_apron|b": {
+   "bytes": 55727,
+   "px": [
+    512,
+    512
+   ]
+  },
+  "e:pgent_apron|n": {
+   "bytes": 38899,
+   "px": [
+    512,
+    512
+   ]
+  },
+  "e:pgent_arm|b": {
+   "bytes": 104159,
+   "px": [
+    512,
+    512
+   ]
+  },
+  "e:pgent_arm|n": {
+   "bytes": 85143,
+   "px": [
+    512,
+    512
+   ]
+  },
+  "e:pgent_hand|b": {
+   "bytes": 35503,
+   "px": [
+    512,
+    512
+   ]
+  },
+  "e:pgent_hand|n": {
+   "bytes": 21459,
+   "px": [
+    512,
+    512
+   ]
+  },
+  "e:pgent_satchel|b": {
+   "bytes": 88759,
+   "px": [
+    512,
+    512
+   ]
+  },
+  "e:pgent_satchel|n": {
+   "bytes": 53051,
+   "px": [
+    512,
+    512
+   ]
+  },
+  "e:pgent_sneakers|b": {
+   "bytes": 106935,
+   "px": [
+    512,
+    512
+   ]
+  },
+  "e:pgent_sneakers|n": {
+   "bytes": 103687,
+   "px": [
+    512,
+    512
+   ]
+  },
+  "e:pgface_blank|b": {
+   "bytes": 57987,
+   "px": [
+    512,
+    512
+   ]
+  },
+  "e:pgface_blank|n": {
+   "bytes": 43943,
+   "px": [
+    512,
+    512
+   ]
+  },
+  "e:pgface_feltdan|b": {
+   "bytes": 96063,
+   "px": [
+    512,
+    512
+   ]
+  },
+  "e:pgface_feltdan|n": {
+   "bytes": 75103,
+   "px": [
+    512,
+    512
+   ]
+  },
+  "e:pgface_piglet|b": {
+   "bytes": 77647,
+   "px": [
+    512,
+    512
+   ]
+  },
+  "e:pgface_piglet|n": {
+   "bytes": 64183,
+   "px": [
+    512,
+    512
+   ]
+  },
+  "e:pgmat_cuff|b": {
+   "bytes": 10911,
+   "px": [
+    512,
+    512
+   ]
+  },
+  "e:pgmat_cuff|n": {
+   "bytes": 59215,
+   "px": [
+    512,
+    512
+   ]
+  },
+  "e:pgmat_cuff|r": {
+   "bytes": 1059,
+   "px": [
+    256,
+    256
+   ]
+  },
+  "e:pgmat_felt|b": {
+   "bytes": 62075,
+   "px": [
+    512,
+    512
+   ]
+  },
+  "e:pgmat_felt|n": {
+   "bytes": 73219,
+   "px": [
+    512,
+    512
+   ]
+  },
+  "e:pgmat_felt|r": {
+   "bytes": 903,
+   "px": [
+    256,
+    256
+   ]
+  },
+  "e:pgmat_frogfelt|b": {
+   "bytes": 58871,
+   "px": [
+    512,
+    512
+   ]
+  },
+  "e:pgmat_frogfelt|n": {
+   "bytes": 73219,
+   "px": [
+    512,
+    512
+   ]
+  },
+  "e:pgmat_frogfelt|r": {
+   "bytes": 903,
+   "px": [
+    256,
+    256
+   ]
+  },
+  "e:pgmat_fur|b": {
+   "bytes": 87707,
+   "px": [
+    512,
+    512
+   ]
+  },
+  "e:pgmat_fur|n": {
+   "bytes": 156851,
+   "px": [
+    512,
+    512
+   ]
+  },
+  "e:pgmat_fur|r": {
+   "bytes": 24995,
+   "px": [
+    256,
+    256
+   ]
+  },
+  "e:pgmat_tongue|b": {
+   "bytes": 22175,
+   "px": [
+    512,
+    512
+   ]
+  },
+  "e:pgmat_tongue|n": {
+   "bytes": 75455,
+   "px": [
+    512,
+    512
+   ]
+  },
+  "e:pgmat_tongue|r": {
+   "bytes": 5507,
+   "px": [
+    256,
+    256
+   ]
+  },
+  "e:pig_flank|b": {
+   "bytes": 57771,
+   "px": [
+    512,
+    256
+   ]
+  },
+  "e:pig_flank|n": {
+   "bytes": 47191,
+   "px": [
+    512,
+    256
+   ]
+  },
+  "e:pig_hide|b": {
+   "bytes": 125727,
+   "px": [
+    512,
+    512
+   ]
+  },
+  "e:pig_hide|n": {
+   "bytes": 103419,
+   "px": [
+    512,
+    512
+   ]
+  },
+  "e:skin_arm|b": {
+   "bytes": 30203,
+   "px": [
+    512,
+    512
+   ]
+  },
+  "e:skin_arm|n": {
+   "bytes": 66319,
+   "px": [
+    512,
+    512
+   ]
+  },
+  "e:skull_front|b": {
+   "bytes": 286175,
+   "px": [
+    1024,
+    1024
+   ]
+  },
+  "e:skull_front|n": {
+   "bytes": 70519,
+   "px": [
+    512,
+    512
+   ]
+  },
+  "e:sleeve_brad|b": {
+   "bytes": 50307,
+   "px": [
+    512,
+    512
+   ]
+  },
+  "e:sleeve_brad|n": {
+   "bytes": 30511,
+   "px": [
+    512,
+    512
+   ]
+  },
+  "e:stump_section|b": {
+   "bytes": 128691,
+   "px": [
+    512,
+    512
+   ]
+  },
+  "e:stump_section|n": {
+   "bytes": 113263,
+   "px": [
+    512,
+    512
+   ]
+  },
+  "e:tee_dan|b": {
+   "bytes": 77723,
+   "px": [
+    512,
+    512
+   ]
+  },
+  "e:tee_dan|n": {
+   "bytes": 33463,
+   "px": [
+    512,
+    512
+   ]
+  },
+  "e:tee_zombie|b": {
+   "bytes": 63479,
+   "px": [
+    512,
+    512
+   ]
+  },
+  "e:tee_zombie|n": {
+   "bytes": 38191,
+   "px": [
+    512,
+    512
+   ]
+  },
+  "e:trousers_brad|b": {
+   "bytes": 50239,
+   "px": [
+    512,
+    512
+   ]
+  },
+  "e:trousers_brad|n": {
+   "bytes": 153555,
+   "px": [
+    512,
+    512
+   ]
+  },
+  "e:trousers_creepah|b": {
+   "bytes": 39575,
+   "px": [
+    512,
+    512
+   ]
+  },
+  "e:trousers_creepah|n": {
+   "bytes": 18451,
+   "px": [
+    512,
+    512
+   ]
+  },
+  "t:bed_s|c": {
+   "bytes": 88031,
+   "px": [
+    512,
+    512
+   ]
+  },
+  "t:bed_s|n": {
+   "bytes": 119215,
+   "px": [
+    512,
+    1536
+   ]
+  },
+  "t:bed_t|c": {
+   "bytes": 56143,
+   "px": [
+    512,
+    512
+   ]
+  },
+  "t:bed_t|n": {
+   "bytes": 69159,
+   "px": [
+    512,
+    1536
+   ]
+  },
+  "t:bedrock|c": {
+   "bytes": 101855,
+   "px": [
+    512,
+    512
+   ]
+  },
+  "t:bedrock|n": {
+   "bytes": 349859,
+   "px": [
+    512,
+    1536
+   ]
+  },
+  "t:brick|c": {
+   "bytes": 109235,
+   "px": [
+    512,
+    512
+   ]
+  },
+  "t:brick|n": {
+   "bytes": 154131,
+   "px": [
+    512,
+    1536
+   ]
+  },
+  "t:cactus_t|c": {
+   "bytes": 78267,
+   "px": [
+    512,
+    512
+   ]
+  },
+  "t:cactus_t|n": {
+   "bytes": 136463,
+   "px": [
+    512,
+    1536
+   ]
+  },
+  "t:cactus|c": {
+   "bytes": 59239,
+   "px": [
+    512,
+    512
+   ]
+  },
+  "t:cactus|n": {
+   "bytes": 110731,
+   "px": [
+    512,
+    1536
+   ]
+  },
+  "t:chest_f|c": {
+   "bytes": 87543,
+   "px": [
+    512,
+    512
+   ]
+  },
+  "t:chest_f|n": {
+   "bytes": 127043,
+   "px": [
+    512,
+    1536
+   ]
+  },
+  "t:chest_t|c": {
+   "bytes": 81519,
+   "px": [
+    512,
+    512
+   ]
+  },
+  "t:chest_t|n": {
+   "bytes": 114823,
+   "px": [
+    512,
+    1536
+   ]
+  },
+  "t:clay|c": {
+   "bytes": 95279,
+   "px": [
+    512,
+    512
+   ]
+  },
+  "t:clay|n": {
+   "bytes": 248983,
+   "px": [
+    512,
+    1536
+   ]
+  },
+  "t:cobble|c": {
+   "bytes": 134243,
+   "px": [
+    512,
+    512
+   ]
+  },
+  "t:cobble|n": {
+   "bytes": 316479,
+   "px": [
+    512,
+    1536
+   ]
+  },
+  "t:craft_s|c": {
+   "bytes": 100319,
+   "px": [
+    512,
+    512
+   ]
+  },
+  "t:craft_s|n": {
+   "bytes": 148327,
+   "px": [
+    512,
+    1536
+   ]
+  },
+  "t:craft_t|c": {
+   "bytes": 98007,
+   "px": [
+    512,
+    512
+   ]
+  },
+  "t:craft_t|n": {
+   "bytes": 192799,
+   "px": [
+    512,
+    1536
+   ]
+  },
+  "t:dirt|c": {
+   "bytes": 133191,
+   "px": [
+    512,
+    512
+   ]
+  },
+  "t:dirt|n": {
+   "bytes": 479999,
+   "px": [
+    512,
+    1536
+   ]
+  },
+  "t:door_l|c": {
+   "bytes": 89039,
+   "px": [
+    512,
+    512
+   ]
+  },
+  "t:door_l|n": {
+   "bytes": 128607,
+   "px": [
+    512,
+    1536
+   ]
+  },
+  "t:door_u|c": {
+   "bytes": 75515,
+   "px": [
+    512,
+    512
+   ]
+  },
+  "t:door_u|m": {
+   "bytes": 343,
+   "px": [
+    512,
+    512
+   ]
+  },
+  "t:door_u|n": {
+   "bytes": 112399,
+   "px": [
+    512,
+    1536
+   ]
+  },
+  "t:flower_r|c": {
+   "bytes": 25063,
+   "px": [
+    512,
+    512
+   ]
+  },
+  "t:flower_r|m": {
+   "bytes": 20263,
+   "px": [
+    512,
+    512
+   ]
+  },
+  "t:flower_r|n": {
+   "bytes": 2015,
+   "px": [
+    512,
+    1536
+   ]
+  },
+  "t:flower_y|c": {
+   "bytes": 26223,
+   "px": [
+    512,
+    512
+   ]
+  },
+  "t:flower_y|m": {
+   "bytes": 29595,
+   "px": [
+    512,
+    512
+   ]
+  },
+  "t:flower_y|n": {
+   "bytes": 2015,
+   "px": [
+    512,
+    1536
+   ]
+  },
+  "t:furn_f|c": {
+   "bytes": 94755,
+   "px": [
+    512,
+    512
+   ]
+  },
+  "t:furn_f|n": {
+   "bytes": 150603,
+   "px": [
+    512,
+    1536
+   ]
+  },
+  "t:furn_t|c": {
+   "bytes": 113687,
+   "px": [
+    512,
+    512
+   ]
+  },
+  "t:furn_t|n": {
+   "bytes": 224911,
+   "px": [
+    512,
+    1536
+   ]
+  },
+  "t:glass|c": {
+   "bytes": 21435,
+   "px": [
+    512,
+    512
+   ]
+  },
+  "t:glass|m": {
+   "bytes": 100907,
+   "px": [
+    512,
+    512
+   ]
+  },
+  "t:glass|n": {
+   "bytes": 65143,
+   "px": [
+    512,
+    1536
+   ]
+  },
+  "t:glowstone|c": {
+   "bytes": 99451,
+   "px": [
+    512,
+    512
+   ]
+  },
+  "t:glowstone|m": {
+   "bytes": 256023,
+   "px": [
+    512,
+    512
+   ]
+  },
+  "t:glowstone|n": {
+   "bytes": 257447,
+   "px": [
+    512,
+    1536
+   ]
+  },
+  "t:grass_side|c": {
+   "bytes": 139571,
+   "px": [
+    512,
+    512
+   ]
+  },
+  "t:grass_side|n": {
+   "bytes": 488415,
+   "px": [
+    512,
+    1536
+   ]
+  },
+  "t:grass_top|c": {
+   "bytes": 178167,
+   "px": [
+    512,
+    512
+   ]
+  },
+  "t:grass_top|n": {
+   "bytes": 468007,
+   "px": [
+    512,
+    1536
+   ]
+  },
+  "t:gravel|c": {
+   "bytes": 129951,
+   "px": [
+    512,
+    512
+   ]
+  },
+  "t:gravel|n": {
+   "bytes": 278203,
+   "px": [
+    512,
+    1536
+   ]
+  },
+  "t:ice|c": {
+   "bytes": 85459,
+   "px": [
+    512,
+    512
+   ]
+  },
+  "t:ice|m": {
+   "bytes": 203031,
+   "px": [
+    512,
+    512
+   ]
+  },
+  "t:ice|n": {
+   "bytes": 56327,
+   "px": [
+    512,
+    1536
+   ]
+  },
+  "t:lava|c": {
+   "bytes": 132671,
+   "px": [
+    512,
+    512
+   ]
+  },
+  "t:lava|m": {
+   "bytes": 257951,
+   "px": [
+    512,
+    512
+   ]
+  },
+  "t:lava|n": {
+   "bytes": 258023,
+   "px": [
+    512,
+    1536
+   ]
+  },
+  "t:leaf_b|c": {
+   "bytes": 97847,
+   "px": [
+    512,
+    512
+   ]
+  },
+  "t:leaf_b|m": {
+   "bytes": 67463,
+   "px": [
+    512,
+    512
+   ]
+  },
+  "t:leaf_b|n": {
+   "bytes": 200931,
+   "px": [
+    512,
+    1536
+   ]
+  },
+  "t:leaf_o|c": {
+   "bytes": 77175,
+   "px": [
+    512,
+    512
+   ]
+  },
+  "t:leaf_o|m": {
+   "bytes": 47959,
+   "px": [
+    512,
+    512
+   ]
+  },
+  "t:leaf_o|n": {
+   "bytes": 156543,
+   "px": [
+    512,
+    1536
+   ]
+  },
+  "t:leaf_s|c": {
+   "bytes": 122607,
+   "px": [
+    512,
+    512
+   ]
+  },
+  "t:leaf_s|m": {
+   "bytes": 93975,
+   "px": [
+    512,
+    512
+   ]
+  },
+  "t:leaf_s|n": {
+   "bytes": 298243,
+   "px": [
+    512,
+    1536
+   ]
+  },
+  "t:log_b|c": {
+   "bytes": 150651,
+   "px": [
+    512,
+    512
+   ]
+  },
+  "t:log_b|n": {
+   "bytes": 415219,
+   "px": [
+    512,
+    1536
+   ]
+  },
+  "t:log_o|c": {
+   "bytes": 144215,
+   "px": [
+    512,
+    512
+   ]
+  },
+  "t:log_o|n": {
+   "bytes": 445803,
+   "px": [
+    512,
+    1536
+   ]
+  },
+  "t:log_s|c": {
+   "bytes": 148183,
+   "px": [
+    512,
+    512
+   ]
+  },
+  "t:log_s|n": {
+   "bytes": 332759,
+   "px": [
+    512,
+    1536
+   ]
+  },
+  "t:log_top|c": {
+   "bytes": 140935,
+   "px": [
+    512,
+    512
+   ]
+  },
+  "t:log_top|n": {
+   "bytes": 291639,
+   "px": [
+    512,
+    1536
+   ]
+  },
+  "t:nbrick|c": {
+   "bytes": 36359,
+   "px": [
+    512,
+    512
+   ]
+  },
+  "t:nbrick|n": {
+   "bytes": 279463,
+   "px": [
+    512,
+    1536
+   ]
+  },
+  "t:nethrock|c": {
+   "bytes": 125335,
+   "px": [
+    512,
+    512
+   ]
+  },
+  "t:nethrock|n": {
+   "bytes": 374231,
+   "px": [
+    512,
+    1536
+   ]
+  },
+  "t:obsidian|c": {
+   "bytes": 83415,
+   "px": [
+    512,
+    512
+   ]
+  },
+  "t:obsidian|n": {
+   "bytes": 203151,
+   "px": [
+    512,
+    1536
+   ]
+  },
+  "t:ore_coal|c": {
+   "bytes": 116687,
+   "px": [
+    512,
+    512
+   ]
+  },
+  "t:ore_coal|n": {
+   "bytes": 223455,
+   "px": [
+    512,
+    1536
+   ]
+  },
+  "t:ore_dia|c": {
+   "bytes": 120431,
+   "px": [
+    512,
+    512
+   ]
+  },
+  "t:ore_dia|n": {
+   "bytes": 222027,
+   "px": [
+    512,
+    1536
+   ]
+  },
+  "t:ore_gold|c": {
+   "bytes": 115507,
+   "px": [
+    512,
+    512
+   ]
+  },
+  "t:ore_gold|n": {
+   "bytes": 209091,
+   "px": [
+    512,
+    1536
+   ]
+  },
+  "t:ore_iron|c": {
+   "bytes": 125971,
+   "px": [
+    512,
+    512
+   ]
+  },
+  "t:ore_iron|n": {
+   "bytes": 229479,
+   "px": [
+    512,
+    1536
+   ]
+  },
+  "t:pg_armhole_t|c": {
+   "bytes": 12283,
+   "px": [
+    256,
+    256
+   ]
+  },
+  "t:pg_armhole_t|n": {
+   "bytes": 27251,
+   "px": [
+    256,
+    768
+   ]
+  },
+  "t:pg_backing|c": {
+   "bytes": 11327,
+   "px": [
+    256,
+    256
+   ]
+  },
+  "t:pg_backing|n": {
+   "bytes": 35999,
+   "px": [
+    256,
+    768
+   ]
+  },
+  "t:pg_bench_s|c": {
+   "bytes": 14655,
+   "px": [
+    256,
+    256
+   ]
+  },
+  "t:pg_bench_s|n": {
+   "bytes": 28495,
+   "px": [
+    256,
+    768
+   ]
+  },
+  "t:pg_bench_t|c": {
+   "bytes": 11507,
+   "px": [
+    256,
+    256
+   ]
+  },
+  "t:pg_bench_t|n": {
+   "bytes": 22627,
+   "px": [
+    256,
+    768
+   ]
+  },
+  "t:pg_brace|c": {
+   "bytes": 8319,
+   "px": [
+    256,
+    256
+   ]
+  },
+  "t:pg_brace|n": {
+   "bytes": 18783,
+   "px": [
+    256,
+    768
+   ]
+  },
+  "t:pg_burner_s|c": {
+   "bytes": 4087,
+   "px": [
+    256,
+    256
+   ]
+  },
+  "t:pg_burner_s|n": {
+   "bytes": 6671,
+   "px": [
+    256,
+    768
+   ]
+  },
+  "t:pg_burner_t|c": {
+   "bytes": 19815,
+   "px": [
+    256,
+    256
+   ]
+  },
+  "t:pg_burner_t|m": {
+   "bytes": 9599,
+   "px": [
+    256,
+    256
+   ]
+  },
+  "t:pg_burner_t|n": {
+   "bytes": 36967,
+   "px": [
+    256,
+    768
+   ]
+  },
+  "t:pg_can_s|c": {
+   "bytes": 17255,
+   "px": [
+    256,
+    256
+   ]
+  },
+  "t:pg_can_s|n": {
+   "bytes": 36611,
+   "px": [
+    256,
+    768
+   ]
+  },
+  "t:pg_can_t|c": {
+   "bytes": 26439,
+   "px": [
+    256,
+    256
+   ]
+  },
+  "t:pg_can_t|n": {
+   "bytes": 53723,
+   "px": [
+    256,
+    768
+   ]
+  },
+  "t:pg_cattail|c": {
+   "bytes": 3959,
+   "px": [
+    256,
+    256
+   ]
+  },
+  "t:pg_cattail|m": {
+   "bytes": 5627,
+   "px": [
+    256,
+    256
+   ]
+  },
+  "t:pg_cattail|n": {
+   "bytes": 4223,
+   "px": [
+    256,
+    768
+   ]
+  },
+  "t:pg_counter_b|c": {
+   "bytes": 16023,
+   "px": [
+    256,
+    256
+   ]
+  },
+  "t:pg_counter_b|n": {
+   "bytes": 13799,
+   "px": [
+    256,
+    768
+   ]
+  },
+  "t:pg_counter_s|c": {
+   "bytes": 2343,
+   "px": [
+    256,
+    256
+   ]
+  },
+  "t:pg_counter_s|n": {
+   "bytes": 3707,
+   "px": [
+    256,
+    768
+   ]
+  },
+  "t:pg_counter_t|c": {
+   "bytes": 10023,
+   "px": [
+    256,
+    256
+   ]
+  },
+  "t:pg_counter_t|n": {
+   "bytes": 1399,
+   "px": [
+    256,
+    768
+   ]
+  },
+  "t:pg_deck|c": {
+   "bytes": 9647,
+   "px": [
+    256,
+    256
+   ]
+  },
+  "t:pg_deck|n": {
+   "bytes": 10171,
+   "px": [
+    256,
+    768
+   ]
+  },
+  "t:pg_door_s|c": {
+   "bytes": 11459,
+   "px": [
+    256,
+    256
+   ]
+  },
+  "t:pg_door_s|n": {
+   "bytes": 21615,
+   "px": [
+    256,
+    768
+   ]
+  },
+  "t:pg_door_t|c": {
+   "bytes": 2971,
+   "px": [
+    256,
+    256
+   ]
+  },
+  "t:pg_door_t|n": {
+   "bytes": 7195,
+   "px": [
+    256,
+    768
+   ]
+  },
+  "t:pg_dough|c": {
+   "bytes": 9995,
+   "px": [
+    256,
+    256
+   ]
+  },
+  "t:pg_dough|n": {
+   "bytes": 32927,
+   "px": [
+    256,
+    768
+   ]
+  },
+  "t:pg_eye|c": {
+   "bytes": 9047,
+   "px": [
+    256,
+    256
+   ]
+  },
+  "t:pg_eye|n": {
+   "bytes": 8103,
+   "px": [
+    256,
+    768
+   ]
+  },
+  "t:pg_fleece|c": {
+   "bytes": 24071,
+   "px": [
+    256,
+    256
+   ]
+  },
+  "t:pg_fleece|m": {
+   "bytes": 6143,
+   "px": [
+    256,
+    256
+   ]
+  },
+  "t:pg_fleece|n": {
+   "bytes": 82535,
+   "px": [
+    256,
+    768
+   ]
+  },
+  "t:pg_foam|c": {
+   "bytes": 29387,
+   "px": [
+    256,
+    256
+   ]
+  },
+  "t:pg_foam|n": {
+   "bytes": 42751,
+   "px": [
+    256,
+    768
+   ]
+  },
+  "t:pg_forearm_s|c": {
+   "bytes": 8519,
+   "px": [
+    256,
+    256
+   ]
+  },
+  "t:pg_forearm_s|n": {
+   "bytes": 7915,
+   "px": [
+    256,
+    768
+   ]
+  },
+  "t:pg_forearm_x|c": {
+   "bytes": 25959,
+   "px": [
+    256,
+    256
+   ]
+  },
+  "t:pg_forearm_x|n": {
+   "bytes": 66819,
+   "px": [
+    256,
+    768
+   ]
+  },
+  "t:pg_hotplate_s|c": {
+   "bytes": 12583,
+   "px": [
+    256,
+    256
+   ]
+  },
+  "t:pg_hotplate_s|n": {
+   "bytes": 28607,
+   "px": [
+    256,
+    768
+   ]
+  },
+  "t:pg_hotplate_t|c": {
+   "bytes": 19815,
+   "px": [
+    256,
+    256
+   ]
+  },
+  "t:pg_hotplate_t|m": {
+   "bytes": 9599,
+   "px": [
+    256,
+    256
+   ]
+  },
+  "t:pg_hotplate_t|n": {
+   "bytes": 36967,
+   "px": [
+    256,
+    768
+   ]
+  },
+  "t:pg_lamp|c": {
+   "bytes": 1639,
+   "px": [
+    256,
+    256
+   ]
+  },
+  "t:pg_lamp|m": {
+   "bytes": 6379,
+   "px": [
+    256,
+    256
+   ]
+  },
+  "t:pg_lamp|n": {
+   "bytes": 2127,
+   "px": [
+    256,
+    768
+   ]
+  },
+  "t:pg_lily_s|c": {
+   "bytes": 5423,
+   "px": [
+    256,
+    256
+   ]
+  },
+  "t:pg_lily_s|n": {
+   "bytes": 7303,
+   "px": [
+    256,
+    768
+   ]
+  },
+  "t:pg_lily_t|c": {
+   "bytes": 17959,
+   "px": [
+    256,
+    256
+   ]
+  },
+  "t:pg_lily_t|n": {
+   "bytes": 36775,
+   "px": [
+    256,
+    768
+   ]
+  },
+  "t:pg_lino|c": {
+   "bytes": 1355,
+   "px": [
+    256,
+    256
+   ]
+  },
+  "t:pg_lino|n": {
+   "bytes": 4415,
+   "px": [
+    256,
+    768
+   ]
+  },
+  "t:pg_mblack|c": {
+   "bytes": 12487,
+   "px": [
+    256,
+    256
+   ]
+  },
+  "t:pg_mblack|n": {
+   "bytes": 27759,
+   "px": [
+    256,
+    768
+   ]
+  },
+  "t:pg_mirror|c": {
+   "bytes": 12791,
+   "px": [
+    256,
+    256
+   ]
+  },
+  "t:pg_mirror|n": {
+   "bytes": 10495,
+   "px": [
+    256,
+    768
+   ]
+  },
+  "t:pg_ore_googly|c": {
+   "bytes": 30311,
+   "px": [
+    256,
+    256
+   ]
+  },
+  "t:pg_ore_googly|n": {
+   "bytes": 78283,
+   "px": [
+    256,
+    768
+   ]
+  },
+  "t:pg_ore_knuckle|c": {
+   "bytes": 29999,
+   "px": [
+    256,
+    256
+   ]
+  },
+  "t:pg_ore_knuckle|n": {
+   "bytes": 77935,
+   "px": [
+    256,
+    768
+   ]
+  },
+  "t:pg_ore_sequin|c": {
+   "bytes": 34375,
+   "px": [
+    256,
+    256
+   ]
+  },
+  "t:pg_ore_sequin|n": {
+   "bytes": 89111,
+   "px": [
+    256,
+    768
+   ]
+  },
+  "t:pg_ore_wire|c": {
+   "bytes": 32231,
+   "px": [
+    256,
+    256
+   ]
+  },
+  "t:pg_ore_wire|n": {
+   "bytes": 66115,
+   "px": [
+    256,
+    768
+   ]
+  },
+  "t:pg_phill|c": {
+   "bytes": 21499,
+   "px": [
+    256,
+    256
+   ]
+  },
+  "t:pg_phill|n": {
+   "bytes": 30259,
+   "px": [
+    256,
+    768
+   ]
+  },
+  "t:pg_pins_s|c": {
+   "bytes": 6827,
+   "px": [
+    256,
+    256
+   ]
+  },
+  "t:pg_pins_s|n": {
+   "bytes": 12271,
+   "px": [
+    256,
+    768
+   ]
+  },
+  "t:pg_pins_t|c": {
+   "bytes": 8447,
+   "px": [
+    256,
+    256
+   ]
+  },
+  "t:pg_pins_t|n": {
+   "bytes": 24935,
+   "px": [
+    256,
+    768
+   ]
+  },
+  "t:pg_plate|c": {
+   "bytes": 20159,
+   "px": [
+    256,
+    256
+   ]
+  },
+  "t:pg_plate|n": {
+   "bytes": 44411,
+   "px": [
+    256,
+    768
+   ]
+  },
+  "t:pg_psky|c": {
+   "bytes": 18647,
+   "px": [
+    256,
+    256
+   ]
+  },
+  "t:pg_psky|n": {
+   "bytes": 25023,
+   "px": [
+    256,
+    768
+   ]
+  },
+  "t:pg_ptrunk_s|c": {
+   "bytes": 19367,
+   "px": [
+    256,
+    256
+   ]
+  },
+  "t:pg_ptrunk_s|n": {
+   "bytes": 40603,
+   "px": [
+    256,
+    768
+   ]
+  },
+  "t:pg_ptrunk_t|c": {
+   "bytes": 20243,
+   "px": [
+    256,
+    256
+   ]
+  },
+  "t:pg_ptrunk_t|n": {
+   "bytes": 40111,
+   "px": [
+    256,
+    768
+   ]
+  },
+  "t:pg_rot|c": {
+   "bytes": 32947,
+   "px": [
+    256,
+    256
+   ]
+  },
+  "t:pg_rot|n": {
+   "bytes": 64987,
+   "px": [
+    256,
+    768
+   ]
+  },
+  "t:pg_satin|c": {
+   "bytes": 5771,
+   "px": [
+    256,
+    256
+   ]
+  },
+  "t:pg_satin|n": {
+   "bytes": 3983,
+   "px": [
+    256,
+    768
+   ]
+  },
+  "t:pg_scum|c": {
+   "bytes": 19199,
+   "px": [
+    256,
+    256
+   ]
+  },
+  "t:pg_scum|n": {
+   "bytes": 7051,
+   "px": [
+    256,
+    768
+   ]
+  },
+  "t:pg_seat_s|c": {
+   "bytes": 7903,
+   "px": [
+    256,
+    256
+   ]
+  },
+  "t:pg_seat_s|n": {
+   "bytes": 13927,
+   "px": [
+    256,
+    768
+   ]
+  },
+  "t:pg_seat_t|c": {
+   "bytes": 19415,
+   "px": [
+    256,
+    256
+   ]
+  },
+  "t:pg_seat_t|n": {
+   "bytes": 40679,
+   "px": [
+    256,
+    768
+   ]
+  },
+  "t:pg_shag_s|c": {
+   "bytes": 17983,
+   "px": [
+    256,
+    256
+   ]
+  },
+  "t:pg_shag_s|n": {
+   "bytes": 47463,
+   "px": [
+    256,
+    768
+   ]
+  },
+  "t:pg_shag_t|c": {
+   "bytes": 33647,
+   "px": [
+    256,
+    256
+   ]
+  },
+  "t:pg_shag_t|n": {
+   "bytes": 126979,
+   "px": [
+    256,
+    768
+   ]
+  },
+  "t:pg_sheet|c": {
+   "bytes": 7463,
+   "px": [
+    256,
+    256
+   ]
+  },
+  "t:pg_sheet|n": {
+   "bytes": 16823,
+   "px": [
+    256,
+    768
+   ]
+  },
+  "t:pg_skin|c": {
+   "bytes": 4391,
+   "px": [
+    256,
+    256
+   ]
+  },
+  "t:pg_skin|n": {
+   "bytes": 16671,
+   "px": [
+    256,
+    768
+   ]
+  },
+  "t:pg_sleeve_s|c": {
+   "bytes": 16815,
+   "px": [
+    256,
+    256
+   ]
+  },
+  "t:pg_sleeve_s|n": {
+   "bytes": 37311,
+   "px": [
+    256,
+    768
+   ]
+  },
+  "t:pg_sleeve_x|c": {
+   "bytes": 18055,
+   "px": [
+    256,
+    256
+   ]
+  },
+  "t:pg_sleeve_x|n": {
+   "bytes": 44599,
+   "px": [
+    256,
+    768
+   ]
+  },
+  "t:pg_soup|c": {
+   "bytes": 13571,
+   "px": [
+    256,
+    256
+   ]
+  },
+  "t:pg_soup|n": {
+   "bytes": 18195,
+   "px": [
+    256,
+    768
+   ]
+  },
+  "t:pg_strunk_s|c": {
+   "bytes": 15499,
+   "px": [
+    256,
+    256
+   ]
+  },
+  "t:pg_strunk_s|n": {
+   "bytes": 26383,
+   "px": [
+    256,
+    768
+   ]
+  },
+  "t:pg_strunk_t|c": {
+   "bytes": 12231,
+   "px": [
+    256,
+    256
+   ]
+  },
+  "t:pg_strunk_t|n": {
+   "bytes": 24583,
+   "px": [
+    256,
+    768
+   ]
+  },
+  "t:pg_stuffing|c": {
+   "bytes": 4735,
+   "px": [
+    256,
+    256
+   ]
+  },
+  "t:pg_stuffing|n": {
+   "bytes": 6319,
+   "px": [
+    256,
+    768
+   ]
+  },
+  "t:pg_swamp|c": {
+   "bytes": 18331,
+   "px": [
+    256,
+    256
+   ]
+  },
+  "t:pg_swamp|n": {
+   "bytes": 21195,
+   "px": [
+    256,
+    768
+   ]
+  },
+  "t:pg_tesla_s|c": {
+   "bytes": 16063,
+   "px": [
+    256,
+    256
+   ]
+  },
+  "t:pg_tesla_s|n": {
+   "bytes": 22231,
+   "px": [
+    256,
+    768
+   ]
+  },
+  "t:pg_tesla_t|c": {
+   "bytes": 27387,
+   "px": [
+    256,
+    256
+   ]
+  },
+  "t:pg_tesla_t|m": {
+   "bytes": 16699,
+   "px": [
+    256,
+    256
+   ]
+  },
+  "t:pg_tesla_t|n": {
+   "bytes": 50103,
+   "px": [
+    256,
+    768
+   ]
+  },
+  "t:pg_traveler|c": {
+   "bytes": 6051,
+   "px": [
+    256,
+    256
+   ]
+  },
+  "t:pg_traveler|n": {
+   "bytes": 12315,
+   "px": [
+    256,
+    768
+   ]
+  },
+  "t:pg_velvet_s|c": {
+   "bytes": 6771,
+   "px": [
+    256,
+    256
+   ]
+  },
+  "t:pg_velvet_s|n": {
+   "bytes": 14743,
+   "px": [
+    256,
+    768
+   ]
+  },
+  "t:pg_velvet_t|c": {
+   "bytes": 5679,
+   "px": [
+    256,
+    256
+   ]
+  },
+  "t:pg_velvet_t|n": {
+   "bytes": 15239,
+   "px": [
+    256,
+    768
+   ]
+  },
+  "t:plank_b|c": {
+   "bytes": 121239,
+   "px": [
+    512,
+    512
+   ]
+  },
+  "t:plank_b|n": {
+   "bytes": 179867,
+   "px": [
+    512,
+    1536
+   ]
+  },
+  "t:plank_o|c": {
+   "bytes": 115863,
+   "px": [
+    512,
+    512
+   ]
+  },
+  "t:plank_o|n": {
+   "bytes": 123599,
+   "px": [
+    512,
+    1536
+   ]
+  },
+  "t:plank_s|c": {
+   "bytes": 121439,
+   "px": [
+    512,
+    512
+   ]
+  },
+  "t:plank_s|n": {
+   "bytes": 267375,
+   "px": [
+    512,
+    1536
+   ]
+  },
+  "t:sandstone_t|c": {
+   "bytes": 136803,
+   "px": [
+    512,
+    512
+   ]
+  },
+  "t:sandstone_t|n": {
+   "bytes": 233655,
+   "px": [
+    512,
+    1536
+   ]
+  },
+  "t:sandstone|c": {
+   "bytes": 103763,
+   "px": [
+    512,
+    512
+   ]
+  },
+  "t:sandstone|n": {
+   "bytes": 312983,
+   "px": [
+    512,
+    1536
+   ]
+  },
+  "t:sand|c": {
+   "bytes": 136011,
+   "px": [
+    512,
+    512
+   ]
+  },
+  "t:sand|n": {
+   "bytes": 298123,
+   "px": [
+    512,
+    1536
+   ]
+  },
+  "t:sbrick|c": {
+   "bytes": 47395,
+   "px": [
+    512,
+    512
+   ]
+  },
+  "t:sbrick|n": {
+   "bytes": 56251,
+   "px": [
+    512,
+    1536
+   ]
+  },
+  "t:snow_side|c": {
+   "bytes": 93543,
+   "px": [
+    512,
+    512
+   ]
+  },
+  "t:snow_side|n": {
+   "bytes": 345855,
+   "px": [
+    512,
+    1536
+   ]
+  },
+  "t:snow|c": {
+   "bytes": 64471,
+   "px": [
+    512,
+    512
+   ]
+  },
+  "t:snow|n": {
+   "bytes": 220135,
+   "px": [
+    512,
+    1536
+   ]
+  },
+  "t:soulsand|c": {
+   "bytes": 91027,
+   "px": [
+    512,
+    512
+   ]
+  },
+  "t:soulsand|n": {
+   "bytes": 289471,
+   "px": [
+    512,
+    1536
+   ]
+  },
+  "t:stonebrick|c": {
+   "bytes": 145807,
+   "px": [
+    512,
+    512
+   ]
+  },
+  "t:stonebrick|n": {
+   "bytes": 249559,
+   "px": [
+    512,
+    1536
+   ]
+  },
+  "t:stone|c": {
+   "bytes": 123155,
+   "px": [
+    512,
+    512
+   ]
+  },
+  "t:stone|n": {
+   "bytes": 224911,
+   "px": [
+    512,
+    1536
+   ]
+  },
+  "t:tallgrass|c": {
+   "bytes": 42079,
+   "px": [
+    512,
+    512
+   ]
+  },
+  "t:tallgrass|m": {
+   "bytes": 76039,
+   "px": [
+    512,
+    512
+   ]
+  },
+  "t:tallgrass|n": {
+   "bytes": 2015,
+   "px": [
+    512,
+    1536
+   ]
+  },
+  "t:tnt_s|c": {
+   "bytes": 68747,
+   "px": [
+    512,
+    512
+   ]
+  },
+  "t:tnt_s|n": {
+   "bytes": 118779,
+   "px": [
+    512,
+    1536
+   ]
+  },
+  "t:tnt_t|c": {
+   "bytes": 81759,
+   "px": [
+    512,
+    512
+   ]
+  },
+  "t:tnt_t|n": {
+   "bytes": 123183,
+   "px": [
+    512,
+    1536
+   ]
+  },
+  "t:torch|c": {
+   "bytes": 6543,
+   "px": [
+    512,
+    512
+   ]
+  },
+  "t:torch|m": {
+   "bytes": 11799,
+   "px": [
+    512,
+    512
+   ]
+  },
+  "t:torch|n": {
+   "bytes": 9375,
+   "px": [
+    512,
+    1536
+   ]
+  },
+  "t:water|c": {
+   "bytes": 14743,
+   "px": [
+    512,
+    512
+   ]
+  },
+  "t:water|m": {
+   "bytes": 52279,
+   "px": [
+    512,
+    512
+   ]
+  },
+  "t:water|n": {
+   "bytes": 231319,
+   "px": [
+    512,
+    1536
+   ]
+  },
+  "t:wool|c": {
+   "bytes": 84603,
+   "px": [
+    512,
+    512
+   ]
+  },
+  "t:wool|n": {
+   "bytes": 331103,
+   "px": [
+    512,
+    1536
+   ]
+  }
+ },
+ "payloadBytes": 34458021,
+ "pillow": "12.3.0",
+ "profile": "std",
+ "secs": 9.8,
+ "sources": {
+  "e:boomer_core": {
+   "basecolor": "15864c444599d52e0863a82e9ccab8902bb725a5",
+   "normal": "76a3c38f9cf907aa14578a108524aa1082dbb44d"
+  },
+  "e:cocoon": {
+   "basecolor": "09f1e3e5fc5d3f54d2a360778756681b08beb164",
+   "normal": "a7945274385081bad13d8f8b9ac9408580712206"
+  },
+  "e:cowhide": {
+   "basecolor": "4c1d2812b38533debf402b31bf821af3009688da",
+   "normal": "52994f31a5407f24542121c8e98fde8a0b236a5b"
+  },
+  "e:eye_human": {
+   "basecolor": "6f16828659463874e744207287e59cf3637e1c19",
+   "normal": "bfe1d4c671652b30793e696ffb43f35149b0473c"
+  },
+  "e:face_bee": {
+   "basecolor": "98dae0ed6d47d14696f8291d70454e9d8d6cd7eb",
+   "normal": "b818101561ae03ccbae437b358cdb8dd7f444adf"
+  },
+  "e:face_boomer": {
+   "basecolor": "398174f99ca72fba72dcaaec00e92ec42921b7da",
+   "normal": "953ced2f6141b73dbbb2468a243bbeef2aa0fda1"
+  },
+  "e:face_brad": {
+   "basecolor": "3516e0306e3da98bc89df6c4c0bda2e66987ef4e",
+   "normal": "2ed0c79fac87c6cdb1ae9f647524ab177db70a7a"
+  },
+  "e:face_cow": {
+   "basecolor": "43d735ecbace0e355ccebbc0047a6b86098a648f",
+   "normal": "acdb2a549f2500f39a07950da1cf71ce7f362b9f"
+  },
+  "e:face_creepah": {
+   "basecolor": "67f945c13a3512e80b76ac8b6b0579fcd8dc4132",
+   "normal": "c5ab9a911a792daebdba7afae10ab2a2a004ebdc"
+  },
+  "e:face_dan": {
+   "basecolor": "d92235ad0a446f3801c70d0e69acfd3f0a873ba8",
+   "normal": "c1a6d1194e236a9c6b03800fd0aafdd1598fb578"
+  },
+  "e:face_pelt": {
+   "basecolor": "3f651ed1c2b203c0e74601720b1dc73e0261fb6e",
+   "normal": "349a0003e589293da2eae6d832ada528cc0d5b5a"
+  },
+  "e:face_pig": {
+   "basecolor": "342dd40002f1ea9ee38e6659f50bed0c21d7e7fc",
+   "normal": "07d21feb351e8ef05ef73eb7e49d6dc553166b07"
+  },
+  "e:face_sheep": {
+   "basecolor": "2e29fa27c9484a2c7d95e4a42894284ff4b4afe8",
+   "normal": "6ddee0cd3d2f95a41e58bcc5fdf4b74531a44847"
+  },
+  "e:face_zombie": {
+   "basecolor": "a1ce63ad5c45c5ed870d3e17938edc4e71eb80ea",
+   "normal": "417bb4ef4160760cccb8ad75122ad5bcd7bd43d0"
+  },
+  "e:fist_dan": {
+   "basecolor": "eea5a807a6a16d00522573741da9f746ca593847",
+   "normal": "1b9ae001b28e19fcf687fa670f1ab815c1420dd8"
+  },
+  "e:fist_pg": {
+   "basecolor": "953c57264d1ab65f49a598350faa32395ee0fd50",
+   "normal": "09a8f642452e9999dbe62fdabf913141cd63da54"
+  },
+  "e:foot_bare_side": {
+   "basecolor": "52cc390b2a28aaa4e8f17a819bf6dcc776bb8dfa",
+   "normal": "83e8de455dcc088e511413b2e50016fc613996b2"
+  },
+  "e:foot_bare_top": {
+   "basecolor": "ecae4b74acf2c8d2e4e111658b3b50840ea4a1da",
+   "normal": "bccce824bad7fc6f6cb479ae117cb5b1b93e261d"
+  },
+  "e:foot_top": {
+   "basecolor": "76a2227b6f70b4081f407d307139801dc367f6a8",
+   "normal": "04e9e9bcc2f97d0214e8a8094fa48212677644c1"
+  },
+  "e:hair_shared": {
+   "basecolor": "5cd60f443ffbda9bc26e3663e473aafaa380e6e9",
+   "normal": "81c075876849fea88c4f2d924d66ca0856910df1"
+  },
+  "e:head_bee_side": {
+   "basecolor": "095e412cfa2d481eff03134a6a1662ba424f3390",
+   "normal": "559564d60f666e2673aeb5af2561a825972e8528"
+  },
+  "e:head_brad_side": {
+   "basecolor": "8bd1c6a851f9646c51ed2229496540d8f150b85b",
+   "normal": "147b571213ab6a4b599d15c59dcddaa0e93fdf7d"
+  },
+  "e:head_creepah_side": {
+   "basecolor": "8b9033d3b0ffdb0e35ca89220d45f875e156f780",
+   "normal": "31792a1cecfa44e7648a9dc6eaf531f0b48b6cee"
+  },
+  "e:head_dan_side": {
+   "basecolor": "a241b5d5d26e11ba2b330a03499884a94e57aff2",
+   "normal": "7428de0dd137c03f18318c5f9226050d9e32259b"
+  },
+  "e:head_pig_side": {
+   "basecolor": "f5a0c843f25d1392e583a156f989ff440723e0c6",
+   "normal": "325562301138c5a71d0dff4e1849425d93c77715"
+  },
+  "e:head_zombie_side": {
+   "basecolor": "e3feadfaf627e4675179c7f188770d046d24e0a9",
+   "normal": "3a2e39855020d856b9fe1cfbea30f14ec283aa00"
+  },
+  "e:honeycomb": {
+   "basecolor": "dfe570c6247c37c8a132b5ef70607413940de5b1",
+   "normal": "d76d49a721c116febf97b9c9cd9b6497c2282735"
+  },
+  "e:hoodie_creepah": {
+   "basecolor": "10d032c0d40abab5ea59f1581d85e7a30a679a2a",
+   "normal": "4bbea0119f733b4fb876a77b62bdf13d7e14b5d8"
+  },
+  "e:jog_dan": {
+   "basecolor": "a25f865209ef5f6caf1108c48885786c70105001",
+   "normal": "bbf840d760815cc92a999f409025977d4c148bf6"
+  },
+  "e:jog_zombie": {
+   "basecolor": "ebbfe806433c25daa0a9b9e6c9b5276831c09c0e",
+   "normal": "0979f3d5352729b778896a1f940118a6c22a84a9"
+  },
+  "e:jumper_bee": {
+   "basecolor": "8184f971cc2301b937ddbba889ee2d171fce0ff3",
+   "normal": "bb775d9b7f3b0a648bbf662860bb1cffa57b3043"
+  },
+  "e:keg_staves": {
+   "basecolor": "0db132dbe22449e2a77f207b4c6d2bf2b89c2787",
+   "normal": "c7bedad9376a8ac79f528fe4f2f5c74de0b169a7",
+   "roughness": "daa86182b8c7e358c451ef19f0fd0009624c1a0d"
+  },
+  "e:leggings_bee": {
+   "basecolor": "70ae0325455e18f5889e20a9e26a8859800dc490",
+   "normal": "76e7820d2b0d417c3065db9b2f4531d616b7aa7e"
+  },
+  "e:mat_bone": {
+   "basecolor": "071c5a0c474a5714bfc5a68b8d12ecd76cd9584c",
+   "normal": "51c4da04bb3373167b017706eb4bf1f0da220e92",
+   "roughness": "948d7e9bb0c151759215e6ef5f704f02197edf97"
+  },
+  "e:mat_burlap": {
+   "basecolor": "bbb6c6ad7e644cfe11108802ae02fd80b5b8b2a9",
+   "normal": "d8d6181db2a92121e30da4a2aa7cb748c06c1077",
+   "roughness": "949ae4dfa59f22513c4bb641be843b9e0ca40949"
+  },
+  "e:mat_chitin": {
+   "basecolor": "a83ce20a845256353e0eabeaf264367776949bf0",
+   "normal": "b14b1aaff1bf33e499d38a9bbde7a6fccf210643"
+  },
+  "e:mat_jersey": {
+   "basecolor": "7e6ce952e70ffbd4a76d25184b139a0ee487df34",
+   "normal": "f71d9861a108a722fdf6bac16dde018148c24ec8",
+   "roughness": "da917ef2b532910a83f61718c7caec9cf2651ca4"
+  },
+  "e:mat_mossflesh": {
+   "basecolor": "176be926ee8e3662e9f7870370a3733f31dfd0a1",
+   "normal": "e57ab000d0bfa68c1d19eed0ce81bb46abcbb7f9",
+   "roughness": "dc91aadd9aeefaf668e35ec08d44cc5b2f539e8e"
+  },
+  "e:mat_rotflesh": {
+   "basecolor": "6f77fabcb15a6fa6e84530c199b71fa3e68acc21",
+   "normal": "24255725e605eb3757276f804ebe2e2740b0ec92",
+   "roughness": "5326b92bb1700aa9b7cfc13ef4138e67129b2734"
+  },
+  "e:mat_skin": {
+   "basecolor": "f50dc7e81c5631e23007e25509df7fb9aec0c808",
+   "normal": "3bef55508f8f6a7cbb0d666c39f19e52cbdc9d85",
+   "roughness": "45eaf3bb629a9a461fcaa0ad8fb35ba0090e7e1e"
+  },
+  "e:mat_wool": {
+   "basecolor": "ac55591257ee461708f6c457b40302a08fe661da",
+   "normal": "b3b4331dd6230dad4bb4c5551d1b1d82ae47e8b4"
+  },
+  "e:pgent_apron": {
+   "basecolor": "49a746b3feb1af3175a5cc536e2ef494048feb85",
+   "normal": "a217628706426bb8d7868e8bbb4328b7a7bc1434"
+  },
+  "e:pgent_arm": {
+   "basecolor": "3a1aaf2bcbabdd143322a6d76d71ee8053c5a2ab",
+   "normal": "c5548c904c3975a70429240fb7b40752b1088168"
+  },
+  "e:pgent_hand": {
+   "basecolor": "7f3b6488183f7b2050da5a9cf2457a4a9b3709da",
+   "normal": "10fcb81c5fc4541901ade9ce79192a1c1859103e"
+  },
+  "e:pgent_satchel": {
+   "basecolor": "c94de87b293ed01cb333464f06f8deb79708e572",
+   "normal": "681a0063e9728e0f106413eb4b079ab7816b1c3b"
+  },
+  "e:pgent_sneakers": {
+   "basecolor": "36ac580b867ca4cfb3609d9685651b32326dd838",
+   "normal": "733a953bd0127c44c256f493ad29f1962c691b2a"
+  },
+  "e:pgface_blank": {
+   "basecolor": "2f3a9908a47f5fa63f98e886d10c0951c6276986",
+   "normal": "16008b7412e922b03359d72dad6883f10aab0e45"
+  },
+  "e:pgface_feltdan": {
+   "basecolor": "dc75f3bb417aafacd27b1d58760b205e24338e6a",
+   "normal": "c982523284b88dc48311899081ce4ac9e4c89f30"
+  },
+  "e:pgface_piglet": {
+   "basecolor": "cfb503261c89fc0a6cffe3ea850f9f081e3791c1",
+   "normal": "b2f53cbf91b4b0061bfb29ae4f73735958aacf3e"
+  },
+  "e:pgmat_cuff": {
+   "basecolor": "c811cd61a3fa4b53e027e5d5e342a089b48aa0d8",
+   "normal": "b5e750d877df7c375c7372d6a56bb2e250abdbb5",
+   "roughness": "4f9327d084bcaefdfecfa2959729e296fddcaeb5"
+  },
+  "e:pgmat_felt": {
+   "basecolor": "020994dbb0f2d120a85cecab7fb709e26a669153",
+   "normal": "0d08c67ef3f9ed3b165a125a4a72984836e089c9",
+   "roughness": "c5f78fa82e86c871330f005c476d59cec029be15"
+  },
+  "e:pgmat_frogfelt": {
+   "basecolor": "421bbc793b8d37eb5c8e22defe983e1e00a67c6b",
+   "normal": "062767f59810f17fb317d90ee2f6fae309bd4c05",
+   "roughness": "c5f78fa82e86c871330f005c476d59cec029be15"
+  },
+  "e:pgmat_fur": {
+   "basecolor": "b263205e72c6122217ca722edb5bc1054cec5d58",
+   "normal": "525e77b2d0971c12a075263d9790197750ed4966",
+   "roughness": "99009431a249fd4c4904a7bd0e3ea2b996cf9f93"
+  },
+  "e:pgmat_tongue": {
+   "basecolor": "91e6ca8cb76b612356a1c227b926db626259326c",
+   "normal": "27ad723517de24b6f569076437b773c88c4f77f6",
+   "roughness": "a17bfca68beae0a80df3509d1f1ee647e0dbe399"
+  },
+  "e:pig_flank": {
+   "basecolor": "4934e780e0adde0e41c1c8bbfb56af50c60a36d3",
+   "normal": "5ed192fc39af664955456d586c3d020d0957c11b"
+  },
+  "e:pig_hide": {
+   "basecolor": "9e70168745cf9e8156b11d99cf31dbdda983cf4f",
+   "normal": "ab8dd3263518d02f974257f0ee76770cad0115c9"
+  },
+  "e:skin_arm": {
+   "basecolor": "156f105e5e5af692182cfe19ea6f42d0642d9e8d",
+   "normal": "13dc36486e8bd03a565aa0abef2681022f8e514f"
+  },
+  "e:skull_front": {
+   "basecolor": "71aefd7bae759e816a556ddd8f7858364bede14f",
+   "normal": "c9b01ff802b2fb97aa5329fc0b58928460dfd552"
+  },
+  "e:sleeve_brad": {
+   "basecolor": "ef760422c815b8de6d9ad7ae1fabbf199c8fabf4",
+   "normal": "f07d384915dfe849f8eae98fa5917aff95493c3f"
+  },
+  "e:stump_section": {
+   "basecolor": "bd9cbe9136a41e223989f6058f7c7b406dda3fee",
+   "normal": "9cfc0f3a5aaf36eb12e0fd9bcc5d0409995c3553"
+  },
+  "e:tee_dan": {
+   "basecolor": "47c43be91bcb58c03ea30782ffd790f6f2059298",
+   "normal": "0926a1aae2170fdc6b103e601bec6c44e68596f1"
+  },
+  "e:tee_zombie": {
+   "basecolor": "e1af2fb38a36c295e0411dc4b12e59f338e28e81",
+   "normal": "3550e599aed42ff41ec35bbc299e181a6609dc27"
+  },
+  "e:trousers_brad": {
+   "basecolor": "9fdcdbd98f91eb72a6c07514c548940bd0dedc10",
+   "normal": "bd8eff79a4761b962d118dd67d3097debcc1ccdc"
+  },
+  "e:trousers_creepah": {
+   "basecolor": "93cb4f29dedf20fb024998623f57cb5c1f4b4061",
+   "normal": "ccfd90ffb24fa0e01aa3f16e8db4c6d11f1fa9f4"
+  },
+  "t:bed_s": {
+   "basecolor": "44ee568f9dc3c4bbc8e2b54c0af1fabc7c136fc4",
+   "normal": "a3df4db1bf1b6332594e546f966de4c018f9c004",
+   "roughness": "913419b145d035fb80e611d50b4230045c5934de"
+  },
+  "t:bed_t": {
+   "basecolor": "593f72512b11fab5accae11e375292c92fbb86c2",
+   "normal": "f6c90209d8a736dc2b63821ec37ec22c4227f27d",
+   "roughness": "8e44bff8dac267758884b18c5ca3709dc5be2758"
+  },
+  "t:bedrock": {
+   "basecolor": "d4bbec051cb45100702a1dcb8b8e498d53583471",
+   "height": "e557158a8b3a509152e477a76f1cd34d683a0afd",
+   "normal": "0e717c66b3c044eae24f0e1f2b4e85d082e53e7b",
+   "roughness": "e3736d89ec5eacc7e57a95d1bc83383953e81b0b"
+  },
+  "t:brick": {
+   "basecolor": "091a55004a2a5cd85811c31f7bbaa580fb243e51",
+   "normal": "65eb02046c0bf1c34108b9b9362e45fbb796d5c0",
+   "roughness": "41869907a6fc43d678b1578300263172cc631b0c"
+  },
+  "t:cactus": {
+   "basecolor": "680bb110bb8b51bb7665987d0ae3216a1e67ad0b",
+   "height": "da84a16c387a419dbb0b57fd6194e1234fa51715",
+   "normal": "30e7fafdbec94aaa1df5743f6d0dbebaea3f060d",
+   "roughness": "8304f44f609aee2e7883a621f24ea76ba58ed277"
+  },
+  "t:cactus_t": {
+   "basecolor": "727a86e061baee23ac246eaada612511e8393b90",
+   "height": "7228c3555dcfb0ee26fa4ef61a47b46de7d67ca3",
+   "normal": "92637b4136395fd5f85fb74ee0d918e421e97e4f",
+   "roughness": "e7bdf4692625366651db19f138475d3e22df4c57"
+  },
+  "t:chest_f": {
+   "basecolor": "d5def32767c7e96fd9985921ba328a34a45e6b8d",
+   "normal": "b798212704f951e0d4b7c2707a954e27d857ebd4",
+   "roughness": "ba7e307d857228d47cc3447554f79f5e3972ca90"
+  },
+  "t:chest_t": {
+   "basecolor": "b80eaac0c8d94e32f7f74bc3141cab8015581056",
+   "normal": "f98ff4e18c5e429e31fc2a643a645a28ffa25e36",
+   "roughness": "f21da290bef3847d5a8a9fb6d65c35f2de547cba"
+  },
+  "t:clay": {
+   "basecolor": "88e20aefd99a3091b79532b12229da6a4cf67d74",
+   "height": "c7b3483cba4a38587fb990caae78a25cb23d7f75",
+   "normal": "edf88fb4c73249305b0663d073b29bd6e87a7271",
+   "roughness": "d2b4c94cfb1b12df74663eab221d4201f062c3c2"
+  },
+  "t:cobble": {
+   "basecolor": "ec4deff038f875f9e007e23ae3106e4257353960",
+   "height": "2410dd44bf619f5e3018badcc145ac58db9707c7",
+   "normal": "b81bc1c389b3f3c9d2f34188a0daf8218746a502",
+   "roughness": "5a90ae037986f387cfdaa005f81276ecd408b5da"
+  },
+  "t:craft_s": {
+   "basecolor": "7e6271542892650b66132b6baf33bc27a214af40",
+   "normal": "95965f083bda5d3ce1e55d7de5a0abb9f6bc19b3",
+   "roughness": "2c4b8f7bbac81b62d035966e8ee84e55ebf2b739"
+  },
+  "t:craft_t": {
+   "basecolor": "701659bacd1ad15c113cb810d1122540f5763a3d",
+   "normal": "c5552b8047fdfa4bb97735356eafb025465520fa",
+   "roughness": "28e9156af167ffa9049c59cf6549f3f3a249b9c2"
+  },
+  "t:dirt": {
+   "basecolor": "d7eed8877d2e6cb0859e74f7e09cac9455d50924",
+   "height": "c806c16125882d68cd6cf86b3b377f195c62226e",
+   "normal": "acca0eb270a8e33565837e0625266cdab05ee956",
+   "roughness": "495c0b2952eb861f112d04795460df7c1ec0e9e1"
+  },
+  "t:door_l": {
+   "basecolor": "5697a9d0aef9565f4ba76ea9746b8a7540d19164",
+   "normal": "1fd7495b11276cc8fa66b8559aea05f675cb1836",
+   "roughness": "c960bef13dcb46fa8084b4a46cdfe0dab799f81d"
+  },
+  "t:door_u": {
+   "basecolor": "c98e21eb96e3a7e900bc2f3b75789e08bd5f3494",
+   "normal": "edaa227a1fc1a0bc6e6a0c4539cbd3856d16f487",
+   "roughness": "e719264db8c077120027cf7b303a4f8aeb5a3741"
+  },
+  "t:flower_r": {
+   "basecolor": "00c101f63659ffcd63b2e3fc7bde5346fec02af2"
+  },
+  "t:flower_y": {
+   "basecolor": "e6e4c63e59f7a33614e21ca5724949aa099db792"
+  },
+  "t:furn_f": {
+   "basecolor": "d66d5e4ec352b8fe57cfd3d0710d9fb57503fa9b",
+   "normal": "6ae9937c9c505292c771949d99aff2438e4689ed",
+   "roughness": "d17c7f34c4c5265b6dcfd166e356a0536d081cbb"
+  },
+  "t:furn_t": {
+   "basecolor": "7e1ecc5c4115d0542484b58f80c1d64c1e5f128e",
+   "normal": "f7401f09993a87aa0de939c32ebcff59d0bac01d",
+   "roughness": "ce731df077232489decf7f47744e25347395e4d2"
+  },
+  "t:glass": {
+   "basecolor": "07724917d2b3848a3f8b0bd3a25847eafef95f3b",
+   "height": "705afd855c0ca8794206436c405ed10b6ea2431c",
+   "normal": "5ff86888b11e998c8bc86415708a564175d46c4b",
+   "roughness": "a47ab0b18ca27c55f5c5b25bb615d808486c21cb"
+  },
+  "t:glowstone": {
+   "basecolor": "f0409b91ac7cc5de93f904c19460f331190af90f",
+   "normal": "84fc6ef2da23392519ccc6644a2848f92a127131",
+   "roughness": "cd9ed76dd04c9c3d1e02f3269df88bbfef51ed36"
+  },
+  "t:grass_side": {
+   "basecolor": "0e3aebe364fe75d60470b115e803b7f098bffd23",
+   "height": "e1fc35ff395b5742ba1018a445de9ce6e22ebad4",
+   "normal": "00a1b2c9fa2e21e297174200a497c5020f075a7c",
+   "roughness": "7c1d122b25b9defb8970f4f61f905d5603ad8822"
+  },
+  "t:grass_top": {
+   "basecolor": "d1f69668966ed3eaea585a04f1e7f2b11f9effbe",
+   "height": "47706b0bee6d7157b906acdbbe15fde330d76343",
+   "normal": "cafc98d661950f9c360c720593e60459fafe8cd2",
+   "roughness": "21b3979afc406fd94453bfa5688fa1c6c722dc99"
+  },
+  "t:gravel": {
+   "basecolor": "ba37508ac9e129961ff9d79d87ff6f9fcf5f2ee0",
+   "height": "c04209128c75367df2e652046061f8e612795196",
+   "normal": "c7809aa3051e81936a69702ddfb627b41bf775a9",
+   "roughness": "74406b929d98b04cffbc7d18bfa7dd7071c2b98e"
+  },
+  "t:ice": {
+   "basecolor": "9a18128f916c0a4a0fc4bc0877a0f88f1eefbc9e",
+   "height": "a9b7766d312b3a4a7d5f4d9a2b53825aac72a552",
+   "normal": "991e848f3575f6ec724a30509e0078eacb5b15be",
+   "roughness": "e0e96b202bfdc1d4b72324a66b39ec339daa8206"
+  },
+  "t:lava": {
+   "basecolor": "6a19df1b5974037cdb1a2b1f9a8f0658bc03bfe6",
+   "height": "67e884759d979774ca65c8aae626ecd0b2868c86",
+   "normal": "2a6b3db04890c93f8e4dc908649e8b25d7d9c0d7",
+   "roughness": "7a0bc8a7234f2f5bede843ef12480cf446d2af79"
+  },
+  "t:leaf_b": {
+   "basecolor": "1ccea384a42eb48be6165e66c5d5d2c26a3ecf5b",
+   "height": "9e0a090a3b1fd387479a525bb0b5878dbdb43954",
+   "normal": "4f7001ec03496057ae30be225db45e605d0aee77",
+   "roughness": "760dfdae4138d6185c08b727e244c07c8b352b80"
+  },
+  "t:leaf_o": {
+   "basecolor": "95f9a98d0930a5821b2f9f6a8304955155027fcf",
+   "height": "5d1af304ba0ad6eb2e6e1c83e6b036877f53701b",
+   "normal": "42a343a21f8d1a7563823ff0b9160db116268d25",
+   "roughness": "d1cc16b5fa453325345b38b9c71da628429620f2"
+  },
+  "t:leaf_s": {
+   "basecolor": "25c664518b1c4a767e40bcfb249a1dc05c1652ae",
+   "height": "10ba3e834cd388fbab98b06dd256f2daa416f5e7",
+   "normal": "81a4b83ddfb194bc3f3b6659ece39c2269b55b30",
+   "roughness": "a31edff4944af08b6fa1a8a55d26c448267f91aa"
+  },
+  "t:log_b": {
+   "basecolor": "aeb71fc6b760e8d7a603db235131364b121dba32",
+   "height": "d04b28dae6724be6001f9d7ce92a9c725a170bd1",
+   "normal": "77194a1299a6813f85603fcdb25418b0a7c8997a",
+   "roughness": "ebf334514d23357d5b42327c6ec53d22806871fc"
+  },
+  "t:log_o": {
+   "basecolor": "4810b2673e5c3e2f37b2258ee50fe4be4e72b104",
+   "height": "8f8a1432f4f4166978f442631e99d01b357360a8",
+   "normal": "d757dcb64af13347c36478065ec42b060e2f5a31",
+   "roughness": "614361ff3734a989580096e69a7a92126751e8d0"
+  },
+  "t:log_s": {
+   "basecolor": "1135cb5a2970591e0e49626c1e5e8036f18561d6",
+   "height": "57c8860172145d4346f266f5d02cd73e288b195f",
+   "normal": "63a0db5c0f5b9b9a4b756cce658c0c3915d60a14",
+   "roughness": "2f10833d8c7a4b4fcfe1c8f48ac1ab3097675f72"
+  },
+  "t:log_top": {
+   "basecolor": "7aa4cf0d40f03aeece1aef75027ef5acdfb91fa7",
+   "height": "81ebee4b21ac0c75d3b59505597eb9e73b043f12",
+   "normal": "1479b9b33b352ad56c8259a83ca47a564685d400",
+   "roughness": "606b1e29c234a8edc0a37800fceca417fc5fe7ab"
+  },
+  "t:nbrick": {
+   "basecolor": "bcee7410cda5735266d2c97a4fde41c95ae8c175",
+   "normal": "5c04937012e64d932b6dbe517ac3574f197b9225",
+   "roughness": "4a65bd80a0b43e0f40e6e71099d8979719504f2b"
+  },
+  "t:nethrock": {
+   "basecolor": "b79ea43a6e9934863bbb75851777b7711d572d5b",
+   "normal": "1e54af4ce6f61ce82bd95c1c2bb8fc747a384027",
+   "roughness": "4cf56519da86138c135b98fda95821cf9ee20ff8"
+  },
+  "t:obsidian": {
+   "basecolor": "179436a2fb5b62c8e86bdd5301cf59ab89063dc2",
+   "height": "ba3b653f88f3366633a5b537dcb91c788c4760de",
+   "normal": "40afc3308453a76ad932d4b2421141f41fb15870",
+   "roughness": "8d60df9c6e7aa454460179ef0a9f833c70bccd66"
+  },
+  "t:ore_coal": {
+   "basecolor": "a9f6acd260bcf739d1b85c761e9a6e0983c338c4",
+   "height": "3d4dce98560c30c3adba1bdbd0610bfab041bd25",
+   "normal": "bb0e8ee76624cf6d1ec6433ce571f5f325822842",
+   "roughness": "47f4f6fdd11d2cba35a4c77d5a72bcce80b9a1dc"
+  },
+  "t:ore_dia": {
+   "basecolor": "608735010fbe8fce0ff5773b623f2a25118be0b3",
+   "height": "6a0854ca1a8227aa8fbab0493aeba89259bc6aeb",
+   "normal": "140ea1b72de3a3e48476eb36bea51a962e4db1e3",
+   "roughness": "92475899cdd8d685a2258c873eefb835e24bdc0e"
+  },
+  "t:ore_gold": {
+   "basecolor": "2be65b440f7ee61f47acdc08da8de4e7a3c9a82e",
+   "height": "4b0586da5942dcfe41045d9e119fb4225ada4ed8",
+   "normal": "ed3364b055d0babd0d0ee5cb1cee781f1aadcf11",
+   "roughness": "5aee2ebd36a3077d452ed9c412905ec48e3598dd"
+  },
+  "t:ore_iron": {
+   "basecolor": "c6ab7cef6b447696f4baa6c2579b6d2d74512531",
+   "height": "1fe5ef3e49c0b0cdf48263997cdba29513e7479d",
+   "normal": "ea67c5fbdfd99fe517d9c903500f1a5ca9c1fea6",
+   "roughness": "6d36090c896044cd6b13c07361c45e1629d0c258"
+  },
+  "t:pg_armhole_t": {
+   "basecolor": "8f3ae2bb56cfc6a28e3be331dc2f9d99afabda11",
+   "normal": "073ae43b15d64a2d58af6328c1a68d722add8c86",
+   "roughness": "4a3b8528994e1dc336d80db221fc6ed2578be8de"
+  },
+  "t:pg_backing": {
+   "basecolor": "b5c3444405f3ac31d880a20cd260bc136af31783",
+   "height": "31fe6f1c69ed76e80ae158c656373352b01634a8",
+   "normal": "37d1b4685b55b93cd61e814d092da51aad32c385",
+   "roughness": "c72fe780e8d7c35c3d4878180e0294acd3a65a17"
+  },
+  "t:pg_bench_s": {
+   "basecolor": "368403cc5e0c98da9d505f66adefb685feaf063f",
+   "normal": "3197d6bbdbbe2779bf7d43d177daf46fdd54b35c",
+   "roughness": "7da812a659dbb543b06a9cc7f76a334b6fe95a56"
+  },
+  "t:pg_bench_t": {
+   "basecolor": "aa8dfb47d2af9087b489b00ffc352778d1e256a8",
+   "normal": "9e86856116bc53c436aaa0f1082be45dbcd7dc75",
+   "roughness": "3eb8499ec7f94f27845889f5e545d9eb38e1c209"
+  },
+  "t:pg_brace": {
+   "basecolor": "faed6b6aa061eabe3dbd767a949372f6f03137c7",
+   "height": "d8ba9d4cdfabcc3bd465485c29cb52d1b74ea235",
+   "normal": "e32295bb923dcee5d044f299cfded99ebd898a87",
+   "roughness": "59ae1ea590ddd64cdf279ca3cebd3dc422706735"
+  },
+  "t:pg_burner_s": {
+   "basecolor": "5215c9d7fba60b91d883b4377784950b380081be",
+   "height": "8418788eb720b8b926478da83f3662822bc38525",
+   "normal": "1a74b9bee136a0e29e54f451e93ed6abc6c3275e",
+   "roughness": "4a8ba202857ba35087e6d756f8c492a166b2dcbe"
+  },
+  "t:pg_burner_t": {
+   "basecolor": "18c36ca9b5362e1f4c0eed3753599161032c164b",
+   "normal": "8fb1444922c6d81514b5e706ad52c494484f3424",
+   "roughness": "cde7e1aa62955eaa46e35cc9b269cd194f5b7efc"
+  },
+  "t:pg_can_s": {
+   "basecolor": "2f3d6d6bc8df1c0d763be91b0373db31b32984d8",
+   "normal": "668cf7afc3b9d54ceb775d0fd54eb8a1d8664761",
+   "roughness": "c9d5f1efbcdbf21939d3e2d2a7f5381ae782ddd4"
+  },
+  "t:pg_can_t": {
+   "basecolor": "d344dea6cb63c87e0e1a6cb4ec5304a712c04006",
+   "normal": "f924691e67571d0626bb3fe79e40c9fde0aadedc",
+   "roughness": "d981b9c9ae1498a64c3d64fdbe3a0d8f3c2165c9"
+  },
+  "t:pg_cattail": {
+   "basecolor": "df712bbe8f9ef69d3433df6b154bb61e16dfb40d",
+   "normal": "14a978c721204c65964c55fd0cd21b00ca96f080",
+   "roughness": "707d6810b669bdaa770c848bc565234503c94762"
+  },
+  "t:pg_counter_b": {
+   "basecolor": "450a81d581af94a76d89467ae60c15461f9ef003",
+   "height": "251a6eec98176e04221698fed671e3e68c043372",
+   "normal": "eac432568928a4b6fb5a4b5114902291d2e0e10d",
+   "roughness": "b269d08603c2074790876741aedb4cc55d72938d"
+  },
+  "t:pg_counter_s": {
+   "basecolor": "478f7b09c08abaddd84c7e9a5a721c69ddd5204a",
+   "normal": "359a93ab99ffb9175612d9bcd4b7708cdded1923",
+   "roughness": "9118239ea0d06c829f0afa2187b1bdc615c2dd41"
+  },
+  "t:pg_counter_t": {
+   "basecolor": "6f56a67d8284b8e4dffa06921de01dff568a99b1",
+   "height": "7ccd1664ac2a12c45c6071d46d15d442b6f1a23a",
+   "normal": "e6227ba22d461d9fa35ed42874fc70baeecb6154",
+   "roughness": "b4f32faaf5cf895e1b263d4b038cdf22aeb17e51"
+  },
+  "t:pg_deck": {
+   "basecolor": "4b11cd352b85619c6aaea5a2f819325ca502c274",
+   "height": "ddeb316451f33b6c7be5e5bb67402681c12c9d87",
+   "normal": "87c9be8f8ba39c4cc3c4430190706e1ed9bd6683",
+   "roughness": "30ba82fb735527427b24e7dd3a85c65181488dca"
+  },
+  "t:pg_door_s": {
+   "basecolor": "98ab30cfea7a7726127b977d272f61ae7be66d11",
+   "normal": "6c1a415205f96265c57684555eb8f4a1621a60f4",
+   "roughness": "c9ebd5868c00835077a842dfb973feed52d76e4e"
+  },
+  "t:pg_door_t": {
+   "basecolor": "fc2bd09c0caeafd58611be05472ab47c559b983b",
+   "height": "1b751a3b3872bafeadb3efdb4f15c2d4856373cc",
+   "normal": "729aebd6b3b314948b101aeedfd048b68e345cdc",
+   "roughness": "c9a076e0c5c987155beeb41d86c0dd2a6344ca7c"
+  },
+  "t:pg_dough": {
+   "basecolor": "140add67fbf27fe3ac9700ab8304ebbacfea8300",
+   "height": "a963aa62efb6ff72d907ec1d4541756e029a8f53",
+   "normal": "f6df0a215b6ca95659e4239585df5511231d4cd1",
+   "roughness": "f9c47e843108ea39c73ca768ada378702a5d4231"
+  },
+  "t:pg_eye": {
+   "basecolor": "c51b92aa5830c5b4c8de8990d49854b7eda69d6e",
+   "normal": "b4a8c89f16866fd6245ef64ec254b63821d19956",
+   "roughness": "813e51a0a14b22537c2ba340ac941322cfa3c6ee"
+  },
+  "t:pg_fleece": {
+   "basecolor": "c89581b204b471284245add80945fab77ebf261c",
+   "height": "c11b8c7b33df1e7637075edc09f6c414540c7589",
+   "normal": "de0953686b98a2fb778e0c0f3e267b06c8443817",
+   "roughness": "fcc17e4fbe8cb13fbc031b6ffc59e608c32d6d49"
+  },
+  "t:pg_foam": {
+   "basecolor": "dfcfd5e14149a0beafa3e9078e1c0b0c53e2790e",
+   "height": "45c394813ff0b6a8e1ca48055666b3f60746c635",
+   "normal": "4ee39f99856fa5e591c47681ae55a1da4257ebc3",
+   "roughness": "604c4b8f459f7e49e079eb4af61dc12d48bf7844"
+  },
+  "t:pg_forearm_s": {
+   "basecolor": "2609be707aa076b90cf778d319630f8e3aedb811",
+   "height": "32874cd0906e9041f7119b5f7ecd38e0887e8b28",
+   "normal": "b6f11d17c25bc2d746e4f2c39b671b20adf3856b",
+   "roughness": "3171beedeeb43b78a79673bd35a0bf9fe0c3b5ef"
+  },
+  "t:pg_forearm_x": {
+   "basecolor": "b72a7af9c91ca08b9a30f47e26ba1a45b97887d2",
+   "normal": "02cbed8d7f95fd47e2f40365b68d56bbec2f4a92",
+   "roughness": "4047637a8112dbf81b924b59e1c64e722fbaa9f7"
+  },
+  "t:pg_hotplate_s": {
+   "basecolor": "19dc6bf5383e54c1c56c5d2b337076a457039ed1",
+   "normal": "184871eb77ed9e3e79c64192fff4074a6a5fcd76",
+   "roughness": "8282b129a7f7287d1e7e59905db852e07a7ca46b"
+  },
+  "t:pg_hotplate_t": {
+   "basecolor": "18c36ca9b5362e1f4c0eed3753599161032c164b",
+   "normal": "8fb1444922c6d81514b5e706ad52c494484f3424",
+   "roughness": "cde7e1aa62955eaa46e35cc9b269cd194f5b7efc"
+  },
+  "t:pg_lamp": {
+   "basecolor": "df21fa3a43e069f90212d89dd545b703c804a3e0",
+   "normal": "68e53385496597959f6bd6f780de6dd1365de657",
+   "roughness": "85d4afae999f4c176b8205dee40375b9b21c5011"
+  },
+  "t:pg_lily_s": {
+   "basecolor": "54c9fd020c22fc7cf92ed9a598746953d10899cc",
+   "normal": "5d088a34e5808013d208e8093e2b560f15769485",
+   "roughness": "d62b471f8b665af5de21f333ed3684d08b601f92"
+  },
+  "t:pg_lily_t": {
+   "basecolor": "5202de6649df7ca7759592a5fb3432c95382b173",
+   "normal": "d0341bf24544b8bd55463c6ef4dcf99e6b3cd592",
+   "roughness": "cf02597eefcab3e262aaf1f0619de269d5366730"
+  },
+  "t:pg_lino": {
+   "basecolor": "2171cefa0093ad15f665f96df6695f8040c86ae9",
+   "height": "4f9c90e10f8fa94695d8b1ac81b8738eb182eefe",
+   "normal": "e62b7eb242c106b7fdd498ba66c4f21c72204b7a",
+   "roughness": "147de083d944d71be5d640f04ccf2f2ea6483cdf"
+  },
+  "t:pg_mblack": {
+   "basecolor": "5fc06cf2ea96f0bb4be3571594e2f4dbce484c5a",
+   "height": "22e0dc1e38d79df228570129cd75f3204fa045a2",
+   "normal": "0d22414498c8c464aaa329b09276b29ee119aba4",
+   "roughness": "69e3d28807d3fee1df7d82c1ba0312fd762375e0"
+  },
+  "t:pg_mirror": {
+   "basecolor": "83d16ae71eef41a156ef9291b3cf63bbf9021bd5",
+   "normal": "e9c521c74d946cf579b8c494c8b12303a44d9adf",
+   "roughness": "3b6cf3ddedd450e709975fabb2ce00f1b64e0f25"
+  },
+  "t:pg_ore_googly": {
+   "basecolor": "726e4d1fb7705b80524bde522d2e067f50106228",
+   "normal": "cae6b4fd616600a0617dc4e2327174b5adaf7626",
+   "roughness": "f0a132b4c44fbdef28170844542fd45946a5686f"
+  },
+  "t:pg_ore_knuckle": {
+   "basecolor": "ce17516953425ba162039958808eb4491f82e935",
+   "normal": "1ed8b67bde4386a4ff946a3a858bd4abd89d7c80",
+   "roughness": "889d84bf0e101de607aedece6ed23aaa820a03ac"
+  },
+  "t:pg_ore_sequin": {
+   "basecolor": "2b8387cc69f4e604bd1bbe7ab41fca6e75c4c239",
+   "normal": "0ec47f6edd49fe51fce6d2071df5b3a0664f592d",
+   "roughness": "2bea25acefed7df0a7dd6edf0c7de71fdbac695f"
+  },
+  "t:pg_ore_wire": {
+   "basecolor": "dfadb07870f084926a644716a5611994ebac00a0",
+   "normal": "cc14da542e3fecf1dd8b55d5ab6bab8815a127ea",
+   "roughness": "826b8f0d7d825785e0a6455e99d878529a9d59e9"
+  },
+  "t:pg_phill": {
+   "basecolor": "18bf385aedb5f6dc4890d9a7d14b4f54c1647574",
+   "normal": "4fd8f3ae8782a9c2fc3b049e26187311e17b545c",
+   "roughness": "fc2a7ca9aa50866cdb6e2a4d4255bd83b8e1ebbd"
+  },
+  "t:pg_pins_s": {
+   "basecolor": "1ece3aa7636c18bd9ec1b7645d44a4d82b38c462",
+   "height": "3f25be30a1b917800dc9ee7a4179c7183a2bff08",
+   "normal": "11f2588a3e805d2c6301bdbdf8beae41c92298d5",
+   "roughness": "cc06dd69aba52da831c449cfc175b7dbd6e72c68"
+  },
+  "t:pg_pins_t": {
+   "basecolor": "88844c8c26b9f02827c1c9f8f9f50256d4bc4750",
+   "normal": "73531d8fe1e7b5700c6a6c7f12e1630a2dd2e898",
+   "roughness": "f61c3c3b9bd497b5e426f78bdcd5f30d26d380ea"
+  },
+  "t:pg_plate": {
+   "basecolor": "caddde4319b39d8c7473e156201935b62ad534f3",
+   "normal": "2ec94d82e73a37a657e26560e5142138b4bf1256",
+   "roughness": "610cecf4df0dd234104ac40264890f0e698347da"
+  },
+  "t:pg_psky": {
+   "basecolor": "18e48609fde6dd93c0532dfc2d0160c146bbfd18",
+   "normal": "1df9f1bcecaf623ab4f5e294c5adc1be21a742d2",
+   "roughness": "059c43f7440c71a246456085643bcf6f47cb72f2"
+  },
+  "t:pg_ptrunk_s": {
+   "basecolor": "0f98585f25ac8f8af2a2a39bbef98f5134fe6feb",
+   "normal": "bb1da9f31441182f68a6fdf57e55b66690311e0e",
+   "roughness": "322d5be78e782d0464f2be1c43129fe807342ddb"
+  },
+  "t:pg_ptrunk_t": {
+   "basecolor": "905da69e2ab53a54a2b199ce940c9104b5106691",
+   "normal": "32943a18d05a11043261602b5b98850872ed8988",
+   "roughness": "26c08254af2776654dc0e9106ea59e2aac68e5ea"
+  },
+  "t:pg_rot": {
+   "basecolor": "ee09d6aa02def5676da34e0dd70f83b99542d1f7",
+   "height": "7d37ae304e897cdc6f9acd5ef612ec11d5bb6642",
+   "normal": "b90366c3ec1992cba3ad7ad2ea0d6fb536ac8e1c",
+   "roughness": "7220599c28c8059231027761b7e6252a04685a09"
+  },
+  "t:pg_satin": {
+   "basecolor": "fe37e9767dc681fd10408441c1441a8f204c6181",
+   "height": "c5b58bbfe02644bcb3078c7c4f8239615595f073",
+   "normal": "18bffb298e66a0374bd46c2db4a8ba6583fc23bf",
+   "roughness": "9317ac9481a407006dc901ee622c31c025929cfd"
+  },
+  "t:pg_scum": {
+   "basecolor": "5b3260694635d37ddd23453c3e1be39ee4b4d70a",
+   "height": "3e62e3aeb697a4ad95dfadd101cf69cc6f36b045",
+   "normal": "c55479b32750d3b1709fa5cb9b85b292a00624ce",
+   "roughness": "bcd0c71aa0405f12f7283b11cc483c7eb307808a"
+  },
+  "t:pg_seat_s": {
+   "basecolor": "d95f5eaab2336c3e325324038bb159b44e4583d2",
+   "normal": "1ce45954a61e385556c35d7279698139cf96825f",
+   "roughness": "6c42d0865e17e1e027b77123369cfa1ded5e0d88"
+  },
+  "t:pg_seat_t": {
+   "basecolor": "c240e8c8f3028ad9ad9282e472bbfcbec2ebb2b0",
+   "normal": "4c63b231c131e0a6ae0450c291c71efe290bd3b6",
+   "roughness": "d2084ae807d040cccee9e90569b7f7dcfd8ffcb5"
+  },
+  "t:pg_shag_s": {
+   "basecolor": "be6d1cc45cb6ec69f9cff784823f9ac771724a16",
+   "normal": "c975cac5e0f8416150062662ac5f4348af3fb319",
+   "roughness": "4424c8b0c23822d49d7ed1c84e47e55e11d24c7e"
+  },
+  "t:pg_shag_t": {
+   "basecolor": "e8248809abb28fe3904ac5084b3e6338d5768505",
+   "height": "78c26cb0566494be0b43639bcee4433d9c4e6c4a",
+   "normal": "272fda30ce305dde61bce23c1beb7f4383de767a",
+   "roughness": "aba485ea3daa41d31b08174190cb5b6e65b749f9"
+  },
+  "t:pg_sheet": {
+   "basecolor": "e2a53ca03bcc38f4c5865ee3e932a97a1b5bc413",
+   "height": "a2336eca04cc6c4f4b7a700539f6200acd11874c",
+   "normal": "ff6a1a9683fb6d845cde1998c56b7cc4970f5b99",
+   "roughness": "497732d4bec87321faf3044467bf472c04805d6b"
+  },
+  "t:pg_skin": {
+   "basecolor": "fcbdf14a9b85c1bb1a7fff99432e4fc39cbd88dd",
+   "normal": "324342583d8e7556318bb4fe0beca102236af0ba",
+   "roughness": "be59c5dde91983ab3a89a24aab53393082337ecb"
+  },
+  "t:pg_sleeve_s": {
+   "basecolor": "b9b4a1438f7d970aedd2b0f5b51f0e290da123a6",
+   "height": "24bf9d92097569ef2021853fc0a88d7c96ab9e64",
+   "normal": "eebd9a9b4bd92f1e3925fb35094581c0756fd493",
+   "roughness": "2f5d75fb47b58ff2fc9c802876aa07508ccc8e01"
+  },
+  "t:pg_sleeve_x": {
+   "basecolor": "9bd4a5eab457ee8ad0406d9b08b1927878342a3b",
+   "normal": "38b6ca7528b19883121a03f2dbcf88d41a0dc4b1",
+   "roughness": "91b8b58b392e9dda68d86d4842f532c38351bb8d"
+  },
+  "t:pg_soup": {
+   "basecolor": "de23b13e5a080bc22728e0fba17829b5f46eb40c",
+   "height": "7c383ef79943c56ae4020dc7016afa083195bd99",
+   "normal": "1db97f73a39326b5f2e6b594d10c95cb4d87deb6",
+   "roughness": "336661808f9fb04193c67f6e59acf06ad27b84e9"
+  },
+  "t:pg_strunk_s": {
+   "basecolor": "4786546b6cc2d211c4fcaf1866b81f13d40326ce",
+   "normal": "bcb743e9f235cca3ae8f314c82b982a93c58b58f",
+   "roughness": "507400248da99ee2b4dbb6380447d074eb416c07"
+  },
+  "t:pg_strunk_t": {
+   "basecolor": "f275e3d472de7e13c7091d1ab56d64ab6455d579",
+   "normal": "c1b7eff860c12dbd1ca98c38d1c35c667cd297f4",
+   "roughness": "3c85b59e248fd45868f4240dff28b75c69a49b22"
+  },
+  "t:pg_stuffing": {
+   "basecolor": "007c0098f58fd312709617aacf5509de5d009029",
+   "height": "d1a27393e1eac38f76b5ce8fbc37e3d7677413cf",
+   "normal": "277d6ec7ddbc389f63e5abf43f985dd6e71cd76e",
+   "roughness": "81f5a962ba1ad3b965545f7eb6ba6437196c33fe"
+  },
+  "t:pg_swamp": {
+   "basecolor": "82679ac08aaffdae357e4b6f6d8409e2e234ffb1",
+   "height": "2114b4c3f64ab4a65afc4b2990692ca4dc4b2e9c",
+   "normal": "45f72bbeba838b128b84fce5851d119b723edfa4",
+   "roughness": "e3f806b850468459596ccb6716f70eb1a9953a41"
+  },
+  "t:pg_tesla_s": {
+   "basecolor": "ea9dc23781cf33272bdd34f9200790ab6ed2657a",
+   "height": "d9ef1f00e6173e4ed4c0820915fb19c90f9dfb3c",
+   "normal": "cd61a2cfbe22bda93a45d7404bd659e901a07fbd",
+   "roughness": "094368158a616726347eacab342a9eac75d6fb80"
+  },
+  "t:pg_tesla_t": {
+   "basecolor": "808c0f7f8fdef4c0c0899f07ab7f96e5bc5b5b21",
+   "normal": "824bb0c278dca323ff1d9699bb65d2ae61ec3da5",
+   "roughness": "406f3290a6031e27d554f391cbcc8ba5450371fb"
+  },
+  "t:pg_traveler": {
+   "basecolor": "9b91f291849d3dd514ac14433d7ca5961d6464ba",
+   "height": "43082236eb62ca68c12c10068dbe34741a507a40",
+   "normal": "0b5e31a4a712f526271e40ec63a2f27c74440b3a",
+   "roughness": "9370829ec0819a9b9c59a00aeee91b31b1e9d6fd"
+  },
+  "t:pg_velvet_s": {
+   "basecolor": "534d981d3200738054d7a6b97d0c69b55747dbfc",
+   "height": "a3362e037ab00d23f95ee1cb34a56c2f0ee85ca4",
+   "normal": "4a5435b43d5647caef14a759c9e9a4f56fb9c5f3",
+   "roughness": "d6a55288bc74693cab7cc4b7e40e09ee9710e38f"
+  },
+  "t:pg_velvet_t": {
+   "basecolor": "2a466c7fb0fdb9d708ca5cf4f97e9d3956040c1d",
+   "normal": "9a8ed02aafa31dec4d4f81d58c85f70023e9f218",
+   "roughness": "5040a13101a4b4cd7bf79eebf437dd875bfd901c"
+  },
+  "t:plank_b": {
+   "basecolor": "cf40315384f8f02ebf323398c93c1db5a6065901",
+   "height": "5256d5365f62532b96f185a5fd85e4e3bc52da5a",
+   "normal": "dedcc93a3213678495b21669e29f6394b8065a41",
+   "roughness": "8480e326f7af49aa94e8dc84ebd78f4db9a30aa6"
+  },
+  "t:plank_o": {
+   "basecolor": "538d32266223abc1fe7594836050d6dd742c85c6",
+   "height": "1d633b8cda2fc24547e39bce2e37b6a4104a7b24",
+   "normal": "6e75ce638cc318ced26a58fdabd4340c03d32658",
+   "roughness": "92b92ac6f084bdfa60a153ba142ac69f39f0d1a7"
+  },
+  "t:plank_s": {
+   "basecolor": "273933cd90b5f0b368c02725bbc14eb56eb1e6f5",
+   "height": "cad8b1fed08a766503dde55be3ce12239d469495",
+   "normal": "54c2f585bd0a89623ab4c782210f2e21154de584",
+   "roughness": "5fec3a57409282f2f97c5cbec50db6f8f689a275"
+  },
+  "t:sand": {
+   "basecolor": "1095a182001e0f904f051dcfff8b7c71f95574b8",
+   "height": "6291ab5582b92f7b0b7a13a44d248c80536569f8",
+   "normal": "631c92066c18e59ceb6c49032a152f7c5a736b1b",
+   "roughness": "2cf2f930b04880aa72d45581768d6497e223a109"
+  },
+  "t:sandstone": {
+   "basecolor": "c7a50a41c3d253a854973a1a3120f91f1315938b",
+   "height": "781643b9fac234db029a3751231342b67c513e61",
+   "normal": "03c94085b2ded29aa785d23076bd3349065b30c3",
+   "roughness": "449ed5192c820a69935dd5f00a60cf6e321a79ea"
+  },
+  "t:sandstone_t": {
+   "basecolor": "17935eb4d64a4f7b38f4a90774653c9ed0574121",
+   "height": "d8d3582e84a99bfa2c43a8189c24ca743b405795",
+   "normal": "2937cbbe108417fa6777551096d329f916e52487",
+   "roughness": "235b94dacf30d46570f9993683cb6d47c117c39a"
+  },
+  "t:sbrick": {
+   "basecolor": "36600cd3741a1657dda1afa011c5cfe9d82385e9",
+   "normal": "03e722fb4fd392eb2db99567d123b7dba28b208c",
+   "roughness": "c13e989ebce0109102b1114667574f5598d30a9a"
+  },
+  "t:snow": {
+   "basecolor": "e53579e2f5060583dd9e659bfeadd8166bd6ae06",
+   "height": "2fd788bf84ba04d8e9b860f8f6d2b6c58a1f5f25",
+   "normal": "ec635df69390f56bcbbd3b6177071eeb68172878",
+   "roughness": "26dc0882832c5846f0fbadb6606e891e70081659"
+  },
+  "t:snow_side": {
+   "basecolor": "098c62a8833aa165c358e541290f68f07ac5c498",
+   "height": "9ff7ed5ce1d6cae75c664f88e130af1aeb6367e4",
+   "normal": "698508c4342dd1ad963a773a8448b807c0ff4d49",
+   "roughness": "00a0da68ec57bfbece8f97aacdd250e76c1a96eb"
+  },
+  "t:soulsand": {
+   "basecolor": "df1c68a9868f9f11b5f4f49632ad011cddb15e07",
+   "normal": "213e5a573ff0708d320e1db55cdaf48f4b94f69e",
+   "roughness": "2c2521b9169137a3137ba27baa7daad7021df486"
+  },
+  "t:stone": {
+   "basecolor": "bca5460f65969b32f957154f92a4523ff16fcbe7",
+   "height": "6c160ecb56256f229612bb7db99a5b82b2e11c92",
+   "normal": "f7401f09993a87aa0de939c32ebcff59d0bac01d",
+   "roughness": "ce731df077232489decf7f47744e25347395e4d2"
+  },
+  "t:stonebrick": {
+   "basecolor": "ec76d0b5a00bcbf3374ad7340799146cee1e0200",
+   "normal": "8f70a9a545883c92fd0eb3742a61f6475b5e0d42",
+   "roughness": "aa04c3a4e5de66a4c60c76d95cf0de1eee2fb04d"
+  },
+  "t:tallgrass": {
+   "basecolor": "84eaac589738b4a38004fe3bd31e6e4d986a18ba"
+  },
+  "t:tnt_s": {
+   "basecolor": "e78d54a5ae2817fec1fc027b56e6e5cb20a87962",
+   "normal": "fb1e336dee7a11bfd01ccfa8b3bd4d05bc5a81ab",
+   "roughness": "54122507f96ad1e098828f4ce447ddfde5446c2a"
+  },
+  "t:tnt_t": {
+   "basecolor": "e1b2a02105de1a0631f59ff233d389a4ef2e5f0e",
+   "normal": "714ca3774fbfb1a7c9978745d609697b1d4c4397",
+   "roughness": "da229a6aa970745e874cc7c981d7cd53ab2eed1c"
+  },
+  "t:torch": {
+   "basecolor": "5b334e560affe1755bd2071a06bce7095e72f3f1",
+   "normal": "57751322820d35d9030c398586d826d638c3d031",
+   "roughness": "367cf8ee39557771922bca4bde2d2df647e24fee"
+  },
+  "t:water": {
+   "basecolor": "4dfcf8a79e7e36ce96a5de144c1580534f435d15",
+   "height": "1f478fe2d0dea94a3bec208a4f3eb0998931bc5e",
+   "normal": "11fbefbf2e619c9cc1de2dadcc149b9bff60640e",
+   "roughness": "3fcf3dcfb031da41cc7539d5d978c279e7ffdcdd"
+  },
+  "t:wool": {
+   "basecolor": "2f2bff536237a50eca3ccc1e95d744725483d8ad",
+   "normal": "79bd3791db31ed06575b5decd2bd61be5dae26dc",
+   "roughness": "c803c5d3fe7022b79ac3753cd98bb30502380e05"
+  }
+ },
+ "v": 1,
+ "warnings": [
+  "tile cactus: weak normal/height correlation (x -0.16, y +0.12), kept",
+  "tile cactus_t: weak normal/height correlation (x -0.09, y +0.08), kept",
+  "tile lava: weak normal/height correlation (x -0.25, y +0.25), kept",
+  "tile ore_coal: weak normal/height correlation (x -0.26, y +0.24), kept",
+  "tile ore_iron: weak normal/height correlation (x -0.29, y +0.28), kept",
+  "tile pg_backing: weak normal/height correlation (x -0.12, y +0.22), kept",
+  "tile pg_burner_s: weak normal/height correlation (x -0.01, y +0.01), kept",
+  "tile pg_counter_t: weak normal/height correlation (x +0.10, y -0.11), kept",
+  "tile pg_foam: DirectX normal, G flipped to OpenGL (corr x -0.54, y -0.57)",
+  "tile pg_satin: weak normal/height correlation (x -0.24, y +0.14), kept",
+  "tile pg_sleeve_s: weak normal/height correlation (x -0.06, y +0.14), kept",
+  "tile pg_stuffing: weak normal/height correlation (x -0.17, y +0.18), kept",
+  "tile pg_swamp: weak normal/height correlation (x -0.25, y +0.05), kept",
+  "tile snow: DirectX normal, G flipped to OpenGL (corr x -0.38, y -0.28)"
+ ]
+}

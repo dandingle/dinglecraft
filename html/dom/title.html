@@ -1,0 +1,78 @@
+<div id="title" class="ovl">
+  <canvas id="tbgc" aria-hidden="true"></canvas>
+  <script type="application/json" id="tpano">{{TITLE_PANO_JSON}}</script>
+  <div id="tshade" aria-hidden="true"></div>
+  <div id="tstage">
+    <header id="thead">
+      <img id="tlogo" src="data:image/png;base64,{{LOGO_PNG_BASE64}}" alt="DINGLECRAFT">
+      <div id="ttag"><span id="t_ver">Release 1.0</span></div>
+    </header>
+    <nav id="tmain" class="tview" aria-label="Main menu">
+      <button id="t_continue" class="mc-btn tgo" style="display:none"></button>
+      <button id="t_go_new" class="mc-btn">Create New World</button>
+      <button id="t_go_load" class="mc-btn">Load World</button>
+      <button id="t_help" class="mc-btn">Help &amp; Controls</button>
+      <button id="t_patch" class="mc-btn" hidden style="display:none">What’s New</button>
+    </nav>
+    <section id="tnew" class="tview panel" aria-labelledby="tnew_h" hidden>
+      <h2 id="tnew_h">Create New World</h2>
+      <label class="mlabel" for="t_name">World name</label>
+      <input id="t_name" class="mc-in" value="My World" maxlength="24" autocomplete="off" spellcheck="false">
+      <label class="mlabel" for="t_seed">Seed (blank = random)</label>
+      <input id="t_seed" class="mc-in" placeholder="e.g. 1337 or any words" autocomplete="off" spellcheck="false">
+      <div class="mlabel" id="t_mode_l">Game mode</div>
+      <div class="tseg" role="group" aria-labelledby="t_mode_l">
+        <button id="t_mode_s" class="mc-btn on" aria-pressed="true">Survival</button>
+        <button id="t_mode_c" class="mc-btn" aria-pressed="false">Creative</button>
+      </div>
+      <select id="t_mode" class="mc-in" hidden>
+        <option value="s">Survival</option>
+        <option value="c">Creative</option>
+      </select>
+      <div class="mlabel" id="t_rules_l">Game rules</div>
+      <div id="t_rules" class="trules" role="group" aria-labelledby="t_rules_l">
+        <label class="ttoggle tsm"><input id="tr_keepInv" type="checkbox"><span class="tlab">Keep Inventory<small>Keep your items when you die</small></span></label>
+        <label class="ttoggle tsm"><input id="tr_mobGrief" type="checkbox" checked><span class="tlab">Mob Griefing<small>Explosions break blocks</small></span></label>
+        <label class="ttoggle tsm"><input id="tr_peaceful" type="checkbox"><span class="tlab">Peaceful<small>No mobs spawn</small></span></label>
+        <label class="ttoggle tsm"><input id="tr_fireTick" type="checkbox" checked><span class="tlab">Fire Tick<small>Fire spreads and burns out</small></span></label>
+        <label class="ttoggle tsm"><input id="tr_snail" type="checkbox"><span class="tlab">The Eternal Snail<small>The slow pursuer</small></span></label>
+        <label class="ttoggle tsm"><input id="tr_ghosts" type="checkbox"><span class="tlab">Guilt Ghosts<small>Slain mobs come back to talk</small></span></label>
+        <label class="ttoggle tsm"><input id="tr_fbOK" type="checkbox" checked><span class="tlab">Fullbright Toggle<small>Allow it in Settings</small></span></label>
+        <label class="ttoggle tsm"><input id="tr_store" type="checkbox" checked><span class="tlab">Dingle Store<small>The shop in the pause menu</small></span></label>
+        <label class="ttoggle tsm"><input id="tr_powers" type="checkbox" checked><span class="tlab">Superpowers<small>Press P</small></span></label>
+        <label class="ttoggle tsm"><input id="tr_cheats" type="checkbox"><span class="tlab">Cheats<small>Debug menu access</small></span></label>
+        <label class="ttoggle tsm twide"><input id="t_bots" type="checkbox"><span class="tlab">AI Players<small>Needs the AI brain server and your own Anthropic API key</small></span></label>
+      </div>
+      <p id="t_warn" class="twarn">Worlds are saved in this browser. Clearing your browsing history or site data deletes them, so export your world often (pause menu, Export World).</p>
+      <div class="trow">
+        <button id="t_back_new" class="mc-btn">Back</button>
+        <button id="t_new" class="mc-btn tgo">Create World</button>
+      </div>
+    </section>
+    <section id="tname" class="tview panel" aria-labelledby="tname_h" hidden>
+      <h2 id="tname_h">Welcome to DINGLECRAFT</h2>
+      <label class="mlabel" for="t_pname">What should everyone call you?</label>
+      <input id="t_pname" class="mc-in" maxlength="16" autocomplete="off" spellcheck="false" placeholder="Your name">
+      <div class="trow"><button id="t_pname_ok" class="mc-btn tgo">Let's go</button></div>
+    </section>
+    <section id="tgr" class="tview panel" aria-labelledby="tgr_h" hidden>
+      <h2 id="tgr_h">Game Rules</h2>
+      <div class="mlabel" id="tgr_world"></div>
+      <div id="tgr_list" class="trules"></div>
+      <div class="trow">
+        <button id="tgr_back" class="mc-btn">Cancel</button>
+        <button id="tgr_save" class="mc-btn tgo">Save Rules</button>
+      </div>
+    </section>
+    <section id="tload" class="tview panel" aria-labelledby="tload_h" hidden>
+      <h2 id="tload_h">Saved Worlds</h2>
+      <div class="mlabel tgrhint">Right-click a world to change its game rules.</div>
+      <div id="t_worlds"></div>
+      <div class="trow">
+        <button id="t_back_load" class="mc-btn">Back</button>
+        <button id="t_import" class="mc-btn">Import World (.vxw.json)</button>
+      </div>
+    </section>
+  </div>
+</div>
+

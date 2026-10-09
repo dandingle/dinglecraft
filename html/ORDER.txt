@@ -1,0 +1,21 @@
+# DINGLECRAFT head.html build order: one path per line (relative to html/), concatenated byte-for-byte by scripts/build.mjs.
+# dom/title.html holds {{LOGO_PNG_BASE64}}, replaced exactly once by base64(assets/logo.png).
+# html/tail.html is not listed: the build appends it after game.js and hrassets.js.
+00_open.html
+css/core.css
+css/features.css
+css/ai_players.css
+css/purgatory.css
+css/creativity.css
+css/malgorath.css
+01_body_open.html
+dom/hud.html
+dom/touch_cursor.html
+dom/panels_a.html
+dom/title.html
+dom/menus.html
+dom/panels_b.html
+dom/help.html
+dom/ext_panels.html
+dom/patch.html
+99_scripts.html

@@ -1,0 +1,20 @@
+#!/bin/sh
+# DINGLECRAFT pre-commit hook (install once: npm run hooks). Refuses a commit that would leak a timezone or a personal address,
+# then runs the secrets + privacy scan over the files the commit would hold. Prints rule names only, never a value.
+REPO="$(git rev-parse --show-toplevel)" || exit 1
+for who in GIT_AUTHOR_IDENT GIT_COMMITTER_IDENT; do
+  ident="$(git var "$who")" || exit 1
+  case "$ident" in
+    *" +0000") ;;
+    *) echo "pre-commit: the $who date is not in UTC (a local zone gives away where and when you work)." >&2
+       echo "            commit with TZ=UTC0, e.g.  TZ=UTC0 git commit ..." >&2
+       exit 1 ;;
+  esac
+  case "$ident" in
+    *"<noreply@dinglecraft.invalid>"*|*"@users.noreply.github.com>"*) ;;
+    *) echo "pre-commit: the $who email is not the placeholder (git config user.email noreply@dinglecraft.invalid)." >&2
+       exit 1 ;;
+  esac
+done
+node "$REPO/tools/scan_secrets.mjs" >/dev/null 2>&1 || { node "$REPO/tools/scan_secrets.mjs" | grep -E '^(FAIL|scan:)' >&2; exit 1; }
+exit 0

@@ -1,0 +1,11 @@
+#!/bin/sh
+# DINGLECRAFT pre-push hook (install once: npm run hooks). Scans exactly what this push adds to the remote: commit identities
+# and zones, every path and every blob (tools/scan_history.mjs --range). Prints rule names only, never a value.
+REPO="$(git rev-parse --show-toplevel)" || exit 1
+Z=0000000000000000000000000000000000000000
+while read -r lref lsha rref rsha; do
+  [ "$lsha" = "$Z" ] && continue                 # deleting a remote ref publishes nothing
+  if [ "$rsha" = "$Z" ]; then range="$lsha"; else range="$rsha..$lsha"; fi
+  node "$REPO/tools/scan_history.mjs" --range "$range" || { echo "pre-push: $lref was not pushed (see the findings above)" >&2; exit 1; }
+done
+exit 0

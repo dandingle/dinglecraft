@@ -1,5 +1,9 @@
 # DINGLECRAFT
 
+The only part of this entire project not written by AI is the paragraph you're reading right now. If you don't understand anything, neither do I. This GitHub repository holds the source code for the entire game in case people want to add / change things themselves but I cannot provide technical support if you do not know what you're doing (because again, I don't know either lol). If you just want to play the game download the HTML either from here or from https://dandingle.store/dinglecraft
+
+- Dan
+
 A fan-made, Minecraft-style voxel sandbox that ships as **one HTML file**. Punch trees, build a house, then find out
 the game also has a casino, a stock market, rideable dragons, a microtransaction store that sells "Remove Ads" (there
 are no ads), walking Nuke Kegs, a nuclear bomb you drop from a prop plane, three AI players with their own grudges, a

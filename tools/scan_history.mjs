@@ -56,9 +56,12 @@ function main() {
   for (const c of commits) {
     const raw = git(['cat-file', 'commit', c]);
     const cut = raw.indexOf('\n\n'), head = raw.slice(0, cut < 0 ? raw.length : cut).split('\n'), msg = cut < 0 ? '' : raw.slice(cut + 2);
+    /* an edit made on github.com (its committer is GitHub itself): the owner accepts its local time zone and GitHub's
+       own web-flow signature (2026-10-09); its email must still be a noreply address */
+    const web = head.some((l) => /^committer GitHub <noreply@github\.com> \d+ [+-]\d{4}$/.test(l));
     for (const l of head) {
-      if (/^(author|committer) /.test(l)) for (const p of identProblems(l)) add('commit', c.slice(0, 7), l.split(' ')[0] + ' ' + p);
-      if (/^(gpgsig|gpgsig-sha256|mergetag) /.test(l)) add('commit', c.slice(0, 7), 'signature-header');
+      if (/^(author|committer) /.test(l)) for (const p of identProblems(l)) { if (web && p === 'ident-timezone') continue; add('commit', c.slice(0, 7), l.split(' ')[0] + ' ' + p); }
+      if (/^(gpgsig|gpgsig-sha256|mergetag) /.test(l) && !web) add('commit', c.slice(0, 7), 'signature-header');
     }
     msg.split('\n').forEach((l) => { for (const [rule] of textHits(l)) add('commit', c.slice(0, 7), 'message ' + rule); });
   }

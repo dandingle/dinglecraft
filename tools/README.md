@@ -55,7 +55,9 @@ that no value is ever printed.
 `tools/scan_history.mjs` applies the same rules to everything a push would publish: every commit's author and committer
 (a placeholder or noreply address, and a `+0000` zone: a local offset says where and when someone works), signature
 headers, every message, every ref name, every path ever committed and every blob reachable from any ref. `--range A..B`
-limits it to what a push adds; the pre-push hook passes exactly that.
+limits it to what a push adds; the pre-push hook passes exactly that. Edits made on github.com (committed by GitHub) may
+carry the editor's local time zone and GitHub's own signature: the owner accepts those (their emails must still be
+noreply addresses).
 
 ## Git hooks (`npm run hooks`)
 

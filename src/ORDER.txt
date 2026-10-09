@@ -79,6 +79,7 @@ features/part47.js
 features/part48.js
 features/part49.js
 features/part50.js
+features/replay.js
 features/p51_prop_plane.js
 features/p52_big_dingle.js
 

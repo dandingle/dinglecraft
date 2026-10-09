@@ -11,7 +11,7 @@ gate. The suites are the safety net that makes these changes boring.
 
 ## 0. First post-split cleanups (Release 1.0)
 
-Small things that v6.3's byte freeze would not let us touch. Release 1.0 (game versions 6.4 to 6.8) did them:
+Small things that v6.3's byte freeze would not let us touch. Release 1.0 (game versions 6.4 to 6.9) did them:
 
 - **Done: the in-game "brain is not running" hint** in `src/ai_players/a8_mind.js` and `a9_ui.js` no longer names the
   old project folder, and `tests/repo/r_build.js` no longer allows it.

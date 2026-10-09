@@ -24,7 +24,7 @@ original: no real characters, brands or trademarks in names, art or text (the IP
 4. **Shipped versions are frozen.** If `GAME_VERSION` is in `tests/fixtures/shipped.json`, the build must reproduce it
    byte for byte. Bump first (`npm run bump`) for anything that changes output. Never overwrite a `dist/` html Dan may be
    playing; never modify a shipped html anywhere. "Release 1.0" is a public LABEL (`RELEASE_LABEL`), not a game version:
-   Release 1.0 is game versions 6.4 (the preview) to 6.8. Never set `GAME_VERSION` or `package.json` to a label;
+   Release 1.0 is game versions 6.4 (the preview) to 6.9. Never set `GAME_VERSION` or `package.json` to a label;
    `GAME_VERSION` only goes up ([CONTRIBUTING.md](CONTRIBUTING.md), "Versions and release labels").
 5. **The core quartet is frozen.** Never edit `tests/core/{stubs,test,smoke,botsmoke}.js`. New behaviour, new suites.
    (One owner-made exception: 6.8 removed `smoke.js`'s Watcher check with the Watcher; `r_gate.js` pins the new bytes.)
@@ -74,7 +74,8 @@ build/ dist/ out/   gitignored outputs
 6. **Run repeatedly.** `npm run test:quick` while iterating, `npm test` before committing, and repeat the relevant smokes
    4-6 times. Flakes are real and almost always rig bugs (`docs/TESTING.md`, the field manual). A red test stops the
    line.
-7. **HTML.** UI markup and CSS in `html/`, a help-screen row and blurb in `html/dom/help.html`.
+7. **HTML.** UI markup and CSS in `html/`; if it adds a key or a mouse action, a row in the Controls screen (`html/dom/help.html`,
+   controls only, no feature blurbs).
 8. **Look at it**, muted, in a real browser, in OG and Hyperreal, if it is visual (`docs/QA.md`).
 9. **Ship.** Patch notes, `npm run gate`, `npm run release`, commit with `TZ=UTC0`, tag (`docs/RELEASING.md`).
 10. **Announce** with playful per-feature patch notes, plus the test counts `npm run release` prints (the in-game

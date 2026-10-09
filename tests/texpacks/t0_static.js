@@ -41,8 +41,8 @@ boot.run(async()=>{
   ok('the v6.0 Hyperreal notes are kept, pinned to 6.0 (at least 8 lines)',V.PATCH_LOG[L+1].v==='6.0'&&V.PATCH_LOG[L+1].title==='Hyperreal'&&V.PATCH_LOG[L+1].lines.length>=8);
   ok('the v5.9 notes are kept, pinned to 5.9',V.PATCH_LOG[L+2].v==='5.9'&&V.PATCH_LOG[L+2].title==='Other Players');
   {const hh=fs.readFileSync(boot.BUILD+'head.html','utf8');
-   ok('the help screen has the '+(malg?'final boss, ':'')+(crea?'creativity, ':'')+'purgatory and texture-pack rows and the title says v'+VER,hh.includes('<b>Puppet Purgatory</b> ')&&!/PLACEHOLDER/.test(hh)&&
-     (!crea||hh.includes('<b>Creativity</b> '))&&(!malg||hh.includes('<b>The Final Boss</b> '))&&hh.includes('<b>Texture packs</b> Settings')&&(NEW?(/id="t_ver"[^>]*>([^<]*)</.exec(hh)||[])[1]===V.RELEASE_LABEL:hh.includes('voxel sandbox — v'+VER+'</div>')));}
+   ok('the help screen is Controls only ('+(crea?'the creativity controls row, ':'')+'no purgatory, final boss or texture-pack blurbs) and the title says v'+VER,!hh.includes('<b>Puppet Purgatory</b>')&&!/PLACEHOLDER/.test(hh)&&
+     (!crea||hh.includes('<b>Creativity</b> '))&&!hh.includes('<b>The Final Boss</b>')&&!hh.includes('<b>Texture packs</b>')&&(NEW?(/id="t_ver"[^>]*>([^<]*)</.exec(hh)||[])[1]===V.RELEASE_LABEL:hh.includes('voxel sandbox — v'+VER+'</div>')));}
 
   /* ---- quality tiers ---- */
   const Q=V.HRQ;

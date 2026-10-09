@@ -122,8 +122,8 @@ boot.run(async()=>{
   /* split repo (bump-safe): VER is the build's version (6.3 at the split) and NEW the patch-log entries newer than v6.3 (0 at v6.3) */
   const VER=V.GAME_VERSION,NEW=Math.max(0,V.PATCH_LOG.findIndex(e=>e.v==='6.3')),vgt=(a,b)=>{const x=String(a).split('.').map(Number),y=String(b).split('.').map(Number);return x[0]>y[0]||(x[0]===y[0]&&x[1]>y[1]);};
   ok('the WIN copy is the v6.3 one (MALGORATH IS UNDONE. / DINGLECRAFT '+VER+') and the old 2.1 lines are gone',HH.includes('<div id="winsub">MALGORATH IS UNDONE.</div>')&&HH.includes('DINGLECRAFT '+(NEW?V.RELEASE_LABEL:VER)+'. The dirt remembers you.')&&
-    HH.indexOf('MALGORATH IS SLAIN')<0&&HH.indexOf('three\n      phases and a speech')<0&&HH.includes("or Malgorath's Bite."));
-  if(full){ok('v'+(NEW?VER+' (newer than 6.3)':'6.3')+': GAME_VERSION, the title line and the help row (The Final Boss)',(NEW?vgt(VER,'6.3'):VER==='6.3')&&(NEW?(/id="t_ver"[^>]*>([^<]*)</.exec(HH)||[])[1]===V.RELEASE_LABEL:HH.includes('voxel sandbox — v'+VER+'</div>'))&&HH.includes('<div class="krow"><b>The Final Boss</b> MALGORATH has been rebuilt'));
+    HH.indexOf('MALGORATH IS SLAIN')<0&&HH.indexOf('three\n      phases and a speech')<0);   /* (the help's Structure Compass blurb, "or Malgorath's Bite.", went when Help became Controls only) */
+  if(full){ok('v'+(NEW?VER+' (newer than 6.3)':'6.3')+': GAME_VERSION and the title line (the help screen is Controls only: no Final Boss row)',(NEW?vgt(VER,'6.3'):VER==='6.3')&&(NEW?(/id="t_ver"[^>]*>([^<]*)</.exec(HH)||[])[1]===V.RELEASE_LABEL:HH.includes('voxel sandbox — v'+VER+'</div>'))&&!HH.includes('<b>The Final Boss</b>'));
     const pn=V.PATCH_LOG[NEW];ok('v6.3 patch notes: The Malgorath Update, >= 5 lines, no placeholder, spoiler-free (no round, sun, burst, hat, gut words), 6.2 kept next',pn.v==='6.3'&&pn.title==='The Malgorath Update'&&
       pn.lines.length>=5&&pn.lines.every(l=>!/PLACEHOLDER/.test(l))&&!/\b(round|rounds|sun|burst|hat|gut|tongue|inhale|plate|maw|table)\b/i.test(pn.lines.join(' '))&&V.PATCH_LOG[NEW+1].v==='6.2');}
   else skip('version, notes and help row','DC_NO_TEX build (stage 2 did not run)');

@@ -243,7 +243,7 @@ async function run(res,scales,{title=true,game=true,behave=false}={}){
       const dir=shotDir(path.join(OUT,`${res[0]}x${res[1]}_behaviour`)),tag=`${res[0]}x${res[1]} title`;
       await C.ev(`uiSetPref('auto');await quitToTitle();`);await sleep(300);
       const q=await C.ev(`tbgDraw(60);const c=document.getElementById('t_continue');return {bg:TBG.on,view:TM.view,cont:getComputedStyle(c).display!=='none'?c.textContent:'',load:document.getElementById('t_go_load').textContent};`);
-      check(`${tag}: back on the title: the island runs again, main menu, Continue and the world count`,q.bg&&q.view==='main'&&/uiqa/.test(q.cont)&&/Load World \(\d+\)/.test(q.load),q);
+      check(`${tag}: back on the title: the island runs again, main menu, Continue and Load World (no world count)`,q.bg&&q.view==='main'&&/uiqa/.test(q.cont)&&q.load==='Load World',q);
       await shoot(dir,6,'title_continue');
       const x=await C.ev(`tmShow('load');const b=[...document.querySelectorAll('#t_worlds .wrow')].find(r=>/uiqa/.test(r.textContent)).querySelector('button.danger');b.click();
         return {txt:b.textContent,armed:b.classList.contains('armed'),still:[...document.querySelectorAll('#t_worlds .wrow')].some(r=>/uiqa/.test(r.textContent))};`);

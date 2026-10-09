@@ -115,16 +115,16 @@ Every build has two version names, and they never mix:
 
 | | `GAME_VERSION` (internal) | `RELEASE_LABEL` (public) |
 |---|---|---|
-| example | `'6.8'` | `'Release 1.0'` |
+| example | `'6.9'` | `'Release 1.0'` |
 | defined in | `src/core/p01a_prologue.js` | the line right below it |
-| used by | saves (`v` in every world file), save migrations, every version comparison, the dist file name `dinglecraft_v6.8.html`, the brain (it serves `dinglecraft_vX.Y.html`), `tests/fixtures/shipped.json`, `package.json` (`6.8.0`), the git tag `v6.8` | everything a player or reader sees: the title screen (`#t_ver` in `html/dom/title.html`), the win screen (`#winsmall` in `html/dom/panels_b.html`), the F3 debug line, README, CHANGELOG headings, the git tag `release-1.0` |
+| used by | saves (`v` in every world file), save migrations, every version comparison, the dist file name `dinglecraft_v6.9.html`, the brain (it serves `dinglecraft_vX.Y.html`), `tests/fixtures/shipped.json`, `package.json` (`6.9.0`), the git tag `v6.9` | everything a player or reader sees: the title screen (`#t_ver` in `html/dom/title.html`), the win screen (`#winsmall` in `html/dom/panels_b.html`), the F3 debug line, README, CHANGELOG headings, the git tag `release-1.0` |
 | shape | two-part `maj.min`, strictly increasing, never reused | one short line of letters, digits, spaces, dots and dashes; consecutive versions may share it, but it never comes back once a newer label has shipped |
 
 - **`GAME_VERSION` only ever goes up** (6.3, 6.4, 6.5 ... 7.0), so old worlds can always be recognised and migrated, and
   a shipped version stays frozen to its bytes. It is never set to a release name: Release 1.0 is game versions 6.4 (the
-  preview, labelled Release 1.0 Preview) to 6.8.
+  preview, labelled Release 1.0 Preview) to 6.9.
 - **`RELEASE_LABEL` names a release for people.** Release 1.0 was the first public release of the repository. A release
-  can come in cuts: consecutive game versions may keep the newest label (6.5 to 6.8 are all Release 1.0), and the
+  can come in cuts: consecutive game versions may keep the newest label (6.5 to 6.9 are all Release 1.0), and the
   release tag then moves to the newest cut. Once a newer label ships, an older label never comes back
   (`labelProblem` in `scripts/lib/version.mjs`). The next public build gets its own label (for example Release 1.1); the
   label is chosen at bump time.

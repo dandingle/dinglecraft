@@ -5,12 +5,12 @@ Every release's patch notes, newest first. This file is generated from
 A version appears once `npm run release` has recorded it in `tests/fixtures/shipped.json`.
 
 <!-- manual -->
-> **Release 1.0 (game versions 6.4 to 6.8).** The first public release, and the first one built in this repository. 6.4 was
+> **Release 1.0 (game versions 6.4 to 6.9).** The first public release, and the first one built in this repository. 6.4 was
 > the preview: Puppet Purgatory's new cast, the game's own names, models and textures in several other places (old worlds
 > load with the new names), a redesigned title screen and a UI Scale setting. 6.5 and 6.6 were cuts of the title panorama.
 > 6.7 completes it: game rules on Create New World, a per-world rules editor, Export World in the pause menu, new sliders,
-> your own name, menu music, offline play and a few rare finds. 6.8, the final cut, trims the horror. Each cut has its
-> own entry below.
+> your own name, menu music, offline play and a few rare finds. 6.8 trims the horror, and 6.9 adds replays (F8) and
+> screenshots (F2). Each cut has its own entry below.
 >
 > **The move into this repository (v6.3, 2026-10-08).** DINGLECRAFT moved out of its old "splice" build pipeline into this
 > repository: per-system source files in `src/` and `html/`, the Hyperreal art as individual WebP files in
@@ -20,6 +20,16 @@ A version appears once `npm run release` has recorded it in `tests/fixtures/ship
 <!-- /manual -->
 
 <!-- generated from PATCH_LOG: do not edit below this line (up to the next manual block) -->
+
+## Release 1.0 — Replays
+
+*Game version 6.9, released 2026-10-09.*
+
+- REPLAYS: the game keeps your last 30 seconds ready. Press F8 and it saves as an MP4 video, sound, records and paintings included. Turn it on or off in Settings.
+- SCREENSHOTS: F2 saves a picture (PNG).
+- First launch says hello: share your best moments on r/DanDingle.
+- Main menu: Controls (just the controls now), an r/DanDingle button and a separate Credits screen.
+- The menu music is half as loud, and Load World no longer shows a count.
 
 ## Release 1.0 (final cut)
 

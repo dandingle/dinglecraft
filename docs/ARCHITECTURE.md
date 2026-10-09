@@ -308,6 +308,14 @@ In the core: atlas tiles (`crTiles`), meshing (`crMesh`), right-click and placem
 `crOnPlace`), keyboard (`crKey`, `crOn` in `modalOpen`), drops that never despawn (`crKeepDrop`), death scatter
 (`crScatter`, `crOrphan`), saves (`crSaveFields`, `crLoad`, `crReset`), and the `CRREG` registry.
 
+Replays and screenshots (`features/replay.js`, game 6.9, bundled right after `part50.js`): `recFrame` runs
+once per rendered frame (p07h, right after the render), copies the canvas into a 2D canvas at up to 720p and feeds
+WebCodecs (`VideoEncoder`, H.264, a key frame a second), keeping the last 30 s (`RP.ch`). The sound is tapped after the
+volume buses (`AC.__sfx`, `AC.__mus`) by an AudioWorklet loaded from a `data:` URL (a `file://` page cannot load one from
+`blob:`), laid down gaplessly by sample index (`rpPcm`). F8 (`rpSave`) encodes the audio (AAC) and packs an MP4 with the
+built-in muxer `rpMux`; F2 (`rpShotNow`) saves a PNG. Settings `s_replay`, the one-time intro `#rpintro`
+(`html/dom/replay.html`, `rpIntro`), storage key `vox_replay`.
+
 ### The Malgorath Update (PART 57, `src/malgorath/`, plus `src/malgorath/hr/`)
 
 The boss at X 1000, Z 1000, rebuilt: the Bite (a 77 m hole in the world), a three-round fight, scenes, loot. State is one

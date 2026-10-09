@@ -146,7 +146,7 @@ boot.run(async()=>{
   ok('pages 1-12 keep the reveals (no elbow, Felt Dan, broom, Strike, hand slid, under the floor, flinch; no arm from page 7)'+(sp.length?' ('+sp.join(',')+')':''),sp.length===0);
   if(full){const pn=V.PATCH_LOG.find(e=>e.v==='6.1')||{lines:[]},nl=pn.lines.join(' ');   /* v6.2: the 6.1 entry is no longer the newest */
     ok('the v6.1 patch notes tease only (strict spoiler regex)',pn.v==='6.1'&&pn.lines.length>0&&!/\barm\b|puppeteer|felt dan|broom|strike|hand slid|elbow/i.test(nl));
-    ok('the help row tells you how to find the door',HH.includes('<b>Puppet Purgatory</b>')&&/Stage Door/.test(HH));}
+    ok('the help screen is Controls only: no Puppet Purgatory blurb (the door is still found by the structure compass)',!HH.includes('<b>Puppet Purgatory</b>')&&/<h2>Controls<\/h2>/.test(HH));}
   else skip('patch notes','DC_NO_TEX build (stage 2 did not run)');
 
   /* ---- verbatim pages (audit A10) ---- */

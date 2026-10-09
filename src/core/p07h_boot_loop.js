@@ -72,6 +72,7 @@ function frame(t){
       renderer.setRenderTarget(SHD.rt);renderer.render(scene,camera);
       renderer.setRenderTarget(null);renderer.render(SHD.scn,SHD.cam);
     }else renderer.render(scene,camera);
+    if(typeof recFrame==='function')recFrame();   /* replays (features/replay.js): grab the frame while the buffer holds it */
     frameCount++;
   }
 }

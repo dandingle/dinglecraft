@@ -1,7 +1,7 @@
 # Testing
 
-DINGLECRAFT has 3,656 distinct automated checks in its game suites (Release 1.0, game 6.8; 3,667 at game 6.7, 3,512 at
-game 6.4, 3,291 at v6.3), plus 276 in the brain and tools self-tests, and no test framework. Every suite is a plain Node script that
+DINGLECRAFT has 3,658 distinct automated checks in its game suites (Release 1.0, game 6.9; 3,656 at game 6.8, 3,667 at
+game 6.7, 3,512 at game 6.4, 3,291 at v6.3), plus 276 in the brain and tools self-tests, and no test framework. Every suite is a plain Node script that
 boots the real built `game.js` against headless stubs (a fake DOM, canvas, WebGL, audio and storage), plays it, and
 prints `N passed, M failed`. Nothing touches the network and nothing makes a sound.
 

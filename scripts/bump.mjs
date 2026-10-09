@@ -64,4 +64,4 @@ rep('package.json', `"version": "${OLD}.0"`, `"version": "${NEW}.0"`);
 
 for (const [f, s] of Object.entries(files)) fs.writeFileSync(path.join(REPO, f), s);
 console.log(`bumped v${OLD} (${OLD_LABEL}) -> v${NEW} (${LABEL}) "${TITLE}" in ${Object.keys(files).length} files: ${Object.keys(files).join(', ')}`);
-console.log('next: write the patch notes (replace the TODO line in ' + PATCH_FILE + '), add a help row + blurb in html/dom/help.html, then npm run build');
+console.log('next: write the patch notes (replace the TODO line in ' + PATCH_FILE + '), add a Controls row in html/dom/help.html if it adds a key, then npm run build');

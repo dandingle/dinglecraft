@@ -73,7 +73,7 @@ boot.run(async()=>{
   const ac=HOLD.ac,M=V.getTMUS();
   ok('Sound on: one looping source (the disc BATEHOVEN IS HALOUS, rendered once) through a gain onto the music bus',!!ac&&V.getAC()===ac&&!!M.src&&M.src.loop===true&&
     !!M.src.buffer&&M.src.buffer.length>ac.sampleRate&&M.src.out[0]===M.g&&!!ac.__mus&&M.g.out[0]===ac.__mus);
-  ok('it fades in (0.0001 -> 0.55 over 1.2 s) and starts just after now',!!M.g&&JSON.stringify(M.g.gain.ev.slice(0,2))===JSON.stringify([['set',0.0001,0],['lin',0.55,1.2]])&&
+  ok('it fades in (0.0001 -> 0.275 over 1.2 s: half the old 0.55) and starts just after now',!!M.g&&JSON.stringify(M.g.gain.ev.slice(0,2))===JSON.stringify([['set',0.0001,0],['lin',0.275,1.2]])&&
     !!M.src.started&&Math.abs(M.src.started[0]-0.05)<1e-9);
   V.tmusStart();
   ok('a second start keeps one voice',FA.live(ac,true).length===1&&V.getTMUS().src===M.src);
@@ -89,10 +89,13 @@ boot.run(async()=>{
   V.syncSetUI();
   ok('the Music switch is labelled World Music (the menu music and records follow the Music volume slider)',/^World Music: (On|Off)$/.test(el('p_music').textContent)&&
     /id="p_music"[^>]*>World Music: Off</.test(HH));
-  ok('Help: AI players are opt-in (Create New World, the rules editor, /bots join), not "the Debug Menu"',/tick <b>AI Players<\/b> on Create New World/.test(HH)&&!/Toggle with \/bots or the Debug Menu/.test(HH));
-  ok('Help: game rules live on Create New World and in the right-click editor; the Debug Menu needs Cheats',/<b>Game rules:<\/b> pick them on Create New World/.test(HH)&&!/<b>Debug Menu:<\/b> in the pause screen/.test(HH));
-  ok('Help: Export World is in the pause menu (no "Export World File"), Settings lists the 6.7 sliders, no What’s New row',
-    /<b>Export World<\/b> \(pause menu, under Save World\)/.test(HH)&&!/Export World File/.test(HH)&&/field of view, your name, mouse sensitivity/.test(HH)&&!/<b>What’s New:<\/b>/.test(HH));
+  ok('Controls (the old Help & Controls) is controls only: the F8 replay row, no AI players, Game rules, Export World, Settings or What’s New blurbs',
+    /<h2>Controls<\/h2>/.test(HH)&&/<b>Save a replay<\/b> F8 saves the last 30 seconds/.test(HH)&&!/<b>AI players<\/b>/.test(HH)&&!/<b>Game rules:<\/b>/.test(HH)&&!/<b>Export World<\/b>/.test(HH)&&!/<b>What’s New:<\/b>/.test(HH));
+  {const a=HH.indexOf('<section id="tcred"'),cr=a>=0?HH.slice(a,HH.indexOf('</section>',a)):'';
+   ok('Credits is its own title view (CC-BY credits, three.js, a Back button) and the help screen has no Credits row',!!cr&&/Roman Miller/.test(cr)&&/three\.js r128 \(MIT\)/.test(cr)&&/id="t_back_cred"/.test(cr)&&!/<b>Credits:<\/b>/.test(HH));}
+  ok('the main menu: Create New World, Load World (no count), Controls, r/DanDingle, Credits, all wired',/id="t_go_load" class="mc-btn">Load World</.test(HH)&&
+    HH.indexOf('id="t_go_new"')<HH.indexOf('id="t_go_load"')&&HH.indexOf('id="t_go_load"')<HH.indexOf('id="t_help"')&&HH.indexOf('id="t_help"')<HH.indexOf('id="t_reddit"')&&HH.indexOf('id="t_reddit"')<HH.indexOf('id="t_credits"')&&
+    ['t_credits','t_back_cred','t_reddit'].every(id=>typeof el(id).onclick==='function'));
   {const U=P_.readSrc('ui/p06e_ui_scale.js'),a=U.indexOf('function hudLayout('),hl=a>=0?U.slice(a):'';
     ok('hudLayout never pushes a menu down for a toast (it sits on the top edge over a full-window menu)',!!hl&&!/paddingTop=\(\(r\.height/.test(hl)&&!/HL\.push=\{/.test(hl)&&/if\(!sp\)tst\.classList\.add\('up'\)/.test(hl));}
 

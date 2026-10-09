@@ -85,7 +85,7 @@ export function readPatchLog(repo = REPO, gameVersion = readVersion(repo), relea
 export const entryName = (e) => (e && e.label ? e.label : 'v' + e.v);
 
 /** The label rule (docs/RELEASING.md, "Versions and release labels"): consecutive game versions may share one label (a
- *  release's later cuts: Release 1.0 is game 6.5 to 6.8), but a label never comes back once a newer label has shipped.
+ *  release's later cuts: Release 1.0 is game 6.5 to 6.9), but a label never comes back once a newer label has shipped.
  *  current: the label the version being released or bumped from carries (null for a release check).
  *  Returns null when the label is allowed, else the reason. */
 export function labelProblem(label, shipped, current = null) {

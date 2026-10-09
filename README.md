@@ -34,7 +34,7 @@ bundled into the file. To build the file yourself you need [Node.js](https://nod
 npm run build
 ```
 
-That writes `dist/dinglecraft_v<game version>.html` (Release 1.0 builds `dinglecraft_v6.8.html`; about 42.5 MB, every
+That writes `dist/dinglecraft_v<game version>.html` (Release 1.0 builds `dinglecraft_v6.9.html`; about 42.5 MB, every
 texture is inside it). Then either:
 
 - **double-click it** (it works straight from disk), or

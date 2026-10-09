@@ -12,7 +12,7 @@
 /* behind it stays.                                                      */
 /* ===================================================================== */
 const TM={view:'main',booted:false,live:false,disarm:null,ready:false};
-function tmEls(){return {main:$('tmain'),new:$('tnew'),load:$('tload'),gr:$('tgr'),name:$('tname')};}
+function tmEls(){return {main:$('tmain'),new:$('tnew'),load:$('tload'),gr:$('tgr'),name:$('tname'),cred:$('tcred')};}
 function tmVisible(el){return !!el&&!el.hidden&&(typeof el.getClientRects!=='function'||el.getClientRects().length>0);}
 /* the focusable controls of the active view, in order */
 function tmItems(){
@@ -31,7 +31,8 @@ function tmShow(view,focusId){
   else if(view==='load')tmFocus(tmItems()[0]);
   else if(view==='name')tmFocus($('t_pname'));
   else if(view==='gr')tmFocus(tmItems()[0]);
-  else tmFocus($(focusId||(from==='new'?'t_go_new':from==='load'?'t_go_load':'')));
+  else if(view==='cred')tmFocus($('t_back_cred'));
+  else tmFocus($(focusId||(from==='new'?'t_go_new':from==='load'?'t_go_load':from==='cred'?'t_credits':'')));
 }
 /* Survival / Creative: two buttons in front of the (hidden) #t_mode select that startNewWorld reads */
 function tmMode(m){
@@ -111,11 +112,6 @@ function tmWorldClick(e){
   b.classList.add('armed');b.textContent='Delete?';b.title='Click again to delete this world for good';
   clearTimeout(TM.disarm);TM.disarm=setTimeout(()=>{if(b.classList.contains('armed')){b.classList.remove('armed');b.textContent='X';}},3000);
 }
-/* "Load World (3)" */
-function tmCount(){
-  const box=$('t_worlds'),b=$('t_go_load');if(!box||!b||typeof box.querySelectorAll!=='function')return;
-  const n=box.querySelectorAll('.wrow').length;b.textContent='Load World'+(n?' ('+n+')':'');
-}
 function tmBoot(){
   if(TM.booted)return;
   TM.booted=true;TM.live=uiLive();
@@ -124,13 +120,16 @@ function tmBoot(){
   on('t_go_load',()=>{tmShow('load');playS('click');});
   on('t_back_new',()=>{tmShow('main');playS('click');});
   on('t_back_load',()=>{tmShow('main');playS('click');});
+  on('t_credits',()=>{tmShow('cred');playS('click');});
+  on('t_back_cred',()=>{tmShow('main');playS('click');});
+  on('t_reddit',()=>{playS('click');try{window.open('https://www.reddit.com/r/DanDingle/','_blank','noopener');}catch(e){}});
   on('t_mode_s',()=>{tmMode('s');playS('click');});
   on('t_mode_c',()=>{tmMode('c');playS('click');});
   {const ch=$('tr_cheats');if(ch&&ch.addEventListener)ch.addEventListener('change',()=>{if(ch.dataset)ch.dataset.touched='1';});}
   tmMode(($('t_mode')||{}).value==='c'?'c':'s');
   on('tgr_back',()=>{tmShow('load');playS('click');});
   on('tgr_save',()=>{tgrSave();playS('click');});
-  on('t_pname_ok',()=>{const i=$('t_pname');if(pnSet(i&&i.value)){tmShow('main');playS('click');}
+  on('t_pname_ok',()=>{const i=$('t_pname');if(pnSet(i&&i.value)){tmShow('main');playS('click');if(typeof rpIntro==='function')rpIntro();}
     else if(i){if(pnClean(i.value))showToast('Pick another name: 2 or more letters, and not an AI player\u2019s name');i.focus();}});
   tmShow('main');
   if(!TM.live)return;
@@ -138,12 +137,13 @@ function tmBoot(){
      them, so a returning player is not asked for a name again, and Sound: Off or Music volume 0 never creates an AudioContext. */
   const ready=()=>{TM.ready=true;if(!tmTitleUp())return;
     if(!PNAME_SET&&TM.view==='main')tmShow('name');            /* first launch: ask for a name (any text) before anything else */
-    tmusStart();};
+    tmusStart();
+    if(PNAME_SET&&typeof rpIntro==='function')rpIntro();};   /* the replays intro, once, for a returning player too */
   /* right-click a saved world (or the Load World button) to edit its game rules */
   {const gl=$('t_go_load');if(gl&&gl.addEventListener)gl.addEventListener('contextmenu',e=>{e.preventDefault();tmShow('load');});}
   document.addEventListener('keydown',tmKey);
   const W=$('t_worlds');
-  if(W){W.addEventListener('click',tmWorldClick,true);try{new MutationObserver(tmCount).observe(W,{childList:true});}catch(e){}
+  if(W){W.addEventListener('click',tmWorldClick,true);
     W.addEventListener('contextmenu',e=>{const row=e.target&&e.target.closest?e.target.closest('.wrow'):null;if(!row)return;e.preventDefault();const sp=row.querySelector('span');if(sp)tgrOpen(sp.textContent);});}
   const T=$('title');let up=tmTitleUp();
   try{new MutationObserver(()=>{const now=tmTitleUp();if(now===up)return;up=now;
@@ -212,7 +212,7 @@ function tmusStart(){
   try{
     if(!TMUS.buf){const x=crSongRender(TMUS_SONG,a.sampleRate),b=a.createBuffer(1,x.length,a.sampleRate);b.getChannelData(0).set(x);TMUS.buf=b;}
     const src=a.createBufferSource(),g=a.createGain(),t=a.currentTime;
-    src.buffer=TMUS.buf;src.loop=true;g.gain.setValueAtTime(0.0001,t);g.gain.linearRampToValueAtTime(0.55,t+1.2);
+    src.buffer=TMUS.buf;src.loop=true;g.gain.setValueAtTime(0.0001,t);g.gain.linearRampToValueAtTime(0.275,t+1.2);   /* half the old 0.55 */
     src.connect(g);g.connect(musDest(a));src.start(t+0.05);TMUS.src=src;TMUS.g=g;
   }catch(e){TMUS.src=null;TMUS.g=null;}
 }

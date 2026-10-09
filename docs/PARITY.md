@@ -215,6 +215,16 @@ so it is not a parity release. What it changed in the test suite:
   scripted fight and changed its course.
 - Gate total: 3,932 checks (suites 3,656 + tools 276), down from 3,943 at game 6.7.
 
+## Release 1.0, game v6.9 (replays): what changed in the tests
+
+- The Controls screen is controls only, and Credits has its own title screen. `u_title` swapped its three Help-blurb
+  checks for three new ones: Controls-only plus the F8 row, the Credits view, and the menu order with no world count.
+  The menu-music fade target moved from 0.55 to 0.275. `m_static`, `t0_static` and `p_static` now assert that the
+  removed feature rows are gone, so their counts held.
+- `r_build` 53 -> 54 and `r_ipscan` 19 -> 20 (the play file `DINGLECRAFT.html`). The replays are fully inert while idle,
+  so all four `og_trace` goldens match unchanged (no re-bless).
+- Gate total: 3,934 checks (suites 3,658 + tools 276).
+
 ## What was retired, and why
 
 Some legacy checks proved properties of the splice pipeline itself. With no splice, there is nothing for them to check.

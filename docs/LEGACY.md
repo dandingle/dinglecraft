@@ -281,7 +281,7 @@ owner lifted that in v6.8).
 
 ### Files added after the split
 
-These did not exist in the v6.3 build; they arrived with Release 1.0 (game 6.4 to 6.8):
+These did not exist in the v6.3 build; they arrived with Release 1.0 (game 6.4 to 6.9):
 
 | repo | added in | what |
 |---|---|---|

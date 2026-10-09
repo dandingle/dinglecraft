@@ -9,7 +9,7 @@
   night's build while the next one is cooking.
 - **Versions are two-part**, `X.Y` (6.3, 6.4, ... 7.0). There are no patch versions: a hotfix is the next minor version.
   The brain only serves files named `dinglecraft_v<X>.<Y>.html`.
-- **Every version also has a public label** (`RELEASE_LABEL`, e.g. "Release 1.0" for game versions 6.5 to 6.8). Players
+- **Every version also has a public label** (`RELEASE_LABEL`, e.g. "Release 1.0" for game versions 6.5 to 6.9). Players
   and readers see the label; saves, migrations, file names and comparisons use the version. Consecutive versions may share
   a label (the cuts of one release); a label never comes back once a newer one has shipped. The full scheme is in
   [CONTRIBUTING.md](../CONTRIBUTING.md), "Versions and release labels".
@@ -110,7 +110,7 @@ The html itself is not committed (`dist/` is gitignored): it is reproducible fro
 **Game versions and release labels are different things.** `GAME_VERSION` counts game builds (6.3, 6.4, ...) and only
 goes up; `RELEASE_LABEL` is the name players and readers see. Release 1.0, the first public release of this repository,
 came in cuts: game version 6.4 (labelled Release 1.0 Preview: the v6.3 game plus the IP clean-up, the privacy fixes, the
-bigger UI and the new title menu), then 6.5 to 6.8 as Release 1.0. Tag both: `git tag v6.8` and
+bigger UI and the new title menu), then 6.5 to 6.9 as Release 1.0. Tag both: `git tag v6.9` and
 `git tag -f release-1.0` (`npm run release` prints the exact commands).
 
 ## Where the new version gets played

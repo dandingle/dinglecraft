@@ -3,7 +3,14 @@
    frozen core suite keep working, but players never see it. PATCH_LOG still feeds CHANGELOG.md (scripts/changelog.mjs)
    and the release tooling. Data-driven off GAME_VERSION so it can't drift from the shipped build. */
 const PATCH_LOG=[
- {v:GAME_VERSION,label:RELEASE_LABEL,title:'Release 1.0 (final cut)',lines:[
+ {v:GAME_VERSION,label:RELEASE_LABEL,title:'Replays',lines:[
+    'REPLAYS: the game keeps your last 30 seconds ready. Press F8 and it saves as an MP4 video, sound, records and paintings included. Turn it on or off in Settings.',
+    'SCREENSHOTS: F2 saves a picture (PNG).',
+    'First launch says hello: share your best moments on r/DanDingle.',
+    'Main menu: Controls (just the controls now), an r/DanDingle button and a separate Credits screen.',
+    'The menu music is half as loud, and Load World no longer shows a count.',
+  ]},
+ {v:'6.8',label:'Release 1.0',title:'Release 1.0 (final cut)',lines:[
     'Final cut of Release 1.0. Two of the things that stalk the night have moved out for good, and the whispers come ten times less often.',
   ]},
  {v:'6.7',label:'Release 1.0',title:'Release 1.0',lines:[

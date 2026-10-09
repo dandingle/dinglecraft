@@ -14,6 +14,7 @@ dom/touch_cursor.html
 dom/panels_a.html
 dom/title.html
 dom/menus.html
+dom/replay.html
 dom/panels_b.html
 dom/help.html
 dom/ext_panels.html

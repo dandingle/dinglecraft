@@ -101,7 +101,7 @@ timestamp, no environment lookup and no randomness in the html (`build/build.jso
 nothing reads it as part of the output). `.gitattributes` (`* -text`) stops git from changing
 line endings on checkout, and `.editorconfig` stops editors from adding or trimming whitespace, so a fresh clone on any
 operating system builds the same md5. That is how the move into this repository could prove that it rebuilt the shipped
-v6.3 byte for byte ([PARITY.md](PARITY.md)), and how every release since (Release 1.0 is game versions 6.4 to 6.8) stays
+v6.3 byte for byte ([PARITY.md](PARITY.md)), and how every release since (Release 1.0 is game versions 6.4 to 6.9) stays
 reproducible: its md5 is recorded in `tests/fixtures/shipped.json` and checked by the frozen check above.
 
 ## Other scripts

@@ -38,6 +38,8 @@ browser and compare them with the Node render. Debug → "Malgorath: sounds" exi
 npm run build
 node tools/qa/boot_check.mjs --launch --port <your port>      # starts and stops its own muted Chrome and server
 node tools/qa/boot_check.mjs --port <your port>               # or use the Chrome + server you already started
+node tools/qa/windows_check.mjs --browser chrome|edge         # DINGLECRAFT.html from file://, like a double-click (CI runs it
+                                                              # on Windows: .github/workflows/windows.yml)
 ```
 
 `boot_check.mjs` opens `dist/dinglecraft_v<VER>.html` muted, checks WebGL2, three r128, `__vox`, `GAME_VERSION` and that

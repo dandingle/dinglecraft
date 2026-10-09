@@ -1,0 +1,55 @@
+# DINGLECRAFT on Windows: plays the committed DINGLECRAFT.html from disk (file://, like a double-click) in headless Chrome and
+# Edge on a real Windows runner (tools/qa/windows_check.mjs: muted, software GPU), checks that the build reproduces the play
+# file byte for byte on Windows, and runs the hermetic brain selftest there. No secrets are used. Runs when the play file or
+# the check changes, and on demand (Actions > windows > Run workflow). Screenshots are kept as run artifacts.
+name: windows
+
+on:
+  workflow_dispatch:
+  push:
+    paths:
+      - 'DINGLECRAFT.html'
+      - 'tools/qa/windows_check.mjs'
+      - '.github/workflows/windows.yml'
+
+permissions:
+  contents: read
+
+concurrency:
+  group: windows-${{ github.ref }}
+  cancel-in-progress: true
+
+jobs:
+  play:
+    name: play in ${{ matrix.browser }}
+    runs-on: windows-latest
+    timeout-minutes: 30
+    strategy:
+      fail-fast: false
+      matrix:
+        browser: [chrome, edge]
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-node@v4
+        with:
+          node-version: '22'
+      - run: node tools/qa/windows_check.mjs --browser ${{ matrix.browser }} --out out/qa/windows_${{ matrix.browser }}
+      - uses: actions/upload-artifact@v4
+        if: always()
+        with:
+          name: windows-${{ matrix.browser }}
+          path: out/qa/windows_${{ matrix.browser }}
+          retention-days: 30
+
+  build:
+    name: build + brain on Windows
+    runs-on: windows-latest
+    timeout-minutes: 20
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-node@v4
+        with:
+          node-version: '22'
+      - run: node tools/qa/windows_check.mjs --repro
+      - run: npm ci --prefix brain
+      - run: node brain/selftest.mjs

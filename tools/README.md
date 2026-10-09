@@ -20,6 +20,7 @@ tools/
            purgatory/  pglib.py run_wave.py mk_shotlists.py shotlists_w23.py post_*.py check_art.py install_art.py
                        review.py measure_bytes.py + the P6 json inputs (picks, tiles_pg, ents_pg, shotlist_w1-3)
   qa/      chrome.sh  boot_check.mjs  lib/{cdp,paths}.mjs  muted headless-Chrome rigs per feature + preview/ dev pages
+           windows_check.mjs                               plays DINGLECRAFT.html from disk in Chrome/Edge (CI: Windows)
   requirements.txt                                         Python pins for the art tools (not needed to build or test)
 ```
 
@@ -144,6 +145,7 @@ kill <chrome pid> <server pid>
 | area | rigs | kind |
 |---|---|---|
 | any | `boot_check.mjs` | load, WebGL2, version, OG world, Hyperreal, back to OG, zero console errors |
+| any (CI: Windows) | `windows_check.mjs` | `DINGLECRAFT.html` from `file://` in Chrome or Edge: load, OG world, save, reload, load again, Hyperreal, zero console errors; `--repro`: the build is byte-identical to it |
 | creativity | `crea_qa.mjs`, `c1_paint_qa.mjs`, `c2_qa.mjs`, `cz_qa.mjs` (`--build`, `--out`) | CDP rigs, shots + `summary.json` |
 | creativity | `cz_audio.js <disc.json>` (`DC_BUILD`), `release_qa.mjs` + `release_sheet.py` | offline audio / the release smoke (current version and label) |
 | malgorath | `mz_qa.mjs --pack og\|hr`, `mz_reload.mjs`, `mz_audio_parity.mjs`, `m1_bite_qa.mjs`, `m3_form/m3_game/m3_scenes.mjs`, `m4_hr_qa.mjs` | CDP rigs + sheet scripts |

@@ -33,8 +33,9 @@ These are not style preferences. Each one exists because breaking it once cost r
 3. **The core quartet is frozen.** Never edit `tests/core/stubs.js`, `test.js`, `smoke.js` or `botsmoke.js`. New
    behaviour gets new suites. (The one exception was the owner's: in 6.8 `smoke.js` lost its Watcher check along with
    the Watcher; `tests/repo/r_gate.js` pins the new bytes.)
-4. **Never hand-edit generated files**: `build/`, `dist/`, `out/`, and the generated part of `CHANGELOG.md` (edit the
-   patch notes in `src/ui/p28_patch_notes.js` and run `npm run changelog`).
+4. **Never hand-edit generated files**: `build/`, `dist/`, `out/`, `DINGLECRAFT.html` (the play file: `npm run release`
+   copies each release there) and the generated part of `CHANGELOG.md` (edit the patch notes in
+   `src/ui/p28_patch_notes.js` and run `npm run changelog`).
 5. **Never commit secrets or personal data.** No `.env`, no keys, no `brain/data/`, no absolute paths, no email
    addresses, no local timezone in a commit (commit with `TZ=UTC0`). Run `npm run scan` before you commit (the
    pre-commit hook does it for you) and `npm run scan:history` before you push (the pre-push hook does that).

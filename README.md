@@ -39,8 +39,12 @@ horror. In Release 1.0:
 
 ## Play it
 
+**Just want to play?** Download [`DINGLECRAFT.html`](DINGLECRAFT.html) (the newest release, about 42.5 MB: open it on
+GitHub and press the download button) and double-click it. That is the whole game, on Windows, macOS or Linux. It is
+developed and tested in Chrome, so an up-to-date Chrome or Edge is the safest bet.
+
 You need a desktop browser with WebGL (WebGL2 for the Hyperreal texture pack). No internet connection: three.js is
-bundled into the file. To build the file you need [Node.js](https://nodejs.org) 20 or newer (22 is what we use; see
+bundled into the file. To build the file yourself you need [Node.js](https://nodejs.org) 20 or newer (22 is what we use; see
 `.nvmrc`). Nothing else.
 
 ```

@@ -7,6 +7,10 @@
                           .env / .env.* file except .env.example, which is never opened by anything here.
    R.isBinary(buf)     -> a NUL byte in the first 8 KB
    R.BIN_EXT           -> extensions read as binary without looking (images, audio, fonts, archives)
+   R.PLAY_FILE         -> 'DINGLECRAFT.html': the newest released build, committed at the repo root so players can download it
+                          (scripts/release.mjs copies it there)
+   R.playCheck()       -> {present, md5, version, newest}: version is the shipped.json version whose md5 the play file carries,
+                          counted only for a public build (game 6.4 or later: older builds held private paths), else null
    The walk never follows symlinks and never reads a file; callers decide what to open. */
 'use strict';
 const fs=require('fs'),path=require('path');
@@ -31,4 +35,11 @@ function list(){const out=[];const root=P.REPO.replace(/\/$/,'');
   })(root,'');
   return out.sort();}
 function isBinary(buf){return buf.subarray(0,8192).includes(0);}
-module.exports={list,isBinary,BIN_EXT};
+const PLAY_FILE='DINGLECRAFT.html',FIRST_PUBLIC=[6,4];
+const vnum=v=>String(v).split('.').map(Number),vcmp=(a,b)=>{const x=vnum(a),y=vnum(b);return x[0]-y[0]||x[1]-y[1];};
+function playCheck(){const abs=path.join(P.REPO,PLAY_FILE);if(!fs.existsSync(abs))return {present:false,md5:null,version:null,newest:null};
+  const md5=require('crypto').createHash('md5').update(fs.readFileSync(abs)).digest('hex');
+  const sh=JSON.parse(fs.readFileSync(path.join(P.FIX,'shipped.json'),'utf8')).shipped||{},vs=Object.keys(sh).sort(vcmp);
+  const version=vs.find(v=>vcmp(v,FIRST_PUBLIC.join('.'))>=0&&sh[v].md5===md5)||null;
+  return {present:true,md5,version,newest:vs[vs.length-1]||null};}
+module.exports={list,isBinary,BIN_EXT,PLAY_FILE,playCheck};

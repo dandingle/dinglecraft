@@ -28,7 +28,7 @@ original: no real characters, brands or trademarks in names, art or text (the IP
    `GAME_VERSION` only goes up ([CONTRIBUTING.md](CONTRIBUTING.md), "Versions and release labels").
 5. **The core quartet is frozen.** Never edit `tests/core/{stubs,test,smoke,botsmoke}.js`. New behaviour, new suites.
    (One owner-made exception: 6.8 removed `smoke.js`'s Watcher check with the Watcher; `r_gate.js` pins the new bytes.)
-6. **Never print big generated text**: `build/hrassets.js`, `build/*.gen.js`, `dist/*.html`, `assets/packed/**`. Their
+6. **Never print big generated text**: `build/hrassets.js`, `build/*.gen.js`, `dist/*.html`, `DINGLECRAFT.html`, `assets/packed/**`. Their
    lines run to megabytes. Search with `tools/grep-safe.sh <pattern> [paths]`, which skips build output, generated
    asset scripts and `.env` files, rather than a raw recursive grep over the repo.
 7. **Public-repo hygiene.** No absolute paths, usernames, machine names, private folder or company names, or email

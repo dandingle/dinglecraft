@@ -22,7 +22,7 @@ for p in "$@"; do
 done
 # shellcheck disable=SC2086
 grep -rnI ${GREP_FLAGS:-} \
-  --exclude='*.gen.js' --exclude=hrassets.js --exclude='dinglecraft_v*.html' \
+  --exclude='*.gen.js' --exclude=hrassets.js --exclude='dinglecraft_v*.html' --exclude=DINGLECRAFT.html \
   --exclude='.env' --exclude='.env.*' --exclude='*.env' --exclude=tokens.json --exclude='*.jsonl' --exclude='*.local.txt' \
   --exclude-dir=og_trace --exclude-dir=build --exclude-dir=dist --exclude-dir=out \
   --exclude-dir=node_modules --exclude-dir=.git --exclude-dir=data --exclude-dir=.art-ledger \

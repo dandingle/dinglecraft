@@ -85,8 +85,12 @@ function build(dir) {
   const gattr = read('.gitattributes').toString('utf8');
   ok('.gitattributes: "* -text" (no EOL normalisation)', gattr.split('\n').includes('* -text'));
   const noDiff = gattr.split('\n').filter((l) => /\s-diff\b/.test(l) && !l.startsWith('#'));
-  ok('.gitattributes hides no source file from diffs (-diff only on the generated og_trace fixtures)' + (noDiff.length > 1 ? ' (' + noDiff.join(', ') + ')' : ''),
-    noDiff.length === 1 && noDiff[0] === 'tests/fixtures/og_trace/*.json -diff');
+  ok('.gitattributes hides no source file from diffs (-diff only on the generated og_trace fixtures and the play file)' + (noDiff.length > 2 ? ' (' + noDiff.join(', ') + ')' : ''),
+    noDiff.length === 2 && noDiff[0] === 'tests/fixtures/og_trace/*.json -diff' && noDiff[1] === 'DINGLECRAFT.html -diff linguist-generated');
+  // ---- the play file (DINGLECRAFT.html): the newest release, byte for byte (npm run release copies it in)
+  { const pc = require('../lib/repo_files.js').playCheck();
+    ok('DINGLECRAFT.html is the newest release, byte for byte (' + (pc.present ? (pc.version ? 'v' + pc.version : 'not a shipped build') + ', newest v' + pc.newest : 'missing') + ')',
+      pc.present && pc.version !== null && pc.version === pc.newest); }
 
   // ---- boundary contract
   const gt = game.toString('utf8'), ht = head.toString('utf8');

@@ -90,6 +90,7 @@ for (const rel of files) {
   { const nh = B.scan(rel, ALL); if (nh.length) names.push(rel + ' #' + nh.map((h) => h.k).join(',#')); }
   if (R.BIN_EXT.test(rel)) { nBin++; continue; }
   if (rel.startsWith('assets/vendor/')) continue;          /* third-party libraries, verbatim (THIRD_PARTY.md): three.js lists CSS colour names */
+  if (rel === R.PLAY_FILE) continue;                       /* the released build, scanned part by part below and at its gate (check: play file) */
   const buf = fs.readFileSync(path.join(P.REPO, rel));
   if (R.isBinary(buf)) { nBin++; continue; }
   nText++;
@@ -112,6 +113,10 @@ for (const f of ['game.js', 'head.html', 'hrassets.js']) {
 }
 
 // ---- 3. the checks ------------------------------------------------------------------------------------------------------
+/* the play file (DINGLECRAFT.html) is skipped as prose (its JS identifiers read as words): it may only be a recorded public build,
+   whose parts (game.js, head.html, hrassets.js) this scan covered when that build was gated */
+{ const pc = R.playCheck();
+  ok('the play file ' + R.PLAY_FILE + ' is a recorded public build (' + (pc.present ? (pc.version ? 'v' + pc.version : 'md5 ' + pc.md5 + ' is not a shipped 6.4+ build') : 'missing') + ')', pc.present && !!pc.version); }
 const show = (hs) => hs.slice(0, 6).map((h) => h.f + ':' + h.line + ' #' + h.k).join(' ') + (hs.length > 6 ? ' ...' : '');
 ok('the build is there (build/game.js, head.html, hrassets.js)', buildOk);
 const LABEL = { build: 'the shipped build (game.js, head.html, hrassets.js keys and metadata)', src: 'src/', html: 'html/',

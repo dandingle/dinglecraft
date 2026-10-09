@@ -6,7 +6,7 @@
 //   - the top PATCH_LOG entry is this version, has lines, and contains no TODO;
 //   - out/gate_last.json (written by a green gate) names the SAME html md5 as a fresh build of the current sources;
 //   - dist/dinglecraft_v<VER>.html does not already exist with other bytes.
-// Then it records { label, bytes, md5, date, parts, assets } in shipped.json (label = RELEASE_LABEL, the public name), regenerates CHANGELOG.md (scripts/changelog.mjs) and
+// Then it copies the html to DINGLECRAFT.html (the play file at the repo root), records { label, bytes, md5, date, parts, assets } in shipped.json (label = RELEASE_LABEL, the public name), regenerates CHANGELOG.md (scripts/changelog.mjs) and
 // prints the patch notes plus the gate counts for the announcement. Committing and tagging stay manual.
 import fs from 'node:fs';
 import path from 'node:path';
@@ -55,6 +55,9 @@ const built = path.join(tmp, info.html.file);
 if (fs.existsSync(distFile)) {
   if (md5(fs.readFileSync(distFile)) !== info.html.md5) die(`${rel(distFile)} already exists with other bytes: rebuild it (npm run build) or move it away first`);
 } else { fs.mkdirSync(distDir, { recursive: true }); fs.copyFileSync(built, distFile); }
+const playFile = path.join(REPO, 'DINGLECRAFT.html');   /* the play file players download from the repo: always the newest release */
+fs.copyFileSync(built, playFile + '.tmp'); fs.renameSync(playFile + '.tmp', playFile);
+console.log(`copied v${VER} to DINGLECRAFT.html (the download at the top of the repo)`);
 fs.rmSync(tmp, { recursive: true, force: true });
 
 shipped[VER] = { label: LABEL, bytes: info.html.bytes, md5: info.html.md5, date: new Date().toISOString().slice(0, 10), parts: info.parts, assets: info.assets };

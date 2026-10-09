@@ -88,7 +88,8 @@ npm run release
   ran tested exactly what ships);
 - `dist/dinglecraft_v<X.Y>.html` does not already exist with different bytes.
 
-Then it rebuilds into a private folder, copies the html to `dist/` (if it is not there yet), records the version in
+Then it rebuilds into a private folder, copies the html to `dist/` (if it is not there yet) and to `DINGLECRAFT.html`
+at the repo root (the play file players download; `r_build` checks it is always the newest release), records the version in
 `tests/fixtures/shipped.json` (from now on it is frozen), regenerates `CHANGELOG.md`, and prints the patch notes plus the
 gate counts for the announcement.
 

@@ -18,23 +18,6 @@ The whole game is about 41,000 lines of plain JavaScript, built here from per-sy
 > DINGLECRAFT is an independent fan-made game. NOT AN OFFICIAL MINECRAFT PRODUCT. NOT APPROVED BY OR ASSOCIATED WITH MOJANG
 > OR MICROSOFT. Other names belong to their owners. Free to play and tinker with, not to redistribute: see [LICENSE](LICENSE).
 
-Current release: **Release 1.0**, the first public release. Release 1.0 is what players see on the title screen; inside
-the code it is game version 6.8 (saves and migrations use that number, see [CONTRIBUTING.md](CONTRIBUTING.md)). Release
-1.0 came in cuts: 6.4 was the preview, 6.5 and 6.6 reworked the title panorama, 6.7 completes it and 6.8 trims the
-horror. In Release 1.0:
-
-- **Puppet Purgatory** has an all-new cast, and the interface is bigger, with a UI Scale setting.
-- **The title screen** is a slowly turning panorama of a real world, with its own menu music (the disc BATEHOVEN IS
-  HALOUS, played by the game's synth).
-- **Your name:** the first launch asks what to call you; chat, the player list and the AI players use it.
-- **Game rules on Create New World** (Keep Inventory, Mob Griefing, Peaceful, Cheats, AI Players and more), with a warning
-  that worlds live in your browser. **Right-click a saved world** in Load World to change its rules later.
-- **Export World** sits in the pause menu, right under Save World.
-- **Settings** gained Field of View, Mouse Sensitivity, Sound volume and Music volume sliders.
-- **Offline play:** three.js is inside the file, so it needs no internet at all.
-- Picking something up updates the hotbar at once, a few rare finds hide in loot chests, and the in-game patch notes
-  are retired (every release's notes are in [CHANGELOG.md](CHANGELOG.md)).
-
 ---
 
 ## Play it

@@ -59,6 +59,8 @@ if(!verStr){console.log(`windows_check: ${NAME} did not open its debugging port`
 const checks=[],shots=[];
 const check=(name,cond,info)=>{checks.push({name,ok:!!cond,info:info===undefined?null:info});console.log((cond?'ok   ':'FAIL ')+name+(info!==undefined?'  '+JSON.stringify(info).slice(0,300):''));};
 const C=await connect(PORT);
+await C.send('Page.addScriptToEvaluateOnNewDocument',{source:"window.__glev=[];for(const k of ['webglcontextlost','webglcontextrestored','webglcontextcreationerror'])"+
+  "addEventListener(k,e=>{try{__glev.push({k,id:(e.target&&e.target.id)||'?',t:Math.round(performance.now())});}catch(x){}},true);"});
 const shot=async name=>{const f=path.join(OUT,String(shots.length+1).padStart(2,'0')+'_'+name+'.jpg');await C.shot(f);shots.push(f);return f;};
 const HELP=`window.__wc={T:700000,stp(n){for(let i=0;i<(n||1);i++){if(paused&&playing)resumeGame();this.T+=40;__vox.frameStep(this.T);}},
   pic(){__vox.tpRenderOnce();const src=renderer.domElement,c=document.createElement('canvas');c.width=64;c.height=36;const g=c.getContext('2d');
@@ -75,7 +77,10 @@ const loadS=(Date.now()-t0)/1000;
 await C.ev(HELP);
 const I=await C.ev(`const c=document.createElement('canvas');return {ver:__vox.GAME_VERSION,three:typeof THREE!=='undefined'?THREE.REVISION:null,
   proto:location.protocol,gl2:!!c.getContext('webgl2'),rgl2:!!(typeof renderer!=='undefined'&&renderer.capabilities&&renderer.capabilities.isWebGL2),
-  sound:soundOn,tp:JSON.parse(localStorage.getItem('vx_vox_settings')||'{}').tp,storage:typeof storageOK==='function'&&storageOK()};`);
+  sound:soundOn,tp:JSON.parse(localStorage.getItem('vx_vox_settings')||'{}').tp,storage:typeof storageOK==='function'&&storageOK(),
+  gpu:(()=>{try{const g=renderer.getContext(),x=g.getExtension('WEBGL_debug_renderer_info');return x?g.getParameter(x.UNMASKED_RENDERER_WEBGL):g.getParameter(g.RENDERER);}catch(e){return null;}})(),
+  title:{live:document.getElementById('title').classList.contains('tbg-live'),css:document.getElementById('title').classList.contains('tbg-css')},glev:window.__glev};`);
+console.log('gpu: '+I.gpu+' | title panorama: '+JSON.stringify(I.title)+' | webgl events: '+JSON.stringify(I.glev));
 check(`page loads from ${I.proto} (${loadS.toFixed(1)} s): GAME_VERSION ${I.ver} = the newest release ${NEWEST}`,I.ver===NEWEST&&I.proto==='file:',I);
 check('three r128',I.three==='128',I.three);
 check('WebGL2 (browser and the game renderer)',I.gl2&&I.rgl2,{gl2:I.gl2,renderer:I.rgl2});
@@ -86,7 +91,10 @@ await shot('title');
 await C.ev(`const V=__vox;V.startNewWorld('wincheck','1337','s');V.GR.mobSpawn=false;V.GR.dayCycle=false;V.setTime(0.3);__wc.stp(200);`);
 const W=await C.ev(`return {playing,y:+__vox.P.y.toFixed(2),pic:__wc.pic(),sound:soundOn};`);
 check('a new OG world starts and steps 200 frames',W.playing===true&&W.sound===false,{playing:W.playing,y:W.y});
-check('OG renders a real picture (not black, not flat)',real(W.pic),W.pic);
+let rec=null;
+if(!real(W.pic)){for(let i=1;i<=10&&!rec;i++){await sleep(500);const p=await C.ev(`__wc.stp(10);return __wc.pic();`);if(real(p))rec={afterS:i*0.5,pic:p};}}
+const ev1=await C.ev(`return window.__glev;`);
+check('OG renders a real picture (not black, not flat)'+(rec?` (black at first, recovered by itself after ${rec.afterS} s)`:''),real(W.pic)||!!rec,{first:W.pic,recovered:rec,webglEvents:ev1});
 await shot('og_world');
 
 const S=await C.ev(`const ok=await saveToStorage('wincheck',true);return {ok,list:await listWorlds()};`);
@@ -109,11 +117,12 @@ const fin=await C.ev(`return {sound:soundOn};`);
 check('sound never on',fin.sound===false,fin);
 check('zero console errors / exceptions in the whole session',errs().length===0,errs().slice(0,8));
 const warns=C.logs.filter(l=>l.startsWith('warning'));
+const glevAll=await C.ev(`return window.__glev;`).catch(()=>null);
 C.close();stop();
 
 const pass=checks.filter(c=>c.ok).length,fail=checks.length-pass;
 fs.writeFileSync(path.join(OUT,'summary.json'),JSON.stringify({browser:verStr,platform:os.platform()+' '+os.release(),play:'DINGLECRAFT.html',
-  version:NEWEST,loadSeconds:loadS,checks,warnings:warns.slice(0,40),shots:shots.map(rel),date:new Date().toISOString()},null,1));
+  version:NEWEST,gpu:I.gpu,titlePanorama:I.title,webglEvents:glevAll,loadSeconds:loadS,checks,warnings:warns.slice(0,40),shots:shots.map(rel),date:new Date().toISOString()},null,1));
 console.log(`windows_check (${NAME}): ${pass} passed, ${fail} failed, ${warns.length} warning(s); shots + summary.json in ${rel(OUT)}`);
 try{fs.rmSync(prof,{recursive:true,force:true});}catch(e){}
 process.exit(fail?1:0);

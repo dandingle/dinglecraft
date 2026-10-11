@@ -116,6 +116,11 @@ function renderChat(force){
     if(m.k==='chat')d.textContent='<'+pnShow(m.from)+'> '+pnText(m.txt);
     else if(m.k==='whisper')d.textContent=m.from==='Dan'?'You whisper to '+m.to+': '+pnText(m.txt):m.from+' whispers to you: '+pnText(m.txt);
     else d.textContent=pnText(m.txt);
+    if(m.k==='chat'||m.k==='whisper'||m.k==='me'){
+      // Player-written and live AI dialogue is authored content, not a UI label.
+      d.setAttribute('data-i18n-skip','');
+      if(m.k==='whisper')d.textContent=m.from==='Dan'?i18nText('You whisper to ')+m.to+': '+pnText(m.txt):m.from+i18nText(' whispers to you: ')+pnText(m.txt);
+    }
     if(!chatOpen){const age=(now-m.t)/1000;if(age>11)d.style.opacity=Math.max(0,1-(age-11)/3).toFixed(2);}
     box.appendChild(d);
   }

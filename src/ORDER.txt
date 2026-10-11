@@ -4,6 +4,8 @@
 
 # core PARTs 1-52
 core/p01a_prologue.js
+ui/i18n_ja.js
+ui/i18n.js
 core/p01b_rng_noise.js
 core/p01c_blocks_items.js
 core/p01d_crafting_inventory.js

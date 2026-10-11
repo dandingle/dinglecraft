@@ -1,6 +1,6 @@
 *{box-sizing:border-box;-webkit-tap-highlight-color:transparent}
 html,body{margin:0;height:100%;overflow:hidden;background:#000;
-  font-family:'Courier New',Courier,monospace;user-select:none;-webkit-user-select:none;touch-action:none}
+  font-family:'M PLUS 1','Courier New',Courier,monospace;user-select:none;-webkit-user-select:none;touch-action:none}
 canvas{image-rendering:pixelated;image-rendering:crisp-edges}
 [hidden]{display:none!important}
 #gl{position:fixed;inset:0;width:100%;height:100%;display:block}
@@ -236,3 +236,7 @@ body.touch #cross{display:none}
 #btndrop{right:22px;bottom:184px;width:52px;height:52px}
 #btninv{right:88px;bottom:178px;width:52px;height:52px}
 #btnpause{right:14px;top:14px;width:46px;height:46px;border-radius:8px}
+/* Include inline/shorthand font rules and all native form controls. */
+html body,html body *{font-family:'M PLUS 1','Noto Sans JP',sans-serif!important}
+html[lang="ja"] .mc-btn{white-space:normal;overflow-wrap:anywhere}
+html[lang="ja"] .panel{line-height:1.5}

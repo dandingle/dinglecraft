@@ -14,6 +14,7 @@ function syncSetUI(){
   const fv=$('s_fov');if(fv)fv.value=FOVB;const fl=$('s_fovv');if(fl)fl.textContent=FOVB;
   const sl=(id,v)=>{const r=$(id);if(r)r.value=v;const l=$(id+'v');if(l)l.textContent=v;};
   const pn=$('s_pname');if(pn&&document.activeElement!==pn)pn.value=PNAME;
+  const lang=$('s_lang');if(lang)lang.value=I18N.locale;
   sl('s_sens',Math.round(MSENS*100));sl('s_sfx',Math.round(SFXVOL*100));sl('s_mus',Math.round(MUSVOL*100));
   if(typeof grApplyUI==='function')grApplyUI();
   if(typeof rpSync==='function')rpSync();
@@ -33,5 +34,6 @@ function closeSet(noBack){setOpen=false;const el=$('settings');if(el)el.style.di
     showToast(SHD.on?'✨ Fancy mode engaged':'Back to honest pixels');};
   const lk=$('s_lock');if(lk)lk.onclick=()=>{setLock(!usePLock);syncSetUI();saveSettings();playS('click');
     showToast(usePLock?'Mouse captured while playing (the browser will show its ESC note)':'Free-range mouse: no capture, no browser banner');};
+  const lang=$('s_lang');if(lang)lang.onchange=()=>i18nSet(lang.value);
 }
 

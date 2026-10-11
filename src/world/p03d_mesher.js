@@ -36,15 +36,16 @@ function faceVisible(id,nid){
 }
 function newBuf(){return {p:[],n:[],u:[],c:[],ix:[],vc:0};}
 function addQuad(b,x,y,z,F,uvr,br,lower){
+  const V=F.verts,N=F.n,nx=N[0],ny=N[1],nz=N[2];
   const u0=uvr[0],v0=uvr[1],u1=uvr[2],v1=uvr[3];
-  const uvs=[[u0,v0],[u1,v0],[u1,v1],[u0,v1]];
-  for(let i=0;i<4;i++){
-    const V=F.verts[i];
-    b.p.push(x+V[0],y+V[1]-(V[1]===1?lower:0),z+V[2]);
-    b.n.push(F.n[0],F.n[1],F.n[2]);
-    b.u.push(uvs[i][0],uvs[i][1]);
-    b.c.push(br[i],br[i],br[i]);
-  }
+  const b0=br[0],b1=br[1],b2=br[2],b3=br[3];
+  let W=V[0];b.p.push(x+W[0],y+W[1]-(W[1]===1?lower:0),z+W[2]);
+  W=V[1];b.p.push(x+W[0],y+W[1]-(W[1]===1?lower:0),z+W[2]);
+  W=V[2];b.p.push(x+W[0],y+W[1]-(W[1]===1?lower:0),z+W[2]);
+  W=V[3];b.p.push(x+W[0],y+W[1]-(W[1]===1?lower:0),z+W[2]);
+  b.n.push(nx,ny,nz,nx,ny,nz,nx,ny,nz,nx,ny,nz);
+  b.u.push(u0,v0,u1,v0,u1,v1,u0,v1);
+  b.c.push(b0,b0,b0,b1,b1,b1,b2,b2,b2,b3,b3,b3);
   const s=b.vc;
   if(br[0]+br[2]<=br[1]+br[3])b.ix.push(s,s+1,s+2,s,s+2,s+3);
   else b.ix.push(s+1,s+2,s+3,s+1,s+3,s);
@@ -69,6 +70,37 @@ function addCross(b,x,y,z,d){
     b.vc+=4;
   }
 }
+/* meshChunk: identical output to v6.9 (tests/core/w_mesher.js), from a padded chunk copy and per-id tables */
+const MPX=CH+2,MPY=WH+2,MDX=MPY*MPX,MDY=MPX;
+const MPAD=new Uint8Array(MPX*MPY*MPX);
+const MOPQ=new Uint8Array(256),MCULL=new Uint8Array(256),MWAT=new Uint8Array(256),MAOB=new Uint8Array(256),MSPC=new Uint8Array(256);
+const MNOF=FACES.map(F=>F.n[0]*MDX+F.n[1]*MDY+F.n[2]);
+const MAOF=FACES.map(F=>F.ao.map(A=>A.map(o=>o[0]*MDX+o[1]*MDY+o[2])));
+const MSHT=FACES.map(F=>[0,1,2,3].map(ao=>F.sh*(.45+.55*(ao/3))));
+let mBusy=0;
+function mTables(){
+  for(let i=0;i<256;i++){
+    const d=DEFS[i];
+    if(!d){MOPQ[i]=MCULL[i]=MWAT[i]=MAOB[i]=0;MSPC[i]=1;continue;}
+    MOPQ[i]=d.opq?1:0;MCULL[i]=d.cullSame?1:0;MWAT[i]=d.bucket==='wat'?1:0;MAOB[i]=d.bucket==='op'?1:0;
+    MSPC[i]=(d.bed||d.crm||d.pcord||d.rail||d.railup||d.ramp||d.door||d.wt||d.cross)?1:0;
+  }
+}
+function mPad(ch,pad){
+  const cx=ch.cx,cz=ch.cz,AIR=B.AIR,BR=B.BEDROCK,nb=[];
+  for(let i=-1;i<=1;i++)for(let k=-1;k<=1;k++){const n=(i||k)?chunks.get(ckey(cx+i,cz+k)):ch;nb.push(n?n.bl:null);}
+  for(let px=0;px<MPX;px++){
+    const lx=px-1,i=lx<0?0:(lx>=CH?2:1),sx=lx<0?CH-1:(lx>=CH?0:lx);
+    for(let pz=0;pz<MPX;pz++){
+      const lz=pz-1,k=lz<0?0:(lz>=CH?2:1),sz=lz<0?CH-1:(lz>=CH?0:lz),src=nb[i*3+k];
+      let o=px*MDX+pz;
+      pad[o]=BR;o+=MDY;
+      if(src){let s=sx*WH*CH+sz;for(let y=0;y<WH;y++,o+=MDY,s+=CH)pad[o]=src[s];}
+      else for(let y=0;y<WH;y++,o+=MDY)pad[o]=AIR;
+      pad[o]=AIR;
+    }
+  }
+}
 function meshChunk(ch){
   const bl=ch.bl,x0=ch.cx*CH,z0=ch.cz*CH;
   const bufs={op:newBuf(),cut:newBuf(),wat:newBuf()};
@@ -78,40 +110,48 @@ function meshChunk(ch){
     if(x>=0&&x<CH&&z>=0&&z<CH)return bl[bidx(x,y,z)];
     return getBlock(x0+x,y,z0+z);
   };
-  for(let lx=0;lx<CH;lx++)for(let lz=0;lz<CH;lz++)for(let y=0;y<WH;y++){
-    const id=bl[bidx(lx,y,lz)];
-    if(id===B.AIR)continue;
-    const d=DEFS[id];
-    if(d.bed){addBed(bufs.cut,lx,y,lz);continue;}
-    if(d.crm&&crMesh(bufs,lx,y,lz,d,gb,ch))continue;
-    if(d.pcord){piCordMesh(bufs.cut,lx,y,lz,gb,d);continue;}
-    if(d.rail){addRail(bufs.cut,lx,y,lz,gb);continue;}
-    if(d.railup){addRailUp(bufs.cut,lx,y,lz,d);continue;}
-    if(d.ramp){addRamp(bufs.cut,lx,y,lz,d);continue;}
-    if(d.door){addDoor(bufs.cut,lx,y,lz,d);continue;}
-    if(d.wt){addWallTorch(bufs.cut,lx,y,lz,d);continue;}
-    if(d.cross){addCross(bufs.cut,lx,y,lz,d);continue;}
-    for(let f=0;f<6;f++){
-      const F=FACES[f];
-      const nid=gb(lx+F.n[0],y+F.n[1],lz+F.n[2]);
-      if(!faceVisible(id,nid))continue;
-      const ti=f===0?d._t.top:(f===1?d._t.bot:d._t.side);
-      const br=[0,0,0,0];
-      for(let v=0;v<4;v++){
-        let ao=3;
-        if(d.bucket==='op'){
-          const A=F.ao[v];
-          const s1=DEFS[gb(lx+A[0][0],y+A[0][1],lz+A[0][2])].opq?1:0;
-          const s2=DEFS[gb(lx+A[1][0],y+A[1][1],lz+A[1][2])].opq?1:0;
-          const cc=DEFS[gb(lx+A[2][0],y+A[2][1],lz+A[2][2])].opq?1:0;
-          ao=(s1&&s2)?0:3-(s1+s2+cc);
+  const pad=mBusy?new Uint8Array(MPAD.length):MPAD;
+  mBusy++;
+  try{
+    mTables();mPad(ch,pad);
+    const AIR=B.AIR,WAT=B.WATER,tuv=[],br=[0,0,0,0];
+    for(let lx=0;lx<CH;lx++)for(let lz=0;lz<CH;lz++){
+      let o=(lx+1)*MDX+MDY+lz+1;
+      for(let y=0;y<WH;y++,o+=MDY){
+        const id=pad[o];
+        if(id===AIR)continue;
+        const d=DEFS[id];
+        if(MSPC[id]){
+          if(d.bed){addBed(bufs.cut,lx,y,lz);continue;}
+          if(d.crm&&crMesh(bufs,lx,y,lz,d,gb,ch))continue;
+          if(d.pcord){piCordMesh(bufs.cut,lx,y,lz,gb,d);continue;}
+          if(d.rail){addRail(bufs.cut,lx,y,lz,gb);continue;}
+          if(d.railup){addRailUp(bufs.cut,lx,y,lz,d);continue;}
+          if(d.ramp){addRamp(bufs.cut,lx,y,lz,d);continue;}
+          if(d.door){addDoor(bufs.cut,lx,y,lz,d);continue;}
+          if(d.wt){addWallTorch(bufs.cut,lx,y,lz,d);continue;}
+          if(d.cross){addCross(bufs.cut,lx,y,lz,d);continue;}
         }
-        br[v]=F.sh*(.45+.55*(ao/3));
+        const t=d._t,buf=bufs[d.bucket],aob=MAOB[id],cull=MCULL[id],wat=MWAT[id];
+        for(let f=0;f<6;f++){
+          const nid=pad[o+MNOF[f]];
+          if((nid===id&&cull)||MOPQ[nid]||(wat&&nid===WAT))continue;
+          const sh=MSHT[f];
+          if(aob){
+            const A=MAOF[f];
+            for(let v=0;v<4;v++){
+              const a=A[v],s1=MOPQ[pad[o+a[0]]],s2=MOPQ[pad[o+a[1]]],cc=MOPQ[pad[o+a[2]]];
+              br[v]=sh[(s1&&s2)?0:3-(s1+s2+cc)];
+            }
+          }else br[0]=br[1]=br[2]=br[3]=sh[3];
+          const ti=f===0?t.top:(f===1?t.bot:t.side);
+          let uv=tuv[ti];if(uv===undefined)uv=tuv[ti]=tileUV(ti);
+          const lower=(id===WAT&&f===0&&pad[o+MDY]!==WAT)?.12:0;
+          addQuad(buf,lx,y,lz,FACES[f],uv,br,lower);
+        }
       }
-      const lower=(id===B.WATER&&f===0&&gb(lx,y+1,lz)!==B.WATER)?.12:0;
-      addQuad(bufs[d.bucket],lx,y,lz,F,tileUV(ti),br,lower);
     }
-  }
+  }finally{mBusy--;}
   return bufs;
 }
 function disposeChunkMeshes(ch){

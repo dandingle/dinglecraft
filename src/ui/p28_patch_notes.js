@@ -3,7 +3,10 @@
    frozen core suite keep working, but players never see it. PATCH_LOG still feeds CHANGELOG.md (scripts/changelog.mjs)
    and the release tooling. Data-driven off GAME_VERSION so it can't drift from the shipped build. */
 const PATCH_LOG=[
- {v:GAME_VERSION,label:RELEASE_LABEL,title:'Replays',lines:[
+ {v:GAME_VERSION,label:RELEASE_LABEL,title:'Faster Chunks',lines:[
+    'FASTER CHUNKS: building a chunk\'s mesh is about 3x faster. Same blocks, same shading, same everything, down to the last float. Just less waiting when you sprint, dig or blow things up.',
+  ]},
+ {v:'6.9',label:'Release 1.0',title:'Replays',lines:[
     'REPLAYS: the game keeps your last 30 seconds ready. Press F8 and it saves as an MP4 video, sound, records and paintings included. Turn it on or off in Settings.',
     'SCREENSHOTS: F2 saves a picture (PNG).',
     'First launch says hello: share your best moments on r/DanDingle.',
